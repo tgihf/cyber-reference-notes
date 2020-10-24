@@ -1,4 +1,6 @@
-# PowerShell [ActiveDirectory](https://docs.microsoft.com/en-us/powershell/module/addsadministration/?view=win10-ps) module - *module for administering an Active Directory environment*
+# PowerShell [ActiveDirectory](https://docs.microsoft.com/en-us/powershell/module/addsadministration/?view=win10-ps) Module
+
+PowerShell module for administering an Active Directory environment
 
 ## Get-ADDomain
 

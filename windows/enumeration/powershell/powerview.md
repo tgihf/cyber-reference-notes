@@ -1,4 +1,6 @@
-# [PowerView](https://github.com/PowerShellMafia/PowerSploit/tree/master/Recon) - offensive PowerShell module for enumeration and exploitation of an Active Directory environment
+# [PowerView](https://github.com/PowerShellMafia/PowerSploit/tree/master/Recon)
+
+Offensive PowerShell module for enumeration and exploitation of an Active Directory environment
 
 ## Get-NetDomain
 
