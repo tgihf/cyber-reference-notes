@@ -33,3 +33,19 @@ Gathers information on the trusts in the domain, including direction, source, an
 ```powershell
 Get-NetDomainTrust
 ```
+
+## Get-DomainUser
+
+Gathers information on the users in the domain. A more concise version of the ActiveDirectory module's *Get-ADUser*.
+
+```powershell
+Get-DomainUser | select cn
+```
+
+## Get-DomainComputer
+
+Gathers information on the computers in the domain.
+
+```powershell
+Get-DomainComputer | select name, operatingsystem
+```
