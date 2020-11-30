@@ -14,5 +14,5 @@ $Computers = @(
 foreach ($Computer in $Computers)
 {
     Add-Computer -ComputerName $Computer.IPAddress -DomainName $Domain -Credential $DomainCredential -LocalCredential $LocalCredential -Force
-    Rename-Computer -ComputerName $Computer.IPAddress -NewName $Computer.ComputerName -DomainCredential $Credential -Restart -Force
+    Rename-Computer -ComputerName $Computer.IPAddress -NewName $Computer.ComputerName -DomainCredential $DomainCredential -Restart -Force
 }
