@@ -49,3 +49,11 @@ Gathers information on the computers in the domain.
 ```powershell
 Get-DomainComputer | select name, operatingsystem
 ```
+
+## Get-NetShare
+
+Gathers information on the shares in the domain.
+
+```powershell
+Get-NetShare
+```
