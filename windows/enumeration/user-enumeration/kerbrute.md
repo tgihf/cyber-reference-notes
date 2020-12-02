@@ -6,5 +6,5 @@
 * If Kerberos logging is enabled, this generates event ID [4768](https://www.ultimatewindowssecurity.com/securitylog/encyclopedia/event.aspx?eventID=4768).
 
 ```bash
-kerbrute userenum -d <DNS domain name> --dc <domain controller (DNS hostname/ip)> <username file>
+kerbrute userenum -d $DNS_DOMAIN_NAME --dc $DOMAIN_CONTROLLER_HOSTNAME_OR_IP $USERNAME_FILE
 ```
