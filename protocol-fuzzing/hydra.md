@@ -7,13 +7,13 @@ Protocol brute-forcing tool
 * Single password
 
 ```bash
-hydra -L <user list> -p <password> <target hostname / IP> http-post-form '<uri>:<user parameter>=^USER^&<password parameter>=^PASS^:F=<failure string>' -v
+hydra -L $USER_LIST -p $PASSWORD $TARGET_HOSTNAME_OR_IP http-post-form '$URI:$USER_PARAMETER=^USER^&$PASSWORD_PARAMTER=^PASS^:F=$FAILURE_STRING' -v
 ```
 
 * Password list
 
 ```bash
-hydra -L <user list> -P <password list> <target hostname / IP> http-post-form '<uri>:<user parameter>=^USER^&<password parameter>=^PASS^:F=<failure string>' -v
+hydra -L $USER_LIST -P $PASSWORD_LIST $TARGET_HOSTNAME_OR_IP http-post-form '$URI:$USER_PARAMETER=^USER^&$PASSWORD_PARAMTER=^PASS^:F=$FAILURE_STRING' -v
 ```
 
 * Example:
