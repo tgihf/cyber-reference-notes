@@ -14,7 +14,7 @@ sudo service neo4j start
 
 ```bash
 cd /usr/share/BloodHound-linux-x64
-./Bloodhound --no-sandbox # no sudo required
+./BloodHound --no-sandbox # no sudo required
 ```
 
 Login using your neo4j credentials (in LastPass)
