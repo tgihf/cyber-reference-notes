@@ -1,4 +1,4 @@
-# CeWL - Custom Wordlist Generator
+# CeWL - Web-Crawling Wordlist Generator
 
 Generates a wordlist by spidering websites
 
