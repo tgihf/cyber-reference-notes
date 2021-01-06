@@ -14,7 +14,7 @@ LinkedIn scraping tool that utilizes Google and Bing to to grab LinkedIn profile
 
 ```bash
 source /usr/share/LeetLinked/venv-leetlinked/bin/activate
-cd /usr/share/leetlinked
+cd /usr/share/LeetLinked
 python3 leetlinked.py -e $EMAIL_DOMAIN -f $EMAIL_FORMAT $COMPANY_NAME
 ```
 

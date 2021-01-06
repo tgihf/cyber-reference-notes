@@ -13,6 +13,6 @@ A windows server that has **Active Directory Domain Servies (ADDS)** installed a
 
 Holds the databases and processes required to store and manage directory information such as users, groups, and services. Outline of some of the contents and characteristics of the ADDS Data Store:
 
-* Contains the **NTDS.dit** file -- a database that contains all of the information of an Active Directory domain controller, as well as **password hashes for domain users**.
+* Contains the **Ntds.dit** file -- a database that contains all of the information of an Active Directory domain controller, as well as **password hashes for domain users**.
 * Stored by default in **%SystemRoot%\\NTDS**.
 * Accessible only by the domain controller.
