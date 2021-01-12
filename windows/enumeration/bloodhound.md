@@ -23,6 +23,12 @@ Login using your neo4j credentials (in LastPass)
 
 Somehow, someway, execute a BloodHound collector (located in **/usr/share/Bloodhound/Collectors**) on a machine in the target domain.
 
+**Attacker Machine, Python collector**:
+
+```bash
+bloodhound-python -d $DOMAIN -u $USERNAME -p $PASSWORD -c All -ns $DOMAIN_DNS_SERVER_IP
+```
+
 **Target Machine, PowerShell collector**:
 
 ```powershell
@@ -36,7 +42,7 @@ Invoke-BloodHound -CollectionMethod All -Domain $DOMAIN -Stealth -NoSaveCache -C
 .\SharpHound.exe --CollectionMethod All --Domain $DOMAIN --Stealth --NoSaveCache --CompressData # HYDRA.test
 ```
 
-**Meterpreter on Target Machine**:
+**Meterpreter/PowerShell on Target Machine**:
 
 ```powershell
 meterpreter > use powershell

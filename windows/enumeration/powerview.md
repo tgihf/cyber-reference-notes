@@ -57,3 +57,15 @@ Gathers information on the shares in the domain.
 ```powershell
 Get-NetShare
 ```
+
+## List group policy objects (GPOs)
+
+```powershell
+Get-NetGPO | select displayname, whenchanged
+```
+
+## List shares across the domain
+
+```powershell
+Invoke-ShareFinder
+```
