@@ -69,3 +69,9 @@ Get-NetGPO | select displayname, whenchanged
 ```powershell
 Invoke-ShareFinder
 ```
+
+## Get Domain SID
+
+```powershell
+Get-DomainSID
+```

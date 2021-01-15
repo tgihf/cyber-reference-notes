@@ -29,3 +29,9 @@ Provides information on the trusts within the Active Directory Domain, including
 ```powershell
 Get-ADTrust -Filter * | Select-Object Direction, Source, Target
 ```
+
+## Get Domain SID
+
+```powershell
+Get-ADDomain
+```
