@@ -13,8 +13,8 @@ masscan -p1-65535,U:1-65536 $TARGET_IP --rate=1000 -e $INTERFACE --output-format
   * json
   * list
 
-## Extract comma-separated list of ports from masscan output
+## Extract comma-separated list of ports from grepable masscan output
 
 ```bash
-cat $MASSCAN_OUTPUT | grep "open port" | cut -d' ' -f4 | cut -d'/' -f1 | tr '\n' ','
+cat $MASSCAN_OUTPUT  | grep open | cut -d' ' -f5 | cut -d'/' -f1 | sort -u | tr '\n' ','
 ```
