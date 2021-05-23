@@ -81,3 +81,9 @@ if [ $foo -gt 0 ]; then
     echo $foo
 fi
 ```
+
+## File Transfer
+
+```bash
+cat $FILE > /dev/tcp/$REMOTE_IP/$REMOTE_PORT
+```

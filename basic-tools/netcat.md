@@ -71,3 +71,12 @@ nc -nuv $REMOTE_IP $REMOTE_PORT
 ```bash
 nc -nlvp $LISTEN_PORT
 ```
+
+## Scan a range of ports
+
+```bash
+netcat -nv $REMOTE_IP $PORT_RANGE
+```
+
+- PORT_RANGE example:
+  - 1-65535

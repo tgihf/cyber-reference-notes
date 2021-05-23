@@ -1,6 +1,9 @@
-# nikto - *web application vulnerability scanner*
+# nikto
 
-## Scan website at *\<url\>*
+> Web application vulnerability scanner
+
+## Scan website at $URL
+
 ```bash
-nikto -h <url>
+nikto -h $URL
 ```

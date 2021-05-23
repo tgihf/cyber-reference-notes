@@ -1,4 +1,6 @@
-# [namely](https://github.com/OrielOrielOriel/namely) - extensible email address generator
+# [namely](https://github.com/OrielOrielOriel/namely)
+
+> Extensible email address generator.
 
 ## Generate email address list based on single name, domain, and template
 
