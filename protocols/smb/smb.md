@@ -3,6 +3,8 @@
 > A network file sharing protocol that allows applications on a computer to read and write to files and to request services from server programs in a computer network.
 
 
-## [List SMB shares on target](list-shares)
+## [List SMB shares on target](list-shares.md)
 
-## [Browse SMB shares on target](browse-shares)
+## [Browse SMB shares on target](browse-shares.md)
+
+## [Exfil file on SMB shares](exfil-shares.md)

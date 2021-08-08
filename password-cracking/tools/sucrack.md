@@ -12,6 +12,8 @@ $ ls src/sucrack
 sucrack
 ```
 
+---
+
 ## Dictionary attack against user $USERNAME with wordlist $WORDLIST using `su`
 
 ```bash
