@@ -2,6 +2,6 @@
 
 > Cracking passwords on a local system.
 
-## Offline Dictionary Attack
+## [[hashcat#Offline Dictionary attack|Offline Dictionary Attack against Password Hash]]
 
-[[hashcat#Offline Dictionary attack]]
+## [[john-the-ripper#Offline dictionary attack against SSH private key encrypted with passphrase|Offline Dictionary Attack for Passphrase of SSH Private Key]]

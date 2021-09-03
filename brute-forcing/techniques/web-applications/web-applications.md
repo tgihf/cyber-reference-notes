@@ -16,3 +16,9 @@
 ## Username Enumeration
 
 [[username-enumeration]]
+
+---
+
+## Brute Force Protection Mechanisms
+
+[[brute-force-protections]]

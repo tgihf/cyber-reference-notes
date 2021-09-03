@@ -3,6 +3,8 @@
 > A network file sharing protocol that allows applications on a computer to read and write to files and to request services from server programs in a computer network.
 
 
+## [Enumerate shares, users, groups, & more](tools/enum4linux)
+
 ## [List SMB shares on target](list-shares.md)
 
 ## [Browse SMB shares on target](browse-shares.md)

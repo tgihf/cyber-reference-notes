@@ -4,8 +4,6 @@ In a web application that leverages password-based authentication, users registe
 
 The critical component of this kind of system is the confidentiality of users' secret password. If a user's secret password is **disclosed**, **easily guessed**, or **brute-forced**, the web application's authentication can be broken.
 
-## Brute Forcing
+---
 
-### Username Enumeration
-
-[[username-enumeration]]
+## [[web-applications/brute-forcing|Brute Forcing]]
