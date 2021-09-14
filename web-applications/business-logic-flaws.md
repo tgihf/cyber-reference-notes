@@ -102,3 +102,25 @@ Examples:
 
 ## [Domain-specific flaws](https://portswigger.net/web-security/logic-flaws/examples#domain-specific-flaws)
 
+Every application exists to solve one or more problems in a specific domain. As a result, every application contains logic that is specific to its domain. By understanding the application's domain, you can determine what kind of inputs the application is supposed to allow and analyze its behavior when fed "invalid" inputs.
+
+Shopping application? Prices should always be positive. Travel application? Distance should always be positive. These are cursory examples. Many application domains are incredible complex and thus also require complex application logic.
+
+How do you find and exploit domain-specific flaws?
+
+1. Understand the domain
+2. Analyze the application's functionality and inputs
+3. Based on your understanding of the domain, enter "invalid" inputs and analyze the application's responses to determine if a vulnerability exists
+
+Examples:
+- [PortSwigger Web Security Academy Business Logic Flaws Lab - Flawed enforcement of business logic](https://github.com/tgihf/writeups/blob/master/port-swigger-web-academy/business-logic-flaws/09%20-%20Flawed%20enforcement%20of%20business%20rules.md)
+- [PortSwigger Web Security Academy Business Logic Flaws Lab - Infinite money logic flaw](https://github.com/tgihf/writeups/blob/master/port-swigger-web-academy/business-logic-flaws/10%20-%20Infinite%20money%20logic%20flaw.md)
+
+---
+
+## [Providing an Encryption Oracle](https://portswigger.net/web-security/logic-flaws/examples#providing-an-encryption-oracle)
+
+An **encryption oracle** is a vulnerability in which user-controllable input is encrypted and the resulting ciphertext is made available to the user in some way.
+
+This allows an attacker to encrypt an input. If another endpoint on the application requires input encrypted via the same algorithm and key, the attacker can leverage the encryption oracle to encrypt their input and pass it to the other endpoint.
+
