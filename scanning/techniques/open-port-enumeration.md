@@ -1,4 +1,4 @@
-# Open Port Service Scanning
+# Open Port Enumeration
 
 ## nmap
 

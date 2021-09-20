@@ -17,3 +17,15 @@ john --wordlist=$PATH_TO_WORDLIST ssh_priv_key.john
 ```
 
 See [this](https://github.com/tgihf/writeups/blob/master/tryhackme/basic-pentesting/basic-pentesting.md) for an example.
+
+---
+
+## Offline dictionary attack against a password hash **containing an emoji**
+
+Simply paste the hash with the emoji into a text file and crack as normal.
+
+```bash
+john --wordlist=$PATH_TO_WORDLIST $HASH_FILE
+```
+
+Example: [HTB Previse]().
