@@ -107,3 +107,18 @@ If `bash` is SUID and/or SGID, it won't automatically retain the privileges of t
 ```bash
 bash -p
 ```
+
+---
+
+## Wildcard Behavior
+
+In `bash`, the wildcard operator `*` creates a string out of all of the file names in the current directory and replaces the wildcard with that string.
+
+For example, let's say the current directory has two files in it: `-l` and `-a`.
+
+```bash
+$ ls
+-a -l
+```
+
+Executing the command `ls *` is equivalent to executing the command `ls -a -l`, because the wildcard injects the file names in the current directory into the command.
