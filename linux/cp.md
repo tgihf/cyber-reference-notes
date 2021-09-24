@@ -4,7 +4,7 @@
 
 ---
 
-## Abuse Copying a Wildcard to Preserve SUID Permissions
+## Abuse Copying a Wildcard to Preserve SUID Permissions (`cp *`)
 
 If you are somehow able to execute `cp * $DESTINATION` with elevated privileges (via `sudo` maybe), it is possible to create a SUID binary with elevated privileges.
 

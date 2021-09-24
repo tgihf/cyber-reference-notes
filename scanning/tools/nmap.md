@@ -4,7 +4,7 @@
 
 ---
 
-## Open port discovery scan of `$TARGET`
+## Open TCP port discovery scan of `$TARGET`
 
 ```bash
 nmap -p- --min-rate=10000 $TARGET -oA $OUTPUT_FILENAME
@@ -12,13 +12,21 @@ nmap -p- --min-rate=10000 $TARGET -oA $OUTPUT_FILENAME
 
 ---
 
-## Open port enumeration scan of `$PORTS` on `$TARGET`
+## Open TCP port enumeration scan of `$PORTS` on `$TARGET`
 
 - `$PORTS` is a comma-separated list of port numbers or a range
   - Example: 80,443,445 or 1-1000
 
 ```bash
 nmap -sC -sV -O -p$PORTS $TARGET -oA $OUTPUT_FILENAME
+```
+
+---
+
+## Open UDP port discovery scan of `$TARGET`
+
+```bash
+nmap -sU $TARGET
 ```
 
 ---
