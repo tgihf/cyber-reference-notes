@@ -99,6 +99,18 @@ patator http_fuzz body='number=RANGE0&letter=RANGE1' 0=int:0-500 1=lower=a-zzz
 
 ---
 
+## PROG
+
+The `PROG` input method allows you to iterate over the output of an external program.
+
+Example:
+
+```bash
+patator http_fuzz url='http://intelligence.htb/documents/PROG0-PROG1-PROG2-upload.pdf' 0='for i in {2019..2021}; do echo $i; done' 1='for i in  {01..12}; do echo $i; done' 2='for i in {01..31}'
+```
+
+---
+
 ## Repeat the Same Request `$N` Times
 
 ```bash
