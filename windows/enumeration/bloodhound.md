@@ -4,16 +4,12 @@ BloodHound uses graph theory to reveal the hidden and often unintended relations
 
 ## Setup
 
-**Attack machine**: Start neo4j
-
-```bash
-sudo service neo4j start
-```
+**Attack machine**: [[neo4j#Run via Docker|Start Neo4j]]
 
 **Attack machine (must be GUI)**: Start Bloodhound
 
 ```bash
-cd /usr/share/BloodHound-linux-x64
+cd /opt/bloodhound/BloodHound-linux-x64
 ./BloodHound --no-sandbox # no sudo required
 ```
 
@@ -21,7 +17,7 @@ Login using your neo4j credentials (in LastPass)
 
 ## Collection
 
-Somehow, someway, execute a BloodHound collector (located in **/usr/share/Bloodhound/Collectors**) on a machine in the target domain.
+Somehow, someway, execute a BloodHound collector (located in **/opt/bloodhound/collectors**), either from the attacker's machine with domain user credentials or on a domain-joined machine.
 
 **Attacker Machine, Python collector**:
 
