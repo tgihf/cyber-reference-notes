@@ -39,7 +39,7 @@ tar -jtvf archive.tbz2
 ## tar Decompress
 
 ```bash
-tar -vf archive.tar
+tar -xvf archive.tar
 ```
 
 ## tar Decompress via Pipe
