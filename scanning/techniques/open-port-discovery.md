@@ -4,7 +4,7 @@
 
 ## masscan
 
-[[masscan#Open port discovery of TARGET|Open TCP port discovery]]
+[[masscan#Open TCP port discovery of TARGET|Open TCP port discovery]]
 
 ---
 

@@ -29,3 +29,13 @@ john --wordlist=$PATH_TO_WORDLIST $HASH_FILE
 ```
 
 Example: [HTB Previse]().
+
+---
+
+## Offline dictionary attack against an AS-REP message
+
+Make sure there are no newlines in the hash.
+
+```bash
+john $HASH_FILE --wordlist=$PASSWORD_LIST
+```

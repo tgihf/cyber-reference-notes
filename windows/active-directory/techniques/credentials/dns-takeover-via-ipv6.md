@@ -1,0 +1,26 @@
+# DNS Takeover via IPv6
+
+Most networks today run entirely off IPv4. However, many networks are still configured to run via IPv6 as well. By mimicking a DNS server and responding to IPv6 requests, you can gather domain information and forward hashes to gain access in the environment.
+
+## DNS takeover via IPv6 to gather domain information or create a new domain administrator
+
+* Start MITM6 listener
+
+```bash
+mitm6 -d $DOMAIN_NAME
+```
+
+* Start relay
+  * $WPAD: Fake WPAD. Pretty inconsequential. Example: fakewpad.marvel.test
+  * $LOOT_DIRECTORY: Attacker-local path to dump collected domain information (domain users, domain computers, domain users by group, domain policies, domain trusts)
+
+```bash
+ntlmrelayx.py -6 -t ldaps://$TARGET -wh $WPAD -l $LOOT_DIRECTORY
+```
+
+* Every 30 minutes from reboot domain computers will requery their DNS name, triggering the attack. If the attack succeeds, domain information will be dumped in **$LOOT_DIRECTORY**.
+* When a domain administrator logs into a machine in the domain, ntlmrelayx.py will leverage their credential to create a new domain user account that isn't necessarily a domain administrator, but through the use of a custom ACL wields the same amount of power as a domain administrator.
+
+---
+
+## [Impersonate user on a target computer (to dump hashes)](https://dirkjanm.io/worst-of-both-worlds-ntlm-relaying-and-kerberos-delegation/)
