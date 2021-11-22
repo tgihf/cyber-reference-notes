@@ -9,7 +9,7 @@ An issue exists in the constrained delegation implementation where the service n
 From the perspective of the principal configured with constrained delegation, the process is comprised of the following steps:
 
 1. `S4U2Self`: The attacker compromises a domain principal configured with constrained delegation. From that context, they request a special, "forwardable" service ticket for the principal to impersonate to the principal configured with constrained delegation that the attacker has control over.
-2. `S4U2Proxy`: The constrained delegation principal sends the "forwardable" service ticket to the target [[service-principal-name|SPN]] and receives a service ticket for that [[service-principal-name|SPN]] in the response.
+2. `S4U2Proxy`: The constrained delegation principal reaches out to the KDC and trades the "forwardable" service ticket to "itself" for a service ticket to the target [[service-principal-name|SPN]].
 3. `Changing the sname`: With a valid service ticket to the target [[service-principal-name|SPN]], the attacker can now modify the service ticket's service name (`sname`) attribute to access any service on the [[service-principal-name|SPN's]] computer.
 
 ---

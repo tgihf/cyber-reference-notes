@@ -99,3 +99,27 @@ Clear the `msds-allowedtoactonbehalfofotheridentity` attribute from the target c
 ```powershell
 Set-ADComputer $TARGET -PrincipalsAllowedToDelegateToAccount $null
 ```
+
+---
+
+## Retrieve Deleted Active Directory Objects
+
+This requires permission to the `AD Recycle Bin` group.
+
+```powershell
+Get-ADObject -Filter 'Deleted -eq $true' -IncludeDeletedObjects
+```
+
+Pipe the results of this command into a `where` clause for further filtering.
+
+---
+
+## Restore a Deleted Active Directory Object
+
+This requires permission to the `AD Recycle Bin` group.
+
+First, you'll need to [[powershell-active-directory-module#Retrieve Deleted Active Directory Objects|retrieve the deleted Active Directory object]]. Pipe that object into `Restore-ADObject`, like so:
+
+```powershell
+Get-ADObject -Filter '$FILTER' -IncludeDeletedObjects | RestoreADObject
+```

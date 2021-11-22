@@ -107,4 +107,8 @@ SELECT sql FROM sqlite_master WHERE type = 'table' AND name = '$TABLE_NAME'
 
 ---
 
-## 
+## Interact with a SQLite Database File from the Command Line
+
+```bash
+sqlite3 $DATABASE_FILE
+```

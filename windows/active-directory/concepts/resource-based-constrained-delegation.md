@@ -1,6 +1,6 @@
 # Resource-Based Constrained Delegation
 
-Windows Server 2012 implemented a new type of constrained in response to some of the problems with [[constrained-delegation|traditional constrained delegation]]: resource-based constrained delegation.
+Windows Server 2012 implemented a new type of constrained delegation in response to some of the problems with [[constrained-delegation|traditional constrained delegation]]: resource-based constrained delegation.
 
 In [[constrained-delegation|traditional constrained delegation]], the account configured with constrained delegation specifies which [[service-principal-name|SPNs]] it can delegate to.
 

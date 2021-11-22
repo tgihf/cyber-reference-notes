@@ -56,3 +56,9 @@ IF ($CONDITION) WAITFOR DELAY '0:0:10'
 ## Table column enumeration
 
 [[database-enumeration#Querying database tables' columns non-Oracle]]
+
+---
+
+## MSSQL Client
+
+[[mssqlclient|impacket-mssqlclient]]

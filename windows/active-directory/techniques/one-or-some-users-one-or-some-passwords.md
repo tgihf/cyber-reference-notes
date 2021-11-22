@@ -85,3 +85,7 @@ There is a `Python` collector for Linux and a `PowerShell` and `C#` collector fo
 ---
 
 ### [[gpp-cpassword-leak|Check Domain Shares for Reversible Credentials in Group Policy Preference Files]]
+
+---
+
+### If the Target's OS is Windows Server 2003 - 2012 R2, exploit [[ms14-068|MS14-068]]
