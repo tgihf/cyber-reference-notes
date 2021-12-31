@@ -12,8 +12,6 @@ Discover hosts and their open ports with [[nmap]]. Enumerate and exploit any exp
 
 ### Check for null or guest access to SMB shares
 
-Use `enum4linux` to check for [[enum4linux#Perform All Checks null session|null]] or [[enum4linux#Perform All Checks guest session|guest]] access.
-
 Use `smbmap` to check for [[smbmap#List SMB shares of TARGET via null session|null]] or [[smbmap#List SMB shares of TARGET via guest session|guest]] access.
 
 Use `smbclient` to check for [[smbclient#Connect to and browse anonymous SMB share SHARE on TARGET|null]] or [[smbclient#Connect to and browse SMB share SHARE on TARGET with guest session|guest]] access.
@@ -40,3 +38,9 @@ However, the same request but **with a valid username** will cause the KDC to re
 An attacker can exploit this behavior to determine valid users on the domain.
 
 Use [[kerbrute#Enumerate valid domain usernames via Kerberos|kerbrute]] for this.
+
+---
+
+## Exploit Domain-Joined SQL Server
+
+If you have SQL command execution on a Microsoft SQL Server that is joined to the domain, you can [[mssql#Enumerate SQL Server Logins|enumerate SQL server logins]] and [[mssql#Enumerate Domain Principals|enumerate domain principals]].

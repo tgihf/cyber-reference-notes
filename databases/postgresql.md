@@ -105,3 +105,45 @@ postgres=# INSERT INTO employees (user_id, username, password, email, created_on
 ```
 
 Query away!
+
+---
+
+## Show Databases in `psql`
+
+```txt
+postgres=# \l+
+```
+
+Also:
+
+```sql
+SELECT datname FROM pg_database;
+```
+
+---
+
+## Connect to Database in `psql`
+
+```txt
+postgres=# \c $DATABASEN_NAME
+```
+
+---
+
+## Show Tables in Database in `psql`
+
+```txt
+postgres=# \dt+
+```
+
+---
+
+## Command Execution in PostgreSQL
+
+If you can execute arbitrary SQL statements on a PostgreSQL server, you can most likely execute operating system commands as well.
+
+On Linux and in PostgreSQL < 8.2, you can import the `system` function from `/lib/x86_64-linux-gnu/libc.so.6` and run arbitrary operating system commands as the user running PostgreSQL. There is even a [Metasploit module](https://www.rapid7.com/db/modules/exploit/linux/postgres/postgres_payload/) for this.
+
+On Linux and in PostgreSQL >= 8.2, PostgreSQL started requiring a "magic block" of data at the beginning of the shared object file for it to be imported that `libc` doesn't have. You can trivially write your PostgreSQL extension that runs `system` and compile it into a compliant shared object file. See `NIX01` in `HTB Offshore` for an example.
+
+Details on how to execute both of these attacks, and command execution attacks on Windows, can be found on [HackTricks](https://book.hacktricks.xyz/pentesting-web/sql-injection/postgresql-injection/rce-with-postgresql-extensions). [This repository](https://github.com/Dionach/pgexec) also contains pre-compiled shared object files and the ability to automate the exploitation.

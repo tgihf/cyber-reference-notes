@@ -14,7 +14,7 @@ Link [here](https://neo4j.com/developer/docker-run-neo4j/).
 $ mkdir -p ~/.neo4j/data
 $ mkdir -p ~/.neo4j/logs
 $ mkdir -p ~/.neo4j/import
-$ mkdkir -p ~/.neo4j/plugins
+$ mkdir -p ~/.neo4j/plugins
 ```
 
 ### Run the Docker Container

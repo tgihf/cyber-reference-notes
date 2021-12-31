@@ -7,6 +7,6 @@
 - $MIN_LENGTH: words must be at least this many letters long to be collected
 
 ```bash
-cewl -c $MIN_LENGTH $URL -w $OUTPUT_FILE
+cewl -m $MIN_LENGTH $URL -w $OUTPUT_FILE --with-numbers
 ```
 

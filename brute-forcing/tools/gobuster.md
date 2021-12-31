@@ -9,7 +9,7 @@ gobuster dir -u $URL -w $WORDLIST [-x $FILE_EXTENSIONS] # $FILE_EXTENSIONS -> ph
 ```
 
 - Potential word lists:
-	- [`/usr/share/wordlists/SecLists/Discovery/Web-Content/raft-small-words.txt`](https://raw.githubusercontent.com/danielmiessler/SecLists/master/Discovery/Web-Content/raft-small-words.txt)
+	- [`/usr/share/wordlists/seclists/Discovery/Web-Content/raft-small-words.txt`](https://raw.githubusercontent.com/danielmiessler/SecLists/master/Discovery/Web-Content/raft-small-words.txt)
 	- `/usr/share/wordlists/dirbuster/directory-list-1.0.txt`
 		- Has small, medium, large, & lowercase variants
 	- `/usr/share/wordlists/dirb/common.txt`

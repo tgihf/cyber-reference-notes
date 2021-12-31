@@ -47,6 +47,14 @@ IF ($CONDITION) WAITFOR DELAY '0:0:10'
 
 ---
 
+## Database enumeration
+
+```sql
+SELECT name, database_id, create_date FROM sys.databases
+```
+
+---
+
 ## Table enumeration
 
 [[database-enumeration#Querying database tables non-Oracle]]
@@ -62,3 +70,21 @@ IF ($CONDITION) WAITFOR DELAY '0:0:10'
 ## MSSQL Client
 
 [[mssqlclient|impacket-mssqlclient]]
+
+---
+
+## Enumerate SQL Server Logins
+
+If you have SQL command execution on a Microsoft SQL Server that is joined to a domain, you can use [this technique](https://www.netspi.com/blog/technical/network-penetration-testing/hacking-sql-server-procedures-part-4-enumerating-domain-accounts/) to enumerate SQL server logins.
+
+---
+
+## Enumerate Domain Principals
+
+If you have SQL command execution on a Microsoft SQL Server that is joined to a domain, you can use [this technique](https://www.netspi.com/blog/technical/network-penetration-testing/hacking-sql-server-procedures-part-4-enumerating-domain-accounts/) to enumerate domain principals.
+
+---
+
+## References
+
+[Pentest Monkey MSSQL Cheat Sheet](https://pentestmonkey.net/cheat-sheet/sql-injection/mssql-sql-injection-cheat-sheet)

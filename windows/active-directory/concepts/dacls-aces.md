@@ -1,6 +1,6 @@
 # Active Directory Discretionary Access Control Lists (DACLs) & Access Control Entries
 
-> Windows and Active Directory allow the owners of [[objects]] to define what other [[objects]] can access them and in what ways. There are several permissions that are of significant interest to adversaries as they allow a great deal of control over [[objects]].
+> An access control list (ACL) is an ordered list of access control entries (ACEs) that define the protections that apply to an object and its properties. Each ACE specifies a **security principal** and a **set of access rights** that are allowed, denied, or audited for that security principal. There are several access rights that allow a great deal of control over [[objects]]. An object's ACLs are set by its owner.
 
 ---
 

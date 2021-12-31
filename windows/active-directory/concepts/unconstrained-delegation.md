@@ -118,3 +118,9 @@ See [[krbrelayx#Add a new DNS record to ADIDNS that maps the new Host SPN in the
 ### 4. Trigger the "Print Bug" & Coerce the Domain Controller to Authenticate to the Attacker-Controlled Computer that is Impersonating the Unconstrained Delegation Computer, Steal `krbtgt`'s TGT, and Dump the Domain's Hashes
 
 See [[krbrelayx#Coerce the domain controller into authenticating to the attacker controlled machine as if it was the unconstrained delegation computer and steal krbtgt 's TGT|krbrelayx's krbrelayx.py & printerbug.py]].
+
+---
+
+## References
+
+[Specter Ops's "The Unintended Risks of Trusting Active Directory" DerbyCon Talk](https://www.youtube.com/watch?v=KbTTDICqCa8)
