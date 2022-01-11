@@ -24,6 +24,14 @@ Note `$POWERVIEW_COMMAND_HERE`. Remote imports only last for that line. Thus, al
 
 ---
 
+## Query a Foreign Domain
+
+Requires network connectivity to the foreign domain's domain controller and a security context capable of issuing LDAP queries to that domain controller.
+
+Use the `-Domain $DOMAIN_NAME` flag. Use the `-Server $FQDN_OR_IP` to specify the foreign domain's domain controller. Use th `-Credential` flag to specify an alternate credential from the current security context.
+
+---
+
 ## Get-NetDomain
 
 Gathers information about the domain, including forest name, domain controllers, and domain name. A more concise version of the ActiveDirectory module's *Get-ADDomain*.
@@ -246,6 +254,7 @@ Add-DomainObjectAcl -PrincipalIdentity "$PRINCIPAL" -TargetIdentity "$TARGET" -R
 
 - `$PRINCIPAL` is the domain principal **subject** of the ACE
 - `$TARGET` is the domain principal **object** of the ACE
+	- One time for this to work, I had to specify the target's LDAP distinguished name, not just its SAM account name
 - `$RIGHTS` are either `ResetPassword`, `WriteMembers`, `DCSync`, or `All`.
 - `$CREDENTIALS` is an optional [[powershell#Create a Credential|PSCredential]] object of a domain principal authorized to add the ACE to the target principal's DACL
 
@@ -317,4 +326,73 @@ Set-DomainObject -Identity $SAM_ACCOUNT_NAME_OF_TARGET_PRINCIPAL -Set @{servicep
 
 ```powershell
 Invoke-Kerberoast -Identity $PRINCIPAL_TO_KERBEROAST
+```
+
+---
+
+## Add a User to a Domain Group
+
+```powershell
+Add-DomainGroupMember -Identity $GROUP_NAME -Members $PRINCIPAL_TO_ADD [-Credential $CREDENTIAL]
+```
+
+---
+
+## Check if a User is in a Domain Group
+
+```powershell
+Get-DomainGroupMember -Identity $GROUP_NAME [-Credential $CREDENTIAL] | ? {$_.MemberName -eq "$USERNAME"}
+```
+
+---
+
+## Change a Domain User's Password
+
+```powershell
+Set-DomainUserPassword -Identity $DOMAIN_USER_TO_CHANGE -AccountPassword $PASSWORD [-Credential $CREDENTIAL]
+```
+
+- `$PASSWORD` is a `SecureString`
+- `$CREDENTIAL` is a [[powershell#Create a Credential PSCredential Object|PSCredential]]
+
+---
+
+## Enumerate Internal & External Trusts of all Domains in the Current Forest
+
+This enumeration method leverages the [[global-catalog|Global Catalog]] and as a result, only requires network traffic between the executing machine and the current domain's primary domain controller.
+
+```powershell
+Get-DomainTrust -SearchBase "GC://$($ENV:USERDNSDOMAIN)"
+```
+
+---
+
+## Recursively Enumerate Trusts of all Domains of the Current Forest and all Transitive Domains
+
+```powershell
+Get-DomainTrustMapping
+```
+
+---
+
+## List All or Retrieve a Specify Local Group on a Local or Remote Computer
+
+```powershell
+Get-NetLocalGroupMember [-ComputerName $FQDN_OR_IP_OF_COMPUTER] [-GroupName $GROUP_NAME] [-Credential $CREDENTIAL]
+```
+
+---
+
+## Enumerate Foreign Group Membership
+
+### List All Users Who are Members of the Current Domain and are in Groups of Foreign Domains
+
+```powershell
+Get-DomainForeignUser
+```
+
+### List All Users Who are Members of a Target Domain and are in Groups of Foreign Domains
+
+```powershell
+Get-DomainForeignUser -Domain $TARGET_DOMAIN
 ```

@@ -138,3 +138,13 @@ In an administrative or SYSTEM context:
 ```powershell
 Add-MpPreference -ExclusionPath $PATH_TO_FOLDER_TO_EXCLUDE
 ```
+
+---
+
+## Recursively Search the File System
+
+```powershell
+Get-ChildItem -Path C:\ -Include "$FILENAME" -Recurse -ErrorAction SilentlyContinue
+```
+
+- `$FILENAME` can contain wildcards

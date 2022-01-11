@@ -42,3 +42,9 @@ A collection of one or more domain trees in Active Directory Domain Services (AD
 ## Domain Schema
 
 - Rules for object creation
+
+---
+
+## References
+
+[Microsoft's How Domain & Forest Trusts Work](https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2003/cc773178(v=ws.10)?redirectedfrom=MSDN)

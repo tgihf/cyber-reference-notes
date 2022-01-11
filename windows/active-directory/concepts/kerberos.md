@@ -135,6 +135,12 @@ If a service wants to ensure that a user actually has a particular privilege adv
 
 ---
 
+## Cross-Trust Kerberos Request
+
+![[Pasted image 20220110124051.png]]
+
+---
+
 ## Kerberos Attacks
 
 ### [[ASREP-roasting|AS-REP Roasting]]

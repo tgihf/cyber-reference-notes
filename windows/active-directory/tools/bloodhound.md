@@ -82,3 +82,12 @@ Afterwards, search for each of the owned principals. Right-click the node and in
 
 Use the prebuilt query `List all Kerberoastable Users`.
 
+---
+
+## Generate a Graph of a Foreign Domain
+
+```powershell
+Invoke-BloodHound -CollectionMethod $COLLECTION_METHOD -Domain $FOREIGN_DOMAIN
+```
+
+Enumerates via LDAP, so must be executed in the security context of a user who can issue an LDAP query to `$FOREIGN_DOMAIN`'s primary domain controller.
