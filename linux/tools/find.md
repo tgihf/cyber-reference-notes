@@ -2,6 +2,8 @@
 
 Search the file system.
 
+---
+
 ## Find file by name $NAME recursively from $DIRECTORY
 
 ```bash
