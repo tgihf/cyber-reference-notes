@@ -4,8 +4,16 @@
 
 ---
 
-## Initiate Enumeration
+## Initiate Enumeration & Write Output
 
 ```bash
-./linenum.sh
+./linenum.sh | tee linenum.out
+```
+
+---
+
+## Read Output File with Color
+
+```bash
+less -R linenum.out
 ```

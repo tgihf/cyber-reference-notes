@@ -10,6 +10,24 @@ See [[situational-awareness|here]].
 
 ---
 
+## [[capabilities#List All Binaries with Capabilities|Check Binaries with Capabilities]]
+
+---
+
+## Kernel Exploits
+
+See [[kernel-exploits|here]].
+
+---
+
+## With Administrative Access, Capture and Analyze Network Traffic
+
+```bash
+tcpdump -i $INTERFACE -nt '$FILTER' -vX [-w $OUTPUT_FILE]
+```
+
+---
+
 ## Credential Hunting
 
 Recursively search `$DIRECTORY` for SSH keys.
@@ -22,13 +40,13 @@ find $DIRECTORY -name id_rsa 2> /dev/null
 grep --color=auto -rnw $DIRECTORY -ie "PRIVATE KEY" --color=always 2> /dev/null
 ```
 
-Recursively search `$DIRECTORY` for the word "PASSWORD."
+Recursively search `$DIRECTORY` for the word "PASSWORD." Feel free to try other variations, like "passwd," "pass", or "pwd."
 
 ```bash
 grep --color=auto -rnw $DIRECTORY -ie "PASSWORD" --color=always 2> /dev/null
 ```
 
-Find all files that **contain** the word "password."
+Find all files whose names' **contain** the word "password."
 
 ```bash
 locate password
@@ -40,30 +58,13 @@ find $DIRECTORY -name password 2> /dev/null
 
 ---
 
-## 3. [[capabilities#List All Binaries with Capabilities|Check Binaries with Capabilities]]
-
----
-
-## 4. Run a Privilege Escalation Enumeration Script
-
-- [linpeas.sh](https://github.com/carlospolop/privilege-escalation-awesome-scripts-suite/tree/master/linPEAS)
-	- **TODO**: figure out how to cleanly transfer the `linpeas.sh` output remotely
-
----
-
-## 5. With Administrative Access, Capture and Analyze Network Traffic
-
-```bash
-tcpdump -i $INTERFACE -nt '$FILTER' -vX [-w $OUTPUT_FILE]
-```
-
 ## Automated Privilege Escalation Enumeration
 
 **Enumeration**
 
 - [[linpeas|linpeas.sh (bash)]]
 - [[linenum|linenum.sh (bash)]]
-- 
+- [[linuxprivchecker|linuxprivchecker.py (Python 2 default, 3 available)]]
 
 **Exploit Suggestion**
 - [[linux-exploit-suggester|Linux Exploit Suggester]]

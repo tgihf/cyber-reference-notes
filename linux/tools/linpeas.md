@@ -4,7 +4,7 @@
 
 ---
 
-## Initiate Enumeration and Write Output
+## Initiate Enumeration & Write Output
 
 ```bash
 ./linpeas.sh | tee linpeas.out
