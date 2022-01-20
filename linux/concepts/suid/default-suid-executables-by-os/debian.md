@@ -2,7 +2,6 @@
 
 ```bash
 $ find / -user root -perm -4000 -print 2>/dev/null
-
 /usr/bin/chfn
 /usr/bin/chsh
 /usr/bin/gpasswd

@@ -12,7 +12,13 @@ See [[situational-awareness|here]].
 
 ## `sudo` Exploitation
 
-See [[sudo|here]].
+See [[sudo-for-privesc|here]].
+
+---
+
+## SUID Exploitation
+
+See [[suid-for-privesc|here]].
 
 ---
 
@@ -22,7 +28,7 @@ See [[sudo|here]].
 
 ## Exploitable Permissions on Sensitive Files
 
-See [[sensitive-files|here]].
+Iterate through each of the machine's [[sensitive-files|sensitive files]], seeing if your current security context has the desired permissions.
 
 ---
 

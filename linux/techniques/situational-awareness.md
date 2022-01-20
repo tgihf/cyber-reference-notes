@@ -79,7 +79,7 @@ cat /etc/passwd
 ### Groups
 
 ```bash
-cat /etc/groups
+cat /etc/group
 ```
 
 ---

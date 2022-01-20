@@ -8,7 +8,7 @@
 
 If a user retains the `LD_PRELOAD` environment variable value when running `sudo` commands, they can execute an arbitrary shared object file as the target user of the `sudo` command.
 
-See [[sudo#LD_PRELOAD Exploitation|here]] for more details.
+See [[sudo-for-privesc#LD_PRELOAD Exploitation|here]] for more details.
 
 ---
 
