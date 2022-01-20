@@ -10,7 +10,25 @@ See [[situational-awareness|here]].
 
 ---
 
+## `sudo` Exploitation
+
+See [[sudo|here]].
+
+---
+
 ## [[capabilities#List All Binaries with Capabilities|Check Binaries with Capabilities]]
+
+---
+
+## Exploitable Permissions on Sensitive Files
+
+See [[sensitive-files|here]].
+
+---
+
+## Credential Hunting
+
+See [[credential-hunting|here]].
 
 ---
 
@@ -44,6 +62,12 @@ Recursively search `$DIRECTORY` for the word "PASSWORD." Feel free to try other 
 
 ```bash
 grep --color=auto -rnw $DIRECTORY -ie "PASSWORD" --color=always 2> /dev/null
+```
+
+Do the same as the above, but also search for hidden directories.
+
+```bash
+find $DIRECTORY -type f -exec grep -i -I "PASSWORD" {} /dev/null \;
 ```
 
 Find all files whose names' **contain** the word "password."

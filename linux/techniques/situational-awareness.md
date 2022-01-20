@@ -52,6 +52,10 @@ whoami
 
 ### Current User's Allowed and Disallowed `sudo` Commands
 
+Commands marked `(root) NOPASSWD` can be executed as `root` without providing the current user's password.
+
+Commands marked `(root)` can be executed as `root` but require providing the current user's password.
+
 ```bash
 sudo -l
 ```
