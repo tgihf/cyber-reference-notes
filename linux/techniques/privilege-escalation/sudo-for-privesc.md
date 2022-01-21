@@ -32,6 +32,13 @@ Abuse the [[situational-awareness#Current User's Allowed and Disallowed sudo Com
 		- Look them up in [GTFOBins](https://gtfobins.github.io/) to determine how to exploit it in order to elevate privileges
 		- If you can't find it in [GTFOBins](https://gtfobins.github.io/), Google `$COMMAND sudo privilege escalation` and see if someone else has already disclosed how to abuse its intended functionality to elevate privileges
 	- If the command **is not** standard to a Linux distribution, understand exactly what the command is doing and try to determine how you can exploit it to elevate privileges
+		- **Is a command in the `sudo` executable configured without an absolute path?**
+			- Can you get your own executable ahead of that command in the `$PATH` search order?
+				- Keep [[environment-variables#Inheritance|environment variable inheritance]] in mind
+		- **Is a command in the `sudo` executable configured with an absolute path?**
+			- Do you have write access to the absolute path? Can you just replace it?
+		- **Does a command in the `sudo` executable contain a wildcard (`*`)?**
+			- Attempt to abuse [[bash#Wildcard Behavior|bash's wildcard behavior]] to perform an elevated action
 
 ---
 

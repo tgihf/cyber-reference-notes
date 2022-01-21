@@ -22,7 +22,21 @@ See [[suid-for-privesc|here]].
 
 ---
 
-## [[capabilities#List All Binaries with Capabilities|Check Binaries with Capabilities]]
+## Capabilities Exploitation
+
+See [[capabilities-for-privesc|here]].
+
+---
+
+## `cron` Exploitation
+
+See [[cron-for-privesc|here]].
+
+---
+
+## `systemd` Timer Exploitation
+
+See [[systemd-timers-for-privesc|here]].
 
 ---
 

@@ -32,7 +32,14 @@ Abuse a SUID executable to perform actions as the owning user in order to elevat
 		- Can the SUID executable be exploited?
 			- Search for a SUID entry on the executable on [GTFOBins](https://gtfobins.github.io/)
 			- If it's not on GTFOBins, understand exactly what it's doing and attempt to exploit it manually
-	
+				- **Is a command in the SUID executable configured without an absolute path?**
+					- Can you get your own executable ahead of that command in the `$PATH` search order?
+						- Keep [[environment-variables#Inheritance|environment variable inheritance]] in mind
+				- **Is a command in the SUID executable configured with an absolute path?**
+					- Do you have write access to the absolute path? Can you just replace it?
+				- **Does a command in the SUID executable contain a wildcard (`*`)?**
+					- Attempt to abuse [[bash#Wildcard Behavior|bash's wildcard behavior]] to perform an elevated action
+
 ---
 	
 ## SUID Exploitation via Shared Object Injection
