@@ -71,3 +71,12 @@ Check these files and directories.
 /var/spool/cron
 /var/spool/cron/crontabs/root
 ```
+
+### View Short-Lived Cron Jobs as They Execute
+
+See [pspy](https://github.com/DominicBreuker/pspy).
+
+```bash
+# print both commands and file system events and scan procfs every 1000 ms (=1sec)
+pspy -pf -i 1000
+```

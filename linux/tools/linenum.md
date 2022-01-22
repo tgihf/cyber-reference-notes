@@ -7,7 +7,7 @@
 ## Initiate Enumeration & Write Output
 
 ```bash
-./linenum.sh | tee linenum.out
+./linenum.sh -t | tee linenum.out
 ```
 
 ---

