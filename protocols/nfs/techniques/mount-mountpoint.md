@@ -11,12 +11,20 @@ mkdir mount-point
 3. Mount the NFS filesystem to the directory
 
 ```bash
-sudo mount -t nfs $TARGET:$MOUNTPOINT mount-point
+sudo mount -t nfs [-o rw,vers=2] $TARGET:$MOUNTPOINT mount-point
 ```
 
 i.e.,
 
 ```bash
 mkdir backups
-sudo mount -t nfs 10.10.10.10:/var backups
+sudo mount -t nfs -o rw,vers=2 10.10.10.10:/var backups
+```
+
+---
+
+## Unmount a Mounted Mount Point
+
+```bash
+sudo umount $LOCAL_MOUNT_POINT
 ```

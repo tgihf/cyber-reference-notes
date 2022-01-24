@@ -45,3 +45,13 @@ With `WRITE` access, you can write a user's hash and then log in as them using t
  
  See [[credential-hunting#SSH Keys|here]].
  
+ ---
+ 
+ ## Authorized SSH Keys (`/home/$USERNAME/.ssh/authorized_keys`)
+ 
+ Stores all the SSH public keys whose corresponding private keys are authorized to SSH as `$USERNAME`.
+ 
+ If you have `WRITE` access to this file, you can append your own public key to it and then SSH as `$USERNAME` with the corresponding private key.
+ 
+ 
+ 

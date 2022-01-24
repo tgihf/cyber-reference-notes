@@ -11,9 +11,7 @@ See [[suid|here]].
 ## SUID Privilege Escalation Process
 
 1. Attempt [[suid-for-privesc#SUID Shell Escaping|SUID Shell Escaping]]
-2. Attempt [[suid-for-privesc#SUID Exploitation via PATH|SUID Exploitation via the PATH Environment Variable]]
-3. Attempt [[suid-for-privesc#SUID Exploitation via Bash Function Redefinition|SUID Exploitation via Bash Function Redefinition]]
-4. Attempt [[suid-for-privesc#SUID Exploitation via Shared Object Injection|SUID Exploitation via Shared Object Injection]]
+2. Attempt [[suid-for-privesc#SUID Exploitation via Shared Object Injection|SUID Exploitation via Shared Object Injection]]
 
 ---
 
@@ -33,10 +31,9 @@ Abuse a SUID executable to perform actions as the owning user in order to elevat
 			- Search for a SUID entry on the executable on [GTFOBins](https://gtfobins.github.io/)
 			- If it's not on GTFOBins, understand exactly what it's doing and attempt to exploit it manually
 				- **Is a command in the SUID executable configured without an absolute path?**
-					- Can you get your own executable ahead of that command in the `$PATH` search order?
-						- Keep [[environment-variables#Inheritance|environment variable inheritance]] in mind
+					- [[suid-for-privesc#SUID Exploitation via PATH|SUID exploitation via PATH environment variable]]
 				- **Is a command in the SUID executable configured with an absolute path?**
-					- Do you have write access to the absolute path? Can you just replace it?
+					- [[suid-for-privesc#SUID Exploitation via Bash Function Redefinition|SUID exploitation via bash function redefition]]
 				- **Does a command in the SUID executable contain a wildcard (`*`)?**
 					- Attempt to abuse [[bash#Wildcard Behavior|bash's wildcard behavior]] to perform an elevated action
 

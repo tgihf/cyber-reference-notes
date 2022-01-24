@@ -10,99 +10,77 @@ See [[situational-awareness|here]].
 
 ---
 
-## `sudo` Exploitation
-
-See [[sudo-for-privesc|here]].
-
----
-
-## SUID Exploitation
-
-See [[suid-for-privesc|here]].
-
----
-
-## Capabilities Exploitation
-
-See [[capabilities-for-privesc|here]].
-
----
-
-## `cron` Exploitation
-
-See [[cron-for-privesc|here]].
-
----
-
-## `systemd` Timer Exploitation
-
-See [[systemd-timers-for-privesc|here]].
-
----
-
-## Exploitable Permissions on Sensitive Files
+## 2. Exploitable Permissions on Sensitive Files
 
 Iterate through each of the machine's [[sensitive-files|sensitive files]], seeing if your current security context has the desired permissions.
 
 ---
 
-## Credential Hunting
+## 3. `sudo` Exploitation
+
+See [[sudo-for-privesc|here]].
+
+---
+
+## 4. SUID Exploitation
+
+See [[suid-for-privesc|here]].
+
+---
+
+## 5. Capabilities Exploitation
+
+See [[capabilities-for-privesc|here]].
+
+---
+
+## 6. `cron` Exploitation
+
+See [[cron-for-privesc|here]].
+
+---
+
+## 7. `systemd` Timer Exploitation
+
+See [[systemd-timers-for-privesc|here]].
+
+---
+
+## 8. NFS No `root` Squashing Exploitation
+
+See [[nfs-no-root-squashing|here]].
+
+---
+
+## 9. Docker Privilege Escalation
+
+Is [Docker](https://www.docker.com/) installed and is the current user a member of the `docker` group?
+
+If so, you can create a container that mounts the system's root directory within the container and then changes its root directory to the system's root directory, effectively granting `root` access to the system.
+
+Refer to the [docker shell entry on GTFOBins](https://gtfobins.github.io/gtfobins/docker/#shell) for an easy escalation.
+
+---
+
+## 10. `lxd` Privilege Escalation
+
+Is [lxd](https://linuxcontainers.org/lxd/introduction/) installed and is the current user a member of the `lxd` group?
+
+If so, you can create a container that mounts the system's root directory within the container and then changes its root directory to the system's root directory, effectively granting `root` access to the system.
+
+Refer to your writeup of [TryHackMe's Anonymous](https://github.com/tgihf/writeups/blob/master/tryhackme/anonymous/anonymous.md) for a straight-forward walkthrough.
+
+Refer to [HackTrick's lxd/lxc group privilege escalation page](https://book.hacktricks.xyz/linux-unix/privilege-escalation/interesting-groups-linux-pe/lxd-privilege-escalation) for more information and walkthroughs.
+
+---
+
+## 11. Credential Hunting
 
 See [[credential-hunting|here]].
 
 ---
 
-## Kernel Exploits
-
-See [[kernel-exploits|here]].
-
----
-
-## With Administrative Access, Capture and Analyze Network Traffic
-
-```bash
-tcpdump -i $INTERFACE -nt '$FILTER' -vX [-w $OUTPUT_FILE]
-```
-
----
-
-## Credential Hunting
-
-Recursively search `$DIRECTORY` for SSH keys.
-
-```bash
-find $DIRECTORY -name id_rsa 2> /dev/null
-```
-
-```bash
-grep --color=auto -rnw $DIRECTORY -ie "PRIVATE KEY" --color=always 2> /dev/null
-```
-
-Recursively search `$DIRECTORY` for the word "PASSWORD." Feel free to try other variations, like "passwd," "pass", or "pwd."
-
-```bash
-grep --color=auto -rnw $DIRECTORY -ie "PASSWORD" --color=always 2> /dev/null
-```
-
-Do the same as the above, but also search for hidden directories.
-
-```bash
-find $DIRECTORY -type f -exec grep -i -I "PASSWORD" {} /dev/null \;
-```
-
-Find all files whose names' **contain** the word "password."
-
-```bash
-locate password
-```
-
-```bash
-find $DIRECTORY -name password 2> /dev/null
-```
-
----
-
-## Automated Privilege Escalation Enumeration
+## 12. Automated Privilege Escalation Enumeration
 
 **Enumeration**
 
@@ -111,7 +89,20 @@ find $DIRECTORY -name password 2> /dev/null
 - [[linuxprivchecker|linuxprivchecker.py (Python 2 default, 3 available)]]
 
 **Exploit Suggestion**
+
 - [[linux-exploit-suggester|Linux Exploit Suggester]]
+
+---
+
+## 13. Kernel Exploits
+
+See [[kernel-exploits|here]].
+
+---
+
+## With Administrative Access, Capture and Analyze Network Traffic
+
+See [[tcpdump#Capture Network Traffic|here]].
 
 ---
 

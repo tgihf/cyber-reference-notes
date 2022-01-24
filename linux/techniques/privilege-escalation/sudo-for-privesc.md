@@ -6,11 +6,11 @@
 
 ## `sudo` Privilege Escalation Process
 
-1. Attempt [[sudo-for-privesc#sudo Shell Escaping|sudo Shell Escaping]]
-2. Attempt [[sudo-for-privesc#LD_PRELOAD Exploitation|LD_PRELOAD exploitation]]
-3. See if you can exploit [[sudo-for-privesc#sudo Heap-Based Buffer Overflow CVE-2021-18634 AKA Baron Samedit|Baron Samedit]]
-4. See if you can exploit [[sudo-for-privesc#sudo 1 8 28 Security Bypass CVE-2019-14287|CVE-2019-14287]]
-5. See if you can exploit [[sudo-for-privesc#sudo 1 8 26 Stack-Based Buffer Overflow CVE-2019-18634|CVE-2019-18634]]
+1. Attempt [[sudo-for-privesc#LD_PRELOAD Exploitation|LD_PRELOAD exploitation]]
+2. See if you can exploit [[sudo-for-privesc#sudo Heap-Based Buffer Overflow CVE-2021-18634 AKA Baron Samedit|Baron Samedit]]
+3. See if you can exploit [[sudo-for-privesc#sudo 1 8 28 Security Bypass CVE-2019-14287|CVE-2019-14287]]
+4. See if you can exploit [[sudo-for-privesc#sudo 1 8 26 Stack-Based Buffer Overflow CVE-2019-18634|CVE-2019-18634]]
+5. Attempt [[sudo-for-privesc#sudo Shell Escaping|sudo Shell Escaping]]
 
 ---
 

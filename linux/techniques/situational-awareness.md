@@ -36,11 +36,29 @@ lscpu
 ps auxef
 ```
 
+### Installed Applications
+
+Refer to [here](https://unix.stackexchange.com/questions/20979/how-do-i-list-all-installed-programs) for more package systems.
+
+On Aptitude-based systems:
+
+```bash
+dpkg -l
+```
+
+On RPM-based systems:
+
+```bash
+rpm -qa
+```
+
 ---
 
 ## User Enumeration
 
 ### Current User
+
+With `id`, note the current user's groups and look through [HackTricks' Linux privilege escalation via interesting groups page](https://book.hacktricks.xyz/linux-unix/privilege-escalation/interesting-groups-linux-pe) to see if any of the groups are exploitable.
 
 ```bash
 id
