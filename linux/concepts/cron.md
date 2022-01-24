@@ -80,3 +80,31 @@ See [pspy](https://github.com/DominicBreuker/pspy).
 # print both commands and file system events and scan procfs every 1000 ms (=1sec)
 pspy -pf -i 1000
 ```
+
+---
+
+## Set Up a Cron Job
+
+1. Open the target `cron` configuration file for editing.
+
+For the current user:
+
+```bash
+crontab -e
+```
+
+For another user (requires privilege):
+
+```bash
+crontab -u $USERNAME -e
+```
+
+2. With the `cron` configuration file open for editing, write the job in the [[cron#Cron Format|proper format]].
+
+3. Save and close the `cron` configuration file.
+
+---
+
+## References
+
+[PhoenixNAP - How to Set Up a Cron Job in Linux](https://phoenixnap.com/kb/set-up-cron-job-linux)

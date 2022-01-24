@@ -22,3 +22,5 @@ See [[cron|here]].
 			- Do you have write access to the absolute path? Can you just replace it?
 		- **Does the command contain a wildcard (`*`)?**
 			- Attempt to abuse [[bash#Wildcard Behavior|bash's wildcard behavior]] to perform an elevated action
+		- **Does a command the command fail to import a writable shared object file**?
+			- Apply the [[shared-object-file-injection#Process|shared object file injection process]]

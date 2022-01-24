@@ -10,13 +10,6 @@ See [[suid|here]].
 
 ## SUID Privilege Escalation Process
 
-1. Attempt [[suid-for-privesc#SUID Shell Escaping|SUID Shell Escaping]]
-2. Attempt [[suid-for-privesc#SUID Exploitation via Shared Object Injection|SUID Exploitation via Shared Object Injection]]
-
----
-
-## SUID Shell Escaping
-
 Abuse a SUID executable to perform actions as the owning user in order to elevate privileges.
 
 ### Process
@@ -36,27 +29,8 @@ Abuse a SUID executable to perform actions as the owning user in order to elevat
 					- [[suid-for-privesc#SUID Exploitation via Bash Function Redefinition|SUID exploitation via bash function redefition]]
 				- **Does a command in the SUID executable contain a wildcard (`*`)?**
 					- Attempt to abuse [[bash#Wildcard Behavior|bash's wildcard behavior]] to perform an elevated action
-
----
-	
-## SUID Exploitation via Shared Object Injection
-
-Executables often import shared object files to use their functionality. Sometimes these shared object files don't exist and the import fails. If you replaced the nonexistent shared object file with your own, you could execute arbitrary code in the context of the owner of the SUID executable.
-
-### Process
-
-1. [[suid#Find SUID Files|Find all files configured with the SUID bit]]
-2. For each SUID file:
-	- Use [[strace]] to trace the SUID executable's interaction with the kernel, looking specifically for failed shared object file imports
-
-```bash
-strace $SUID_EXECUTABLE 2>&1 | grep -i -E "open|access|no such file"
-```
-
-3. For each failed shared object file import:
-	- Check your permissions on the target file or its directory. If you can replace it:
-		- Replace it with a [[so-source|malicious shared object file]]
-		- Run the SUID executable, which should load your malicious shared object file
+				- **Does a command in the SUID executable fail to import a writable shared object file**?
+					- Apply the [[shared-object-file-injection#Process|shared object file injection process]]
 
 ---
 
