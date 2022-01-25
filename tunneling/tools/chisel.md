@@ -34,6 +34,8 @@ Requires command execution access to the target, as well as the ability to liste
 - `$REMOTE_TARGET_ACCESSIBLE_DESTINATION_HOSTNAME_OR_ADDRESS`: the destination hostname/address that is forwarded to
 - `$REMOTE_TARGET_ACCESSIBLE_DESTINATION_PORT`: the destination port that is forwarded to
 
+Note that multiple `$ATTACKER_ACCESSIBLE_SOURCE_PORT`:`REMOTE_TARGET_ACCESSIBLE_DESTINATION_HOSTNAME_OR_ADDRESS`:`REMOTE_TARGET_ACCESSIBLE_DESTINATION_PORT` can be specified.
+
 ### Example
 
 If you wanted to forward the attacker's `0.0.0.0:8001` to the target's `localhost:8002`, you would start by serving `chisel` on an arbitrary port on the target's machine (we'll use port `8000`). The attacker's IP address is 192.168.1.100.
@@ -79,6 +81,8 @@ Requires command execution access to the target and doesn't require opening a TC
 - `$ATTACKER_ACCESSIBLE_SOURCE_PORT`: the source port on the attacker that is forwarded to the destination port
 - `$REMOTE_TARGET_ACCESSIBLE_DESTINATION_HOSTNAME_OR_ADDRESS`: the destination hostname/address that is forwarded to
 - `$REMOTE_TARGET_ACCESSIBLE_DESTINATION_PORT`: the destination port that is forwarded to
+
+Note that multiple `$ATTACKER_ACCESSIBLE_SOURCE_PORT`:`$REMOTE_TARGET_ACCESSIBLE_DESTINATION_HOSTNAME_OR_ADDRESS`:`$REMOTE_TARGET_ACCESSIBLE_DESTINATION_PORT` can be specified.
 
 ### Example
 
