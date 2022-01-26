@@ -22,6 +22,22 @@ See [[image-research|here]].
 
 See [[email-address-research|here]].
 
+### Username Research
+
+See [[username-research|here]].
+
+### Breached Credential Research
+
+See [[breached-credential-research|here]].
+
+### People Research
+
+See [[people-research|here]].
+
+### Social Media Research
+
+See [[social-media-research|here]].
+
 ---
 
 ## References
