@@ -1,18 +1,19 @@
 # Image Research
 
+> How to gather useful data from an image.
+
 ---
 
 ## Reverse Image Searching
 
 Give the search engine an image and have it return relevant results (pages tied to the photo, similar photos, etc.).
 
-Possible reverse image search engines:
+A few reverse image search engines:
 
+- [PimEyes](https://pimeyes.com/en)
+	- Requires an account, but very effective
 - [Google Image Searching](https://images.google.com/?gws_rd=ssl)
-	- Returns exact photo matches
-	- Returns pages tied to the photo
 - [Yandex Image Searching](https://yandex.com/images/)
-	- Returns similar photos
 - [TinEye](https://tineye.com/)
 
 ---
@@ -38,7 +39,21 @@ Web Application:
 
 Command Line:
 
-- [exiftool](https://exiftool.org/)
+```bash
+exiftool $FILE
+```
+
+---
+
+## Identifying an Image's Location (by hand, no Exif data)
+
+Analyze the image's details to narrow down its potential location.
+
+- Use a [[search-engines|search engine]] to lookup any unique building signs.
+- [[image-research#Reverse Image Searching|Reverse image search]] any buildings or landmarks that stand out.
+- [This article](https://somerandomstuff1.wordpress.com/2019/02/08/geoguessr-the-top-tips-tricks-and-techniques/) is a great resource for exactly what details you should be looking at and how those details indicate different areas of the world.
+
+[GeoGuesser](https://www.geoguessr.com/) is an online game that lets you test this skill.
 
 ---
 

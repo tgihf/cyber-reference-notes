@@ -18,6 +18,10 @@ See [[search-engines|here]].
 
 See [[image-research|here]].
 
+### Email Address Research
+
+See [[email-address-research|here]].
+
 ---
 
 ## References
