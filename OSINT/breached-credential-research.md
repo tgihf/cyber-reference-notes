@@ -6,6 +6,11 @@
 
 ## Performing Breached Credential Research
 
+### Command Line Tools
+
+- [[h8mail]]
+- [[breach-parse]]
+
 ### Web Applications
 
 These web applications and their APIs allow you to find credentials, email addresses, usernames, IP addresses, names, addresses, phones, VINs, and domains based on the input. The input can often be one or more of these parameters.

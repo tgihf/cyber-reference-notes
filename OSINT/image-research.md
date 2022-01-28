@@ -33,15 +33,13 @@ The **Exif** format specifies all kinds of useful metadata about the file that c
 
 ### Exif Data Parsing Tools
 
-Web Application:
+#### Command Line
+
+- [[exiftool#View a File's Exif Data|exiftool]]
+
+#### Web Applications
 
 - [Jeffrey's Image Metadata Viewer](http://exif.regex.info/exif.cgi)
-
-Command Line:
-
-```bash
-exiftool $FILE
-```
 
 ---
 

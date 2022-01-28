@@ -16,7 +16,14 @@
 
 ## Find a Domain's Email Addresses
 
-### `hunter.io`
+### Command Line Tools
+
+- [[h8mail]]
+- [[theHarvester#Enumerate SOURCE for DOMAIN 's Information|theHarvester]]
+
+### Web Applications
+
+#### `hunter.io`
 
 [hunter.io](https://hunter.io/) is a web application that takes a domain name and scours the Internet for all email addresses on that domain.
 
@@ -30,13 +37,13 @@ A free account can make 25 searches per month.
 
 ![[Pasted image 20220125203302.png]]
 
-### `phonebook.cz`
+#### `phonebook.cz`
 
 [phonebook](https://phonebook.cz/) is a web application that takes a domain name and scours 34 billion records for all subdomains, **email addresses**, or URLs related to the domain name. No account required.
 
 ![[Pasted image 20220125202052.png]]
 
-### `Clearbit Connect`
+#### `Clearbit Connect`
 
 [Clearbit Connect](https://connect.clearbit.com/) is a Chrome extension that takes a domain name and  scours the Internet for all email addresses related to the domain name. A free account can list 100 email addresses per month.
 

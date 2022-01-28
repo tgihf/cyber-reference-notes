@@ -1,12 +1,12 @@
 # Open Source Intelligence (OSINT)
 
-> A methodology for collecting, analyzing, and making decisions about data accessible in publicly available sources to be used in an intelligence context. In the intelligence community, the term "open" referes to overt, publicly available sources.
+> A methodology for collecting, analyzing, and making decisions about data accessible in publicly available sources to be used in an intelligence context. In the intelligence community, the term "open" refers to overt, publicly available sources.
 
 ---
 
 ## OSINT Collection Process
 
-### 1. (Optional) Adopt a Sock Puppet
+###  (Optional) Adopt a Sock Puppet
 
 If you want to prevent your research from being tied back to you, adopt a Sock Puppet to perform your research as. See [[sock-puppet|here]].
 
@@ -37,6 +37,14 @@ See [[people-research|here]].
 ### Social Media Research
 
 See [[social-media-research|here]].
+
+### Domain/Website Research
+
+See [[website-research|here]].
+
+### Wireless Research
+
+See [[wireless-research|here]].
 
 ---
 
