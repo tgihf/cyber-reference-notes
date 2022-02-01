@@ -4,15 +4,19 @@
 
 ## Phishing Process
 
-### 1. Research Your Target
+### 1. Setup Infrastructure
+
+See [[phishing-infrastructure|here]].
+
+### 2. Research Your Target
 
 See [[target-research-for-phishing|here]].
 
-### 2. Gather Email Addresses
+### 3. Gather Email Addresses
 
 See [[email-address-research|here]].
 
-### 3. Craft the Phish
+### 4. Craft the Phish
 
 See [[craft-the-phish|here]].
 
