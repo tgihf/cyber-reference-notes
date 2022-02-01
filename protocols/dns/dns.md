@@ -55,3 +55,13 @@ In this example, `www.tgihf.click` will always redirect to `tgihf.click`. If the
 ---
 
 ## [[dynamic-dns|Dynamic DNS]]
+
+---
+
+## Commercial Domain Name Services
+
+- [AWS Route 52](https://aws.amazon.com/route53/)
+- [GoDaddy](https://www.godaddy.com/)
+- [domain.com](https://www.domain.com/domains/)
+- [name.com](https://www.name.com/)
+- [Name Cheap](https://www.namecheap.com/)

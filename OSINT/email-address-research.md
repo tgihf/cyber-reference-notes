@@ -6,9 +6,10 @@
 
 ## Email Address Research Process
 
-1. Given the target domain(s), aggregate a list of potential email addresses using [[email-address-research#Find a Domain's Email Addresses|these tools]].
-2. Verify the aggregated email addresses using [[email-address-research#Verify an Email Address|these tools]].
-3. **Optional:** If you want to generate a list of potential email addresses:
+1. Given the target domain(s), aggregate a list of potential names and email addresses from the websites at those domains (especially the target's primary web site).
+3. Given the target domain(s), aggregate a list of potential email addresses from open source records using [[email-address-research#Find a Domain's Email Addresses|these tools]].
+4. Verify the aggregated email addresses using [[email-address-research#Verify an Email Address|these tools]].
+5. **Optional:** If you want to generate a list of *potential* email addresses:
 	- Analyze the verified, aggregated email addresses to determine the **email address pattern(s)**
 	- [[email-address-generation|Generate email addresses]] using the determined **email address pattern(s)**
 
@@ -18,6 +19,8 @@
 
 ### Command Line Tools
 
+- [[crosslinked]]
+- [[leetlinked]]
 - [[h8mail]]
 - [[theHarvester#Enumerate SOURCE for DOMAIN 's Information|theHarvester]]
 
