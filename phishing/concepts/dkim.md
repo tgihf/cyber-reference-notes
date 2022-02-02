@@ -1,6 +1,6 @@
 # [Domain Keys Identified Mail](https://support.dnsimple.com/articles/dkim-record/)
 
-The **Domain Keys Identified Mail (DKIM)** protocol is one of the two ways [[dmarc|DMARC]] ensures the authenticity of an email's source domain
+The **Domain Keys Identified Mail (DKIM)** protocol is one of the two ways [[dmarc|DMARC]] ensures the authenticity of an email's source domain.
 
 DKIM prevents someone from spoofing the source of an email (i.e., sending an email from a domain they don't actually have access to). How does it do this?
 
