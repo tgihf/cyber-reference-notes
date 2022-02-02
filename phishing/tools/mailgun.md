@@ -1,8 +1,12 @@
 # [MailGun](https://mailgun.com)
 
+> One of the world's largest services for sending, receiving, and tracking emails at any scale. MailGun provides a powerful API for developers to automate email actions.
+
 ---
 
 ## Verify Source Domain
+
+Ensuring your mail service (MailGun in this case) has verified your source domain goes a long way towards passing [[dkim|DKIM]] checks.
 
 From the main page, navigate to `Sending` -> `Domains` -> `Add New Domain`.
 

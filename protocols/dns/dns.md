@@ -48,6 +48,20 @@ Maps one hostname to another hostname.
 
 In this example, `www.tgihf.click` will always redirect to `tgihf.click`. If the IP address of `tgihf.click` changes, you only need to update that A record to still be able to access the same IP via `www.tgihf.click`.
 
+### [TXT Record](https://support.dnsimple.com/articles/txt-record/)
+
+Associates text data with a hostname.
+
+| Hostname | Data |
+| --- | --- |
+| www.tgihf.click | Primary domain |
+
+---
+
+## Domain Keys Identified Mail (DKIM)
+
+See [[dkim|here]].
+
 ---
 
 ## [[enumeration#Attempt Zone Transfer from a DNS Server|Zone Transfer]]

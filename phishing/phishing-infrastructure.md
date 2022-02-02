@@ -15,3 +15,4 @@
 	- Allow TCP 3333 ([[gophish]] admin interface) inbound
 	- Deny all else inbound
 	- Allow all outbound
+3. Based on your [[target-research-for-phishing#Domain Name Research|domain name research]], purchase your desired source domain, set it up with a mail service like [[mailgun]] and ensure it [[mailgun#Verify Source Domain|gets verified by the mail service]].

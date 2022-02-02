@@ -12,6 +12,7 @@
 	- This could lead to your domain being blacklisted as a known spam source
 - Avoid the temptation to have the target organization whitelist your phishing domain(s) in their spam filter
 	- It may lead to a more successful campaign, but the organization may doubt the level of risk since the domains were whitelisted
+- Ensure your mail service has verified your source domain so you pass [[dkim|DKIM]] checks (more on this while [[phishing-infrastructure|setting up the infrastructure]])
 
 ---
 
