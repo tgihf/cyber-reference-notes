@@ -73,7 +73,7 @@ wmic [/node:$REMOTE_HOST] rdtoggle where AllowTSConnections="0" call SetAllowTSC
 ## Query Attached Drives
 
 ```cmd
-wmic logicaldrive get caption,description,providername
+wmic logicaldisk get caption,description,providername
 ```
 
 ---

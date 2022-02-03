@@ -8,7 +8,7 @@ The process of escalating privileges on a Linux machine involves careful enumera
 
 ### 1. Situational Awareness
 
-See [[situational-awareness|here]].
+See [[linux-situational-awareness|here]].
 
 ### 2. Exploitable Permissions on Sensitive Files
 
@@ -58,7 +58,7 @@ Refer to [HackTrick's lxd/lxc group privilege escalation page](https://book.hack
 
 ### 11. Credential Hunting
 
-See [[credential-hunting|here]].
+See [[linux-credential-hunting|here]].
 
 ### 12. Automated Privilege Escalation Enumeration
 
@@ -74,7 +74,7 @@ See [[credential-hunting|here]].
 
 ### 13. Kernel Exploits
 
-See [[kernel-exploits|here]].
+See [[linux-kernel-exploits|here]].
 
 ---
 

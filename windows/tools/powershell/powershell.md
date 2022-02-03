@@ -99,6 +99,22 @@ Get-NetAdapter
 
 ---
 
+## Query Routing Table
+
+```powershell
+Get-NetRoute
+```
+
+---
+
+## Query ARP Cache
+
+```powershell
+Get-NetNeighbor
+```
+
+---
+
 ## Query Network Listeners & Connections
 
 ```powershell
@@ -107,10 +123,34 @@ Get-NetIPConfiguration
 
 ---
 
+## Query Local Users
+
+```powershell
+Get-LocalUser
+```
+
+---
+
+## Query a Particular Local User
+
+```powershell
+Get-LocalUser $USERNAME
+```
+
+---
+
 ## Query Local Groups
 
 ```powershell
 Get-LocalGroup
+```
+
+---
+
+## Query a Particular Local Group
+
+```powershell
+Get-LocalGroup $GROUP_NAME
 ```
 
 ---
@@ -148,3 +188,27 @@ Get-ChildItem -Path C:\ -Include "$FILENAME" -Recurse -ErrorAction SilentlyConti
 ```
 
 - `$FILENAME` can contain wildcards
+
+---
+
+## Query Firewall Rules
+
+```powershell
+Get-NetFirewallRule
+```
+
+---
+
+## Query AppLocker Policies
+
+```powershell
+Get-AppLockerPolicy
+```
+
+---
+
+## Get PowerShell Version
+
+```powershell
+Get-Host | Select Version
+```

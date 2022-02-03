@@ -4,14 +4,14 @@
 
 ## Process
 
-1. Hunt in the current user's exection history (part of [[situational-awareness#Current User's Execution History|situational awareness]])
+1. Hunt in the current user's exection history (part of [[linux-situational-awareness#Current User's Execution History|situational awareness]])
 2. Hunt in the file system
 
 ---
 
 ## 1. Hunt in the Current User's Execution History
 
-See [[situational-awareness#Current User's Execution History|situational awareness]].
+See [[linux-situational-awareness#Current User's Execution History|situational awareness]].
 
 ---
 

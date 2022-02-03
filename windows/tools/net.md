@@ -12,6 +12,12 @@
 net user
 ```
 
+### View a particular Local user
+
+```cmd
+net user $USERNAME
+```
+
 ### Create a new local user
 
 ```cmd
@@ -26,6 +32,12 @@ net user $USERNAME $PASSWORD /add
 
 ```cmd
 net localgroup
+```
+
+### View a particular local group
+
+```cmd
+net localgroup $GROUP_NAME
 ```
 
 ### Create a new local group

@@ -63,7 +63,7 @@ There is a `Python` collector for Linux and a `PowerShell` and `C#` collector fo
 
 ---
 
-### Attempt to [[windows/techniques/privilege-escalation|escalate privileges]] to local administrator on a machine in the domain so you can dump hashes.
+### Attempt to [[windows-privilege-escalation|escalate privileges]] to local administrator on a machine in the domain so you can dump hashes.
 
 ---
 

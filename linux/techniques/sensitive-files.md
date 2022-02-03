@@ -43,7 +43,7 @@ With `WRITE` access, you can write a user's hash and then log in as them using t
  
  System SSH keys can also be found at `/etc/ssh/ssh_host_(dsa|rsa|ecda|ed25519)_key`.
  
- See [[credential-hunting#SSH Keys|here]].
+ See [[linux-credential-hunting#SSH Keys|here]].
  
  ---
  

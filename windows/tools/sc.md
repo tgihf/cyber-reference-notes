@@ -57,3 +57,11 @@ sc $SERVER_FQDN_OR_IP start $SERVICE_NAME
 ```cmd
 sc [$SERVER_FQDN_OR_IP] config $SERVICE_NAME binpath= "$COMMAND_TO_EXECUTE"
 ```
+
+---
+
+## Query for Existence of Windows Defender Service
+
+```cmd
+sc query windefend
+```

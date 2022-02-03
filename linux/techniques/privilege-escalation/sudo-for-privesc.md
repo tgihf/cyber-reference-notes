@@ -16,17 +16,17 @@
 
 ## Current User's Allowed and Disallowed `sudo` Commands
 
-This is a part of [[situational-awareness#Current User's Allowed and Disallowed sudo Commands|situational awareness]].
+This is a part of [[linux-situational-awareness#Current User's Allowed and Disallowed sudo Commands|situational awareness]].
 
 ---
 
 ## `sudo` Shell Escaping
 
-Abuse the [[situational-awareness#Current User's Allowed and Disallowed sudo Commands|current user's allowed sudo commands]] to perform actions in order to elevate privileges.
+Abuse the [[linux-situational-awareness#Current User's Allowed and Disallowed sudo Commands|current user's allowed sudo commands]] to perform actions in order to elevate privileges.
 
 ### Process
 
-1. Determine the [[situational-awareness#Current User's Allowed and Disallowed sudo Commands|current user's allowed sudo commands]]
+1. Determine the [[linux-situational-awareness#Current User's Allowed and Disallowed sudo Commands|current user's allowed sudo commands]]
 2. For each command, determine if it can be abused to elevate privileges:
 	- If the command is standard to the Linux distribution:
 		- Look them up in [GTFOBins](https://gtfobins.github.io/) to determine how to exploit it in order to elevate privileges
@@ -46,7 +46,7 @@ Abuse the [[situational-awareness#Current User's Allowed and Disallowed sudo Com
 
 ## `LD_PRELOAD` Exploitation
 
-If the [[situational-awareness#Current User's Allowed and Disallowed sudo Commands|current user's allowed sudo commands]] indicates that running `sudo` retains the environment variable [[LD_PRELOAD]], then you can use this environment variable to execute an arbitrary shared object file before the execution of one of the `sudo` command. This guarantees code execution as the target user of the `sudo` line.
+If the [[linux-situational-awareness#Current User's Allowed and Disallowed sudo Commands|current user's allowed sudo commands]] indicates that running `sudo` retains the environment variable [[LD_PRELOAD]], then you can use this environment variable to execute an arbitrary shared object file before the execution of one of the `sudo` command. This guarantees code execution as the target user of the `sudo` line.
 
 ### Process
 
@@ -133,7 +133,7 @@ References:
 
 ## `sudo` < 1.8.26 Stack-Based Buffer Overflow (CVE-2019-18634)
 
-Generally when you are prompted to enter a password in a Unix environment, the terminal provides no feedback of the characters you are typing in. `sudo` can be configured to provide character feedback by replacing each character with an asterisk (`*`). This feature is enabled by including the `pwfeedback` setting in `/etc/sudoers`. If this feature is enabled, it will also be visible when the user views their [[situational-awareness#Current User's Allowed and Disallowed sudo Commands|allowed sudo commands]].
+Generally when you are prompted to enter a password in a Unix environment, the terminal provides no feedback of the characters you are typing in. `sudo` can be configured to provide character feedback by replacing each character with an asterisk (`*`). This feature is enabled by including the `pwfeedback` setting in `/etc/sudoers`. If this feature is enabled, it will also be visible when the user views their [[linux-situational-awareness#Current User's Allowed and Disallowed sudo Commands|allowed sudo commands]].
 
 In `sudo` versions before 1.8.26 with `pwfeedback` enabled, there exists a stack-based buffer overflow vulnerability when entering your password. This vulnerability can be abused to achieve code execution as `root`.
 
@@ -148,7 +148,7 @@ sudo --version
 2. Determine if the `sudo` configuration is vulnerable. One of the following is an indication of a vulnerable configuration:
 
 - When `sudo` prompts the user for their password, asterisk feedback is provided
-- `pwfeedback` will be visibile when the user views their [[situational-awareness#Current User's Allowed and Disallowed sudo Commands|allowed sudo commands]]
+- `pwfeedback` will be visibile when the user views their [[linux-situational-awareness#Current User's Allowed and Disallowed sudo Commands|allowed sudo commands]]
 - `pwfeedback` is specified in `/etc/sudoers`
 
 3. If both the `sudo` version and configuration are vulnerable, download the exploit from [Saleem Rashid's Github repository](https://github.com/saleemrashid/sudo-cve-2019-18634), and compile it with the repository's `Makefile`. As always, it's best to compile it on the target machine or on a machine with the same operating system version.

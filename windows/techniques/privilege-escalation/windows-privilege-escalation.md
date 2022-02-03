@@ -4,67 +4,34 @@ The process of escalating privileges on a Linux machine involves careful enumera
 
 ---
 
-## 	1. Situational Awareness
+## Windows Privilege Escalation Process
 
-Automated: [Seatbelt](https://github.com/GhostPack/Seatbelt#table-of-contents)
+### 1. Situational Awareness
 
-### 1.1 Current [[access-tokens|Access Token]] Attributes (SID, Groups, & Privileges)
+See [[windows-situational-awareness|here]].
 
-```cmd
-whoami /all
-```
+### Credential Hunting
 
-### 1.2 Operating System Information & Installed Updates
+See [[windows-credential-hunting|here]].
 
-```cmd
-systeminfo
-```
+### Automated Privilege Escalation Enumeration
 
-- [[wmic#Query Operating System Information]]
-- [[wmic#Query Installed Updates]]
-- [[powershell#Query Operating System Version from NET Systen Environment Library]]
-- [[powershell#Query Operating System Information via WMI]]
-- [[powershell#Query Installed Updates via WMI]]
+**Enumeration**
 
-### 1.3 Installed Antivirus
+- [[winpeas|winpeas (.NET 4.0 binary or batch script)]]
+- [SeatBelt.exe](https://github.com/GhostPack/Seatbelt)
+- [[sharpup|SharpUp.exe]]
+- [[powerup|PowerUp.ps1]]
 
-- [[wmic#Query Installed Antivirus]]
-- [[powershell#Query Installed Antivirus via WMI]]
+**Exploit Suggestion**
 
-### 1.4 PowerShell Version (if applicable)
+- [[windows-exploit-suggester|Windows Exploit Suggester]]
+- Meterpreter's exploit suggester
+- [Watson.exe](https://github.com/rasta-mouse/Watson)
 
-```powershell
-Get-Host | Select Version
-```
+### Windows Kernel Exploits
 
-### 1.5 Running Processes
-
-- [[tasklist#List Currently Running Processes]]
-- [[powershell#List Currently Running Processes]]
-
-### 1.6 Network Shares
-
-```cmd
-net share
-```
-
-- [[powershell#Query SMB Shares]]
-
-### 1.7 Network Interfaces
-
-```cmd
-ipconfig /all
-```
-
-- [[powershell#Query Network Adapters]]
-
-### 1.8 Network Connections
-
-```cmd
-netstat -ano
-```
-
-- [[powershell#Query Network Listeners Connections]]
+See [[windows-kernel-exploits|here]].
 
 ---
 
@@ -147,4 +114,12 @@ set
 
 ## References
 
+[PayloadsAllTheThings - Windows Privilege Escalation Methodology & Resources](https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Windows%20-%20Privilege%20Escalation.md)
+
+[absolomb's Security Blog - Windows Privilege Escalation Guide](https://www.absolomb.com/2018-01-26-Windows-Privilege-Escalation-Guide/)
+
+[susha747 - Privilege Escalation Windows](https://sushant747.gitbooks.io/total-oscp-guide/content/privilege_escalation_windows.html)
+
 [Conda's Privilege Escalation Maps](https://github.com/C0nd4/OSCP-Priv-Esc)
+
+[Fuzzy Security - Windows Privilege Escalation Fundamentals](https://www.fuzzysecurity.com/tutorials/16.html)
