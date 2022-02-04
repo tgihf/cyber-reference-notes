@@ -14,6 +14,14 @@ See [[windows-situational-awareness|here]].
 
 See [[windows-credential-hunting|here]].
 
+### Token Privilege Exploitation
+
+See [[token-privilege-exploitation|here]].
+
+### Windows Subsystem for Linux (WSL) Exploitation
+
+See [[wsl-privesc|here]].
+
 ### Automated Privilege Escalation Enumeration
 
 **Enumeration**
@@ -32,6 +40,12 @@ See [[windows-credential-hunting|here]].
 ### Windows Kernel Exploits
 
 See [[windows-kernel-exploits|here]].
+
+---
+
+## Elevate from a Local Administrator to `NT AUTHORITY\SYSTEM`
+
+- [[get-system|Get System]]
 
 ---
 
@@ -118,7 +132,7 @@ set
 
 [absolomb's Security Blog - Windows Privilege Escalation Guide](https://www.absolomb.com/2018-01-26-Windows-Privilege-Escalation-Guide/)
 
-[susha747 - Privilege Escalation Windows](https://sushant747.gitbooks.io/total-oscp-guide/content/privilege_escalation_windows.html)
+[sushant747 - Privilege Escalation Windows](https://sushant747.gitbooks.io/total-oscp-guide/content/privilege_escalation_windows.html)
 
 [Conda's Privilege Escalation Maps](https://github.com/C0nd4/OSCP-Priv-Esc)
 
