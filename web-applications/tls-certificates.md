@@ -51,3 +51,11 @@ This will generate four files:
 ```bash
 openssl pkcs12 -export -out $OUTFILE.pfx -inkey privkey.pem -in cert.pem [-certfile chain.pem]
 ```
+
+---
+
+## Decode a Certificate Signing Request
+
+```bash
+openssl req -in $PATH_TO_CSR -noout -text
+```
