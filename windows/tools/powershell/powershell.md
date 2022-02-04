@@ -212,3 +212,35 @@ Get-AppLockerPolicy
 ```powershell
 Get-Host | Select Version
 ```
+
+---
+
+## Find All Files with Alternate Data Streams
+
+```powershell
+Get-ChildItem -Recurse $DIRECTORY | % { Get-Item $_.FullName -Stream * } | where Stream -ne ':$Data'
+```
+
+---
+
+## Show a File's Alternate Data Streams
+
+```powershell
+Get-Item -Path $FILE_PATH -Stream *
+```
+
+---
+
+## Read a File's Alternate Data Stream
+
+```powershell
+Get-Content -Path $FILE_PATH -Stream $STREAM_NAME
+```
+
+---
+
+## Write to a File's Alternate Data Stream
+
+```powershell
+Set-Content -Path $FILE_PATH -Stream $STREAM_NAME -Value $VALUE
+```

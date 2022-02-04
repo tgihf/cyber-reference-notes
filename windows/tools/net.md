@@ -131,3 +131,11 @@ Must be executed on a domain-joined computer.
 ```cmd
 net accounts /domain
 ```
+
+---
+
+## View the Current Machine's Offered Shares
+
+```cmd
+net share
+```

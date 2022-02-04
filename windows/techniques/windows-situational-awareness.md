@@ -54,7 +54,7 @@ Via PowerShell:
 
 ### .NET Versions
 
-Query the registry key `HKLM\SOFTWARE\Microsoft\NET Framework Setup\NDP`.
+[[reg#Retrieve Registry Key|Query the registry key]] `"HKLM\SOFTWARE\Microsoft\NET Framework Setup\NDP"`.
 
 ### PowerShell Version (if applicable)
 
@@ -147,6 +147,16 @@ netstat -ano
 Via PowerShell:
 
 - [[powershell#Query Network Listeners Connections]]
+
+### Offered Shares
+
+Via command prompt:
+
+- [[net#View the Current Machine's Offered Shares]]
+
+Via PowerShell:
+
+- [[powershell#Query SMB Shares]]
 
 ---
 
