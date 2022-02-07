@@ -15,3 +15,11 @@ accesschk.exe -accepteula -ucqv $SERVICE_NAME
 ```cmd
 accesschk.exe -accepteula -uwcqv "$GROUP" *
 ```
+
+---
+
+## Determine the Effective Access to a Particular File
+
+```batch
+accesschk.exe -accepteula $FILE_PATH
+```

@@ -18,6 +18,16 @@ Get-Acl -Audit $PATH_TO_FILE_OR_FOLDER
 
 ---
 
+## View a Registry Key's DACL
+
+```powershell
+Get-Acl -Path $REGISTRY_KEY_PATH | fl
+```
+
+- `$REGISTRY_KEY_PATH` example: `HKLM:\System\CurrentControlSet\services`
+
+---
+
 ## References
 
 [[acls|Windows ACLs]]

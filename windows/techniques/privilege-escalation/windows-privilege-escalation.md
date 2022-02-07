@@ -18,6 +18,14 @@ See [[windows-credential-hunting|here]].
 
 See [[always-install-elevated-privesc|here]].
 
+### Registry Run Key Exploitation
+
+See [[run-key-privesc|here]].
+
+### Startup Folder Exploitation
+
+See [[startup-folder-privesc|here]].
+
 ### Token Privilege Exploitation
 
 See [[token-privilege-exploitation|here]].
@@ -25,6 +33,10 @@ See [[token-privilege-exploitation|here]].
 ### Windows Subsystem for Linux (WSL) Exploitation
 
 See [[wsl-privesc|here]].
+
+### Service Misconfiguration Exploitation
+
+See [[service-misconfigurations|here]].
 
 ### Automated Privilege Escalation Enumeration
 

@@ -68,3 +68,11 @@ reg delete $PATH_TO_SUBKEY /v $ENTRY_NAME
 ```
 
 Example path: `HKLM:\Software\Microsoft\Windows\CurrentVersion\Run`
+
+---
+
+## Update a Service's Registry Key's Binary Path
+
+```batch
+reg add HKLM\SYSTEM\CurrentControlSet\services\$SERVICE_NAME /v ImagePath /t REG_EXPAND_SZ /d $PATH_TO_SERVICE_BINARY /f
+```

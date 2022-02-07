@@ -7,7 +7,17 @@
 ## Query Services
 
 ```cmd
-sc [$SERVER_FQDN_OR_IP] queryex type=service state=all
+sc [$SERVER_FQDN_OR_IP] queryex type= service state= all
+```
+
+---
+
+## Query Service
+
+This includes the service's binary path.
+
+```batch
+sc [$SERVER_FQDN_OR_IP] qc $SERVICE_NAME
 ```
 
 ---

@@ -46,6 +46,12 @@ net localgroup $GROUP_NAME
 net localgroup $GROUPNAME /add
 ```
 
+### Add local user to local group
+
+```batch
+net localgroup $GROUPNAME $USERNAME /add
+```
+
 ---
 
 ## Domain Controllers

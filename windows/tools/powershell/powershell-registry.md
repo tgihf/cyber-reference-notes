@@ -69,3 +69,11 @@ Remove-ItemProperty -Path $ROOT_KEY:$PATH_TO_SUBKEY -Name $ENTRY_NAME
 ```
 
 Example path: `HKLM:\Software\Microsoft\Windows\CurrentVersion\Run`
+
+---
+
+## Update a Service's Registry Key's Binary Path
+
+```powerhell
+New-ItemProperty -Path HKLM:\SYSTEM\CurrentControlSet\services\$SERVICE_NAME -Name ImagePath -PropertyType ExpandString -Value $PATH_TO_SERVICE_BINARY
+```
