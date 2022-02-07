@@ -4,20 +4,10 @@
 
 ---
 
-## Run Command as Another Local User
+## Run Command as Another User
 
 ```batch
-runas /user:$LOCAL_MACHINE_NAME\$USERNAME "$COMMAND $ARGS"
-```
-
-You'll be prompoted for `$USERNAME`'s password.
-
----
-
-## Run Command as Another Domain User
-
-```batch
-runas /user:$DOMAIN_NAME\$USERNAME "$COMMAND $ARGS"
+runas /user:[$DOMAIN_NAME\]$USERNAME "$COMMAND $ARGS"
 ```
 
 You'll be prompoted for `$USERNAME`'s password.
@@ -27,7 +17,15 @@ You'll be prompoted for `$USERNAME`'s password.
 ## Run Command as Another User for Remote Access Only
 
 ```batch
-runas /user:$DOMAIN_NAME\$USERNAME "$COMMAND $ARGS" /netonly
+runas /user:[$DOMAIN_NAME\]$USERNAME "$COMMAND $ARGS" /netonly
 ```
 
 You'll be prompoted for `$USERNAME`'s password.
+
+---
+
+## Run Command as Another User with Credential Saved in Windows Credential Manager
+
+```batch
+runas /savecred /user:[$DOMAIN\]$USERNAME "$COMMAND $ARGS"
+```

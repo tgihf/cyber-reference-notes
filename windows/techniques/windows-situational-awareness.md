@@ -52,6 +52,13 @@ Via PowerShell:
 
 - [[powershell#List Currently Running Processes]]
 
+### Installed Applications
+
+```batch
+dir /a "C:\Program Files"
+dir /a "C:\Program Files (x86)"
+```
+
 ### .NET Versions
 
 [[reg#Retrieve Registry Key|Query the registry key]] `"HKLM\SOFTWARE\Microsoft\NET Framework Setup\NDP"`.

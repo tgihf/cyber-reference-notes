@@ -14,6 +14,10 @@ See [[windows-situational-awareness|here]].
 
 See [[windows-credential-hunting|here]].
 
+### `AlwaysInstallElevated` Exploitation
+
+See [[always-install-elevated-privesc|here]].
+
 ### Token Privilege Exploitation
 
 See [[token-privilege-exploitation|here]].

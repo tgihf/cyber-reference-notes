@@ -4,16 +4,16 @@
 
 ## Credential Hunting Process
 
-1. [[windows-credential-hunting#View Stored Credentials|View stored credentials]]
+1. [[windows-credential-hunting#View Credentials Stored in Windows Credential Manager|View credentials stored in Windows Credential Manager]].
 1. Search for passwords in [[windows-credential-hunting#Common Files that May Contain Passwords|files that often contain them]].
 2. Search for passwords in [[windows-credential-hunting#Common Registry Entries that May Contain Passwords|registry entries that often contain them]].
 3. Search for variations of the word "password" in files ([[windows-credential-hunting#Search for Variations of the Word Password|here]]).
 
 ---
 
-## View Stored Credentials
+## View Credentials Stored in Windows Credential Manager
 
-Use [[cmdkey#Display a List of All Stored Usernames Credentials|cmdkey to list stored credentials]]. Only applies to Windows Server 2012 and newer.
+[[cmdkey#Display a List of All Stored Usernames Credentials|List credentials stored in Windows Credential Manager]]. If there are any stored,  [[runas#Run Command as Another User with Credential Saved in Windows Credential Manager|leverage them to run commands]].
 
 ---
 
@@ -37,12 +37,11 @@ dir c:\ /s /b | findstr /si *vnc.ini
 
 ## Common Registry Entries that May Contain Passwords
 
+- [[autologon|Autologons registry key]]
+
 ```batch
 # VNC
 reg query "HKCU\Software\ORL\WinVNC3\Password"
-
-# Windows autologin
-reg query "HKLM\SOFTWARE\Microsoft\Windows NT\Currentversion\Winlogon"
 
 # SNMP Paramters
 reg query "HKLM\SYSTEM\Current\ControlSet\Services\SNMP"

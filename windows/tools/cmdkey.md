@@ -1,6 +1,6 @@
 # [cmdkey](https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/cmdkey)
 
-> Creates, lists, and deletes stored user names and passwords or credentials.
+> Creates, lists, and deletes user names and passwords or credentials stored by Windows Credential Manager.
 
 ---
 
