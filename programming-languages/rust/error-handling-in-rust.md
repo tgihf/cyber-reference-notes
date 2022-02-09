@@ -10,6 +10,14 @@ let unwrapped = function_that_returns_a_result().unwrap();
 
 ---
 
+## Unwrap the Result if `Ok`, `panic!` with `$ERROR_MESSAGE` if `Err`
+
+```rust
+let unwrapped = function_that_returns_a_result().expect("$ERROR_MESSAGE");
+```
+
+---
+
 ## Unwrap the Result if `Ok`, `return` Wrapped Error if `Err`
 
 ```rust
