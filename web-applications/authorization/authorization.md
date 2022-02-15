@@ -4,6 +4,19 @@
 
 ---
 
+## Authorization / Access Control Exploitation Process
+
+1. *Thoroughly* understand the web application's authorization mechanism(s)
+	- How are users identified?
+	- Are requests checked for proper authorization? How does the application check authorization?
+2. With a good understanding of the web application's authorization mechanism(s), read through the following sections and see if any of the techniques apply:
+	- [[authorization#Vertical Privilege Escalation|Vertical privilege escalation]]
+	- [[authorization#Horizontal Privilege Escalation|Horizontal privilege escalation]]
+	- [[authorization#Access Control Vulnerabilities in Multi-Step Processes|Access Control Vulnerabilities in Multi-Step Processes]]
+	- [[authorization#Referer Based Access Control|Referer-based Access Control]]
+
+---
+
 ## Vertical Privilege Escalation
 
 Vertical privilege escalation occurs when a user of one type is able to access resources or functionality that should only be accessible to users of a different, more privileged type.
@@ -71,18 +84,47 @@ Horizontal privilege escalation is often also known as an [[idor|Insecure Direct
 
 ### Manipulating a Predictable User ID
 
-`TODO`
+How does the web application identify its users? Is it through a mechanism that is easily predictable, like an identification integer (i.e., an administrator account whose user ID is 0)?
+
+If so, could you leverage this to perform actions as other users? Maybe view data only they should be allowed to access? Does any of the web application's functionality require a user ID input parameter?
+
+See [PortSwigger Web Security Academy Access Control Lab - User ID controlled by request parameter]() for an example.
 
 ### Manipulating an Unpredictable User ID
 
-`TODO`
+Perhaps the application uses something less predictable than incrementing integers to identify users, like randomly generated GUIDs (i.e. `24b31c53-531e-4fff-97a8-35cda067eaa5`). You're not going to brute force that.
+
+Perhaps the application reveals each user's GUID through a user listing page or an individual user's profile? If you're able to find a GUID, can you leverage it to perform actions as that user? Can you view any data only they should be allowed to access?
+
+See [PortSwigger Web Security Academy Access Control Lab - User ID controlled by request parameter, with unpredictable user IDs]() for an example.
 
 ### Data Leakage
 
-`TODO`
+If the application properly authorizes each check on the backend, it will likely redirect you somewhere else (maybe a login page) if you attempt to access an unauthorized resource or perform an unauthorized action.
+
+Look at the body of the redirect response though. Does it contain any useful data? Perhaps the web application accidentally returns the requested data? Worth checking out.
+
+See [PortSwigger Web Security Academy Access Control Lab - User ID controlled by request parameter with data leakage in redirect]() for an example.
 
 ---
 
-## Horizontal to Vertical Privilege Escalation
+## Access Control Vulnerabilities in Multi-Step Processes
 
-`TODO`
+Often times, sensitive actions on a web application require multiple steps. For example, before Github will allow you to delete a repository, you must:
+
+1. Login
+2. Pass an MFA check
+3. Load and complete the repository deletion form
+4. Review and confirm the repository deletion
+
+Ideally, adequate access controls are applied to each of these steps. However, perhaps they're not. Perhaps access controls are applied very well to steps 1-3, but not to #4.
+
+More generally, is it possible to complete any of the steps without completing their predecessor? As a result, can you complete the entire process without actually going through it? Understanding the entire flow is key here.
+
+---
+
+## `Referer` Based Access Control
+
+When a client is redirected to another URL, the `Referer` HTTP header specifies the original URL that redirected them.
+
+Apparently some web applications use the `Referer` header as a means to enforce authorization by ensuring the client first went through a particular URL path (i.e., `/auth`) first. The `Referer` header can be easily forged, rendering this defense useless. If you come across this defense, determine the proper `Referer` and set it to bypass access controls.

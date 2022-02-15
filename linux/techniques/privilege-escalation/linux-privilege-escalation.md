@@ -56,11 +56,15 @@ Refer to your writeup of [TryHackMe's Anonymous](https://github.com/tgihf/writeu
 
 Refer to [HackTrick's lxd/lxc group privilege escalation page](https://book.hacktricks.xyz/linux-unix/privilege-escalation/interesting-groups-linux-pe/lxd-privilege-escalation) for more information and walkthroughs.
 
-### 11. Credential Hunting
+### 11. Installed Applications
+
+Are there any known local privilege escalation vulnerabilities in the installed applications?
+
+### 12. Credential Hunting
 
 See [[linux-credential-hunting|here]].
 
-### 12. Automated Privilege Escalation Enumeration
+### 13. Automated Privilege Escalation Enumeration
 
 **Enumeration**
 
@@ -72,7 +76,7 @@ See [[linux-credential-hunting|here]].
 
 - [[linux-exploit-suggester|Linux Exploit Suggester]]
 
-### 13. Kernel Exploits
+### 14. Kernel Exploits
 
 See [[linux-kernel-exploits|here]].
 

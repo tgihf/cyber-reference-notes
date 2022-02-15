@@ -9,3 +9,11 @@
 ```bash
 tcpdump -i $INTERFACE -nt '$FILTER' -vX [-w $OUTPUT_FILE]
 ```
+
+---
+
+## Capture ICMP Traffic
+
+```bash
+tcpdump -i $INTERFACE icmp
+```

@@ -52,7 +52,11 @@ schtasks /query /V
 
 - [[powershell-scheduled-tasks]]
 
-### 11. Automated Privilege Escalation Enumeration
+### 11. Installed Applications
+
+Are there any known local privilege escalation vulnerabilities in the installed applications?
+
+### 12. Automated Privilege Escalation Enumeration
 
 **Enumeration**
 
@@ -67,7 +71,7 @@ schtasks /query /V
 - Meterpreter's exploit suggester
 - [Watson.exe](https://github.com/rasta-mouse/Watson)
 
-### 12. Kernel Exploits
+### 13. Kernel Exploits
 
 See [[windows-kernel-exploits|here]].
 

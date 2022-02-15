@@ -7,6 +7,8 @@ Username enumeration is possible when an attacker is able to observe changes in 
 
 Recommended tool: [[patator]]
 
+---
+
 ## Username Enumeration via Account Lockout
 
 If a target application employs account lockout based on a certain number of failed login attempts, you can enumerate users by submitting just enough requests to lock out a user for each username in a list. The accounts that get locked have valid usernames.

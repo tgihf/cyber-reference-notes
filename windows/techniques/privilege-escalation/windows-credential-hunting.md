@@ -7,7 +7,7 @@
 1. [[windows-credential-hunting#View Credentials Stored in Windows Credential Manager|View credentials stored in Windows Credential Manager]].
 1. Search for passwords in [[windows-credential-hunting#Common Files that May Contain Passwords|files that often contain them]].
 2. Search for passwords in [[windows-credential-hunting#Common Registry Entries that May Contain Passwords|registry entries that often contain them]].
-3. Search for variations of the word "password" in files ([[windows-credential-hunting#Search for Variations of the Word Password|here]]).
+3. Search for variations of the word "password" in files and the registry ([[windows-credential-hunting#Search for Variations of the Word Password|here]]).
 
 ---
 
@@ -49,6 +49,10 @@ reg query "HKLM\SYSTEM\Current\ControlSet\Services\SNMP"
 # Putty
 reg query "HKCU\Software\SimonTatham\PuTTY\Sessions"
 ```
+
+To interact with the registry:
+	- [[reg|cmd]]
+	- [[powershell-registry|PowerShell]]
 
 ---
 

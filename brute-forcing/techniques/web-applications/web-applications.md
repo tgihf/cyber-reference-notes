@@ -1,24 +1,32 @@
 # Brute Forcing Web Applications
 
+---
+
 ## General Web Application Brute Forcing
 
-- Recommended brute forcer: [[patator]]
+- [[patator]]
 - [[hydra]]
 
 ---
 
-## Web Application Content Discovery
+## Content Discovery
 
-[[content-discovery]]
+See [[content-discovery|here]].
+
+---
+
+## Virtual Host Discovery
+
+See [[virtual-host-discovery|here]].
 
 ---
 
 ## Username Enumeration
 
-[[username-enumeration]]
+See [[username-enumeration|here]].
 
 ---
 
 ## Brute Force Protection Mechanisms
 
-[[brute-force-protections]]
+See [[brute-force-protections|here]].

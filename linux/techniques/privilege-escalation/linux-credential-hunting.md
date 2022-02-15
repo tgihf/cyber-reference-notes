@@ -5,7 +5,8 @@
 ## Process
 
 1. Hunt in the current user's exection history (part of [[linux-situational-awareness#Current User's Execution History|situational awareness]])
-2. Hunt in the file system
+2. Hunt in directories that are likely to have credentials, such as user's home directories and web application directories
+3. Hunt in the entire file system
 
 ---
 

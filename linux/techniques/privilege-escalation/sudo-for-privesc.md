@@ -39,8 +39,8 @@ Abuse the [[linux-situational-awareness#Current User's Allowed and Disallowed su
 			- Do you have write access to the absolute path? Can you just replace it?
 		- **Does a command in the `sudo` executable contain a wildcard (`*`)?**
 			- Attempt to abuse [[bash#Wildcard Behavior|bash's wildcard behavior]] to perform an elevated action
-			- **Does a command in the `sudo` executable fail to import a writable shared object file**?
-				- Apply the [[shared-object-file-injection#Process|shared object file injection process]]
+		- **Does a command in the `sudo` executable fail to import a writable shared object file**?
+			- Apply the [[shared-object-file-injection#Process|shared object file injection process]]
 
 ---
 
@@ -184,7 +184,7 @@ sudo --version
 2. If the current version of `sudo` lies within the vulnerable range, you can optionally use this proof of concept to validate the existence of the vulnerability. If it results in a memory error, `sudo` is vulnerable.
 
 ```bash
-sudoedit -s '\' $(python -c 'print("A"*1000)')
+sudoedit -s '\' $(python3 -c 'print("A"*1000)')
 ```
 
 3. If the current version of `sudo` is vulnerable, download the exploit source code from [bl4sty's Exploit Github Repository](https://github.com/blasty/CVE-2021-3156), and compile it with the repository's `Makefile`. As always, it's best to compile it on the target machine or on a machine with the same operating system version.

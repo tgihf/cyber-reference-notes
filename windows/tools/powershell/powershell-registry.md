@@ -74,6 +74,6 @@ Example path: `HKLM:\Software\Microsoft\Windows\CurrentVersion\Run`
 
 ## Update a Service's Registry Key's Binary Path
 
-```powerhell
+```powershell
 New-ItemProperty -Path HKLM:\SYSTEM\CurrentControlSet\services\$SERVICE_NAME -Name ImagePath -PropertyType ExpandString -Value $PATH_TO_SERVICE_BINARY
 ```

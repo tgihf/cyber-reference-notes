@@ -15,12 +15,7 @@ gobuster dir -u $URL -w $WORDLIST [-x $FILE_EXTENSIONS] [-b $STATUS_CODES_TO_IGN
 	- i.e., `404,403`
 - `$RESPONSE_SIZES_TO_IGNORE`
 	- i.e., `275,4000`
-- Potential `$WORDLIST` options:
-	- [`/usr/share/wordlists/seclists/Discovery/Web-Content/raft-small-words.txt`](https://raw.githubusercontent.com/danielmiessler/SecLists/master/Discovery/Web-Content/raft-small-words.txt)
-	- `/usr/share/wordlists/dirbuster/directory-list-1.0.txt`
-		- Has small, medium, large, & lowercase variants
-	- `/usr/share/wordlists/dirb/common.txt`
-	- `/usr/share/wordlists/dirb/big.txt`
+- Potential `$WORDLIST` options can be found [[content-discovery#Useful Wordlists|here]]
 
 ---
 
@@ -30,7 +25,4 @@ gobuster dir -u $URL -w $WORDLIST [-x $FILE_EXTENSIONS] [-b $STATUS_CODES_TO_IGN
 gobuster vhost -u $URL -w $WORDLIST
 ```
 
-- Potential `$WORDLIST` options:
-	- [`/usr/share/wordlists/SecLists/Discovery/DNS/subdomains-top1million-5000.txt`](https://raw.githubusercontent.com/danielmiessler/SecLists/master/Discovery/DNS/subdomains-top1million-5000.txt)
-	- [`/usr/share/wordlists/SecLists/Discovery/DNS/subdomains-top1million-20000.txt`](https://raw.githubusercontent.com/danielmiessler/SecLists/master/Discovery/DNS/subdomains-top1million-20000.txt)
-	- [`/usr/share/wordlists/SecLists/Discovery/DNS/subdomains-top1million-110000.txt`](https://raw.githubusercontent.com/danielmiessler/SecLists/master/Discovery/DNS/subdomains-top1million-110000.txt)
+- Potential `$WORDLIST` options can be found [[virtual-host-discovery#Useful Wordlists|here]]

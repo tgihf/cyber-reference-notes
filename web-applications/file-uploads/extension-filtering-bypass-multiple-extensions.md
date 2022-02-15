@@ -1,4 +1,4 @@
-# Extension Filtering of Web Application File Uploads
+# Extension Blacklist Bypass - Multiple Extensions
 
 Many web applications filter file uploads based off the file extension.
 
