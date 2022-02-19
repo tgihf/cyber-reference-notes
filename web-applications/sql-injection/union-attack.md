@@ -88,7 +88,7 @@ retrieves all rows from the `users` table whose `start_date` column is equal to 
 
 It is also possible to `ORDER BY` the column's **index** instead of its name, and that's what this method leverages to determine the number of columns being returned.
 
-To use this method, continually inject an `ORDER BY` clause into the query, incrementing the index, like so:
+To use this method, continually inject an `ORDER BY` clause into the query, incrementing the index (the indices begin at 1), like so:
 
 ```txt
 ORDER BY 1

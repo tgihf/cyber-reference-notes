@@ -15,8 +15,11 @@
 			- [ ] [[sql-injection|SQL injection]]
 			- [ ] [[os-command-injection|Command injection]]
 			- [ ] [[directory-traversal|Directory traversal]]
+			- [ ] [[file-inclusion|File inclusion]]
 			- [ ] [[file-uploads|File uploads]]
+			- [ ] [[server-side-request-forgery|Server-side request forgery (SSRF)]]
 			- [ ] [[information-disclosure|Information disclosure]]
+			- [ ] [[cross-site-scripting|Cross-site scripting (XSS)]]
 6. Does the web web application attempt to enforce authentication and authorization? How so?
-	- Follow the process [[exploiting-authentication#Process|here]] to understand and potentially exploit the **authentication** process
+	- Follow the process [[exploiting-authentication#Authentication Exploitation Process|here]] to understand and potentially exploit the **authentication** process
 	- Follow the process [[authorization#Authorization Access Control Exploitation Process|here]] to understand and potentially exploit the **authorization** process

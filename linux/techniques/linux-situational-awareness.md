@@ -139,3 +139,7 @@ ip neigh
 ```bash
 netstat -ano
 ```
+
+```bash
+ss -l
+```
