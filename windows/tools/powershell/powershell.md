@@ -118,8 +118,9 @@ Get-NetNeighbor
 ## Query Network Listeners & Connections
 
 ```powershell
-Get-NetIPConfiguration
+Get-NetTCPConnection | Select-Object -Property *,@{'Name' = 'ProcessName';'Expression'={(Get-Process -Id $_.OwningProcess).Name}} | ft -Autosize -Property ProcessName, LocalAddress, LocalPort, RemoteAddress, RemotePort, State
 ```
+
 
 ---
 
@@ -243,4 +244,44 @@ Get-Content -Path $FILE_PATH -Stream $STREAM_NAME
 
 ```powershell
 Set-Content -Path $FILE_PATH -Stream $STREAM_NAME -Value $VALUE
+```
+
+---
+
+## Translate an IPv4 Address into an Integer
+
+```powershell
+([System.Net.IPAddress]"$IPV4_ADDRESS").Address
+```
+
+---
+
+## Create an IPv4 Address from an Integer
+
+Be careful here. PowerShell expect `$INTEGER` to be the integer of the IP address with its octets reversed, so don't use an online IPv4 to integer converter to get `$INTEGER`. Instead, use [[powershell#Translate an IPv4 Address into an Integer|PowerShell itself]].
+
+```powershell
+New-Object System.Net.IPAddress($INTEGER)
+```
+
+---
+
+## Execute a Command
+
+```powershell
+powershell.exe [-ep bypass] -c $COMMAND
+```
+
+---
+
+## Execute Base64 Encoded Command
+
+```powershell
+powershell.exe [-ep bypass] -enc $BASE64_ENCODED_COMMAND
+```
+
+where `$BASE64_ENCODED_COMMAND` is a base64-encoded UTF-16LE string of the command. You can create those on `bash` as follows:
+
+```bash
+$ echo -n $COMMAND | iconv -t utf-16le | base64 -w 0
 ```

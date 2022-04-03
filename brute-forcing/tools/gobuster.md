@@ -26,3 +26,11 @@ gobuster vhost -u $URL -w $WORDLIST
 ```
 
 - Potential `$WORDLIST` options can be found [[virtual-host-discovery#Useful Wordlists|here]]
+
+---
+
+## Use with Proxy
+
+```bash
+HTTP_PROXY="$PROTOCOL://$FQDN_OR_IP:$PORT" $GOBUSTER COMMAND
+```

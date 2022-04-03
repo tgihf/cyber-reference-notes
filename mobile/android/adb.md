@@ -30,17 +30,6 @@ adb connect $HOSTNAME_OR_IP:$PORT
 
 ---
 
-## Connect to a Remote Android System via SSH Tunnel
-
-```bash
-$ ssh $USER@$HOSTNAME_OR_IP [-p $SSH_PORT] -L $LOCAL_PORT:127.0.0.1:5555
-$ adb connect 127.0.0.1:$LOCAL_PORT
-```
-
-Most just use 5555 as `$LOCAL_PORT`.
-
----
-
 ## Check Connected Devices
 
 ```bash
@@ -58,3 +47,38 @@ adb shell
 Once in the shell, attempt to escalate to `root` using `su`.
 
 Example: [HTB Explore]().
+
+---
+
+## Install APK on Connected Device
+
+```bash
+adb install $PATH_TO_APK
+```
+
+---
+
+## Configure Proxy
+
+### View Proxy Settings
+
+```bash
+$ adb shell
+(adb) settings list global | grep proxy
+```
+
+### Set Proxy
+
+```bash
+$ adb shell
+(adb) settings put global http_proxy $FQDN_OR_IP:$PORT
+```
+
+### Clear Proxy
+
+```bash
+$ adb shell
+(adb) settings delete global http_proxy
+(adb) settings delete global global_http_proxy_host
+(adb) settings delete global global_http_proxy_port
+```

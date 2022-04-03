@@ -5,7 +5,7 @@
 ## View an Object's DACL
 
 ```powershell
-Get-Acl $PATH_TO_FILE_OR_FOLDER
+Get-Acl $PATH_TO_FILE_OR_FOLDER | fl
 ```
 
 ---
@@ -13,7 +13,7 @@ Get-Acl $PATH_TO_FILE_OR_FOLDER
 ## View an Object's SACL
 
 ```powershell
-Get-Acl -Audit $PATH_TO_FILE_OR_FOLDER
+Get-Acl -Audit $PATH_TO_FILE_OR_FOLDER | fl
 ```
 
 ---

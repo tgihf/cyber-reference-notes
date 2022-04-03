@@ -18,18 +18,36 @@ See [[linux-situational-awareness#Current User's Execution History|situational a
 
 ## 2. Hunt in the File System
 
-### "Password" Variations in Files
+### URLs that Contain Credentials in Files
 
-Recursively search `$DIRECTORY` for the word "PASSWORD." Feel free to try other variations, like "passwd," "pass", or "pwd." With color.
+Recursively search `$DIRECTORY` for URLs that contain credentials.
+
+With color.
 
 ```bash
-grep --color=auto -rnw $DIRECTORY -ie "PASSWORD" --color=always 2> /dev/null
+grep --color=auto -PRi '(\w+):\/\/(\w+):(\w+)@([\w.:]+)' $DIRECTORY 2>/dev/null
 ```
 
 Do the same as the above, but also search for hidden directories. Without color.
 
 ```bash
-find $DIRECTORY -type f -exec grep -i -I "PASSWORD" {} /dev/null \;
+find $DIRECTORY -type f -exec grep --color=auto -PRIi '(\w+):\/\/(\w+):(\w+)@([\w.:]+)' {} /dev/null 2>/dev/null \;
+```
+
+### "Password" Variations in Files
+
+Recursively search `$DIRECTORY` for the word "PASSW." Feel free to try other variations, like "passwd," "pass", or "pwd."
+
+With color.
+
+```bash
+grep --color=auto -rnw $DIRECTORY -ie "PASSW" --color=always 2> /dev/null
+```
+
+Do the same as the above, but also search for hidden directories. Without color.
+
+```bash
+find $DIRECTORY -type f -exec grep --color=auto -i -I "PASSW" {} /dev/null 2>/dev/null \;
 ```
 
 ### SSH Keys

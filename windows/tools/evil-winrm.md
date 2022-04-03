@@ -25,3 +25,12 @@ evil-winrm -i $TARGET -u [$DOMAIN\\]$USERNAME -p $PASSWORD
 ```bash
 evil-winrm -i $TARGET -u [$DOMAIN\\]$USERNAME -H $NTLM_HASH
 ```
+
+---
+
+## Log in with SSL Certificate & Private Key
+
+```bash
+evil-winrm -i $TARGET -u [$DOMAIN\\]$USERNAME --ssl -c $PATH_TO_CERTIFICATE -k $PATH_TO_PRIVATE_KEY
+```
+

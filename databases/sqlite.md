@@ -112,3 +112,33 @@ SELECT sql FROM sqlite_master WHERE type = 'table' AND name = '$TABLE_NAME'
 ```bash
 sqlite3 $DATABASE_FILE
 ```
+
+---
+
+## UPSERT Clause on `INSERT` Statement
+
+If you're able to inject into an [INSERT](https://www.sqlite.org/lang_insert.html) statement but actually want to update a particular value in the database, you can inject an [UPSERT clause](https://www.sqlite.org/syntax/upsert-clause.html), like the following:
+
+```sql
+INSERT INTO $TABLE ($COLUMNS) VALUES ($VALUES) ON CONFLICT($COLUMN) DO UPDATE SET $COLUMN_TO_CHANGE = $VALUE
+```
+
+- `$TABLE`: the table to insert into
+- `$COLUMNS`: the columns whose values must be specified for any row being inserted into the table (these columns don't have default values specified)
+- `$VALUES`: the values for the `$COLUMNS`
+- `$COLUMN`: the column whose value you specified in `$VALUES` conflicts with some unique constraint on the table
+	- The `UPSERT` clause will trigger for this row
+- `$COLUMN_TO_CHANGE`: the column whose value you want to change
+- `$VALUE`: the value you want to change `$COLUMN_TO_CHANGE` to
+
+### Example
+
+You can inject into a `users` table that has two text columns: `username` and `password`. There is a unique constraint on `username`. There already exists a row with `username` == `admin` and an unknown `password`.
+
+To change `admin`'s password to `woo`, execute the following:
+
+```sql
+INSERT INTO users (username, password) VALUES ('admin', 'does not matter') ON CONFLICT(username) DO UPDATE SET password = 'woo'
+```
+
+See [HTB Weather App](https://github.com/tgihf/private-writeups/blob/main/htb/challenges/weather-app/weather-app.md) for a similar example.

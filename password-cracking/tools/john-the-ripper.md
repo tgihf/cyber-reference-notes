@@ -39,3 +39,35 @@ Make sure there are no newlines in the hash.
 ```bash
 john $HASH_FILE --wordlist=$PASSWORD_LIST
 ```
+
+---
+
+## Offline dictionary attack against a PGP private key file
+
+Convert the PGP private key file into a format `john` can crack.
+
+```bash
+gpg2john $PATH_TO_PGP_PRIVATE_KEY_FILE
+```
+
+Save the resultant hash to a file and crack it as normal.
+
+```bash
+john --wordlist=$PATH_TO_PASSWORD_LIST $PATH_TO_CONVERTED_PGP_PRIVATE_KEY_FILE
+```
+
+---
+
+## Offline dictionary attack against a password-protected ZIP
+
+Convert the password-protected ZIP file into a format `john` can crack.
+
+```bash
+zip2john $PATH_TO_ZIP_FILE
+```
+
+Save the resultant hash to a file and crack it as normal.
+
+```bash
+john --wordlist=$PATH_TO_PASSWORD_LIST $PATH_TO_CONVERTED_ZIP_HASH_FILE
+```

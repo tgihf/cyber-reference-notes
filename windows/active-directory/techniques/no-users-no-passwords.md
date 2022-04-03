@@ -43,4 +43,4 @@ Use [[kerbrute#Enumerate valid domain usernames via Kerberos|kerbrute]] for this
 
 ## Exploit Domain-Joined SQL Server
 
-If you have SQL command execution on a Microsoft SQL Server that is joined to the domain, you can [[mssql#Enumerate SQL Server Logins|enumerate SQL server logins]] and [[mssql#Enumerate Domain Principals|enumerate domain principals]].
+If you have SQL command execution on a Microsoft SQL Server that is joined to the domain (i.e., through SQL injection), you can [[mssql#Enumerate SQL Server Logins|enumerate SQL server logins]] and [[mssql#Enumerate Domain Principals|enumerate domain principals]].

@@ -7,5 +7,3 @@
 ## Diagrams
 
 ![[remote-port-forwarding-1.png]]
-
-![[remote-port-forwarding-2.png]]

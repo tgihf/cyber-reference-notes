@@ -16,8 +16,16 @@ cat /proc/version
 
 ### Distribution Version
 
+Debian:
+
 ```bash
 cat /etc/issue
+```
+
+RHEL/CentOS:
+
+```bash
+rpm -q centos-linux-release	
 ```
 
 ### CPU Architecture, Thread, and Core Count

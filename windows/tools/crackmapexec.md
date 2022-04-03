@@ -76,3 +76,15 @@ Filter the results with `jq`!
 ```bash
 cat /tmp/cme_spider_plus | jq
 ```
+
+---
+
+## Attempt to Read LAPS Passwords
+
+See [[local-administrator-password-solution|LAPS]] for more information.
+
+`$DOMAIN\$USERNAME`:`$PASSWORD` must be capable of reading at least one LAPS password on `$DOMAIN`.
+
+```bash
+crackmapexec ldap $TARGET -d $DOMAIN -u $USERNAME [-p $PASSWORD || -H $NTLMHASH] [--kdcHost $DC_FQDN_OR_IP] -M laps
+```

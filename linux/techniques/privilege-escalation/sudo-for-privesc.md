@@ -1,6 +1,6 @@
 # Privilege Escalation via `sudo`
 
-> "Super User Do." Allows a user to execute a particular command(s) with elevated permission.
+> "Super User Do." Allows a user to execute a particular command(s) as another user.
 
 ---
 

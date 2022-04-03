@@ -18,7 +18,7 @@ nmap -p- --min-rate=10000 $TARGET -oA $OUTPUT_FILENAME
   - Example: 80,443,445 or 1-1000
 
 ```bash
-nmap -sC -sV -O -p$PORTS $TARGET -oA $OUTPUT_FILENAME
+nmap -sC -sV -p$PORTS $TARGET -oA $OUTPUT_FILENAME
 ```
 
 ---
