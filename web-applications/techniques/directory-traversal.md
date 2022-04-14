@@ -11,6 +11,11 @@
 	- If the target's technology stack includes an Apache Tomcat web server sitting behind an Nginx reverse proxy, see [[path-normalization#Path Normalization to Directory Traversal in Nginx Tomcat|here]]
 3. Bypass any directory traversal defense mechanism
 	- See [[directory-traversal#Directory Traversal Defense Mechanism Bypass Techniques|here]]
+- Potential target files:
+	- Linux:
+		- Web application source code and configuration files
+		- SSH keys
+		- [[proc-filesystem|proc filesystem]]
 
 ---
 
