@@ -13,3 +13,11 @@
 ```bash
 getcap -r / 2>/dev/null
 ```
+
+---
+
+## Determine a Running Process's Capabilities
+
+```bash
+capsh --decode=$(cat /proc/$PID/status | grep CapEff | cut -d':' -f2 | xargs)
+```

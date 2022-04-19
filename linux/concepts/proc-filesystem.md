@@ -1,4 +1,4 @@
-# `proc` Filesystem
+ 	# `proc` Filesystem
 
 > The `proc` filesystem is a pseudo-filesystem which provides an interface to kernel data structures. It is commonly mounted at `/proc`.
 
@@ -39,6 +39,56 @@ The process's environment variables.
 ## `/proc/self/`
 
 A symbolic link to the current process's [[proc-filesystem#proc PID|/proc subdirectory]].
+
+---
+
+## `/proc/net/`
+
+Each of the files in this directory contain networking information about the system. In fact, many common network utilities (`netstat`, `arp`, `ifconfig`, etc.) pull information from these files.
+
+### `/proc/net/arp`
+
+ARP cache.
+
+### `/proc/net/dev`
+
+Network interfaces.
+
+### `/proc/net/route`
+
+Routing table.
+
+### `/proc/net/tcp`
+
+IPv4 TCP socket table. Can be used to enumerate network connections and listening ports. IP addresses are in hex. If the `rem_address` field is null, `local_address` represents a listening socket. Addresses are in little endian.
+
+### `/proc/net/tcp6`
+
+IPv6 TCP socket table. Same as `/proc/net/tcp`, but for IPv6.
+
+### `/proc/net/udp`
+
+IPv4 UDP socket table.
+
+### `/proc/net/udp6`
+
+IPv6 UDP socket table. Same as `/proc/net/udp`, but for iPv6.
+
+### `/proc/net/wireless`
+
+Contains wireless device information.
+
+---
+
+## `/proc/mount`
+
+Mounted filesystems.
+
+---
+
+## `/proc/version`
+
+Kernel version.
 
 ---
 
