@@ -2,7 +2,7 @@
 
 ## [Wordlist Generation](wordlist-generation)
 
-## [Email Addres Generation](email-address-generation)
+## [Email Address Generation](email-address-generation)
 
 ## [Employee Information Gathering](employee-information-gathering)
 
