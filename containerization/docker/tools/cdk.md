@@ -71,3 +71,5 @@ $PATH_TO_CDK ifconfig
 ## References
 
 [GitHub - cdk](https://github.com/cdk-team/CDK)
+
+[Hack the Box - Talkative](https://github.com/tgihf/private-writeups/blob/main/htb/boxes/talkative/talkative.md)
