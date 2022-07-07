@@ -16,6 +16,12 @@ DKIM prevents someone from spoofing the source of an email (i.e., sending an ema
 
 ---
 
+## Determine if Domain is Spoofable
+
+- [[spoofcheck|spoofcheck]]
+
+---
+
 ## References
 
 [dmarcian on YouYube - DKIM Overview](https://www.youtube.com/watch?v=yHv1OPcc-gw)

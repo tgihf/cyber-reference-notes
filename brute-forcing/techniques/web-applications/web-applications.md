@@ -9,15 +9,21 @@
 
 ---
 
-## Content Discovery
+## Path Discovery
 
-See [[content-discovery|here]].
+See [[path-discovery|here]].
 
 ---
 
 ## Virtual Host Discovery
 
 See [[virtual-host-discovery|here]].
+
+---
+
+## Query Parameter Discovery
+
+See [[query-parameter-discovery|here]].
 
 ---
 

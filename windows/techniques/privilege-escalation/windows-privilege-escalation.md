@@ -8,7 +8,9 @@ The process of escalating privileges on a Linux machine involves careful enumera
 
 ### 1. Situational Awareness
 
-See [[windows-situational-awareness|here]].
+See [[windows-situational-awareness|here]] and [SeatBelt](https://github.com/GhostPack/Seatbelt).
+
+Also consider screenshots and/or keylogging.
 
 ### 2. Credential Hunting
 
@@ -61,7 +63,6 @@ Are there any known local privilege escalation vulnerabilities in the installed 
 **Enumeration**
 
 - [[winpeas|winpeas (.NET 4.0 binary or batch script)]]
-- [SeatBelt.exe](https://github.com/GhostPack/Seatbelt)
 - [[sharpup|SharpUp.exe]]
 - [[powerup|PowerUp.ps1]]
 

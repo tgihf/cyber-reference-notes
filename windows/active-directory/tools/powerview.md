@@ -396,3 +396,39 @@ Get-DomainForeignUser
 ```powershell
 Get-DomainForeignUser -Domain $TARGET_DOMAIN
 ```
+
+---
+
+## List All GPOs that Modify Local Group Membership
+
+```powershell
+Get-DomainGPOLocalGroup [| select GPODisplayName, GroupName]
+```
+
+---
+
+## List All Computers that have Domain Users or Domain Groups as Members of One of its Local Groups
+
+```powershell
+Get-DomainGPOUserLocalGroupMapping -LocalGroup $LOCAL_GROUP_NAME [| select ObjectName, GPODisplayName, ContainerName, ComputerName]
+```
+
+---
+
+## List All Active Session on a Computer
+
+```powershell
+Get-NetSession -ComputerName $COMPUTER_NAME [| select CName, UserName]
+```
+
+- `CName` is the source IP address of the session
+
+---
+
+## List Active Sessions Across the Domain
+
+Finds the sessions of users in the specified group (`Domain Admins`) by default. Queries every computer in the domain, so very loud.
+
+```powershell
+Find-DomainUserLocation
+```

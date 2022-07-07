@@ -5,3 +5,9 @@ The **DMARC** protocol attempts to resolve the age-old problem of email spoofing
 It does this by performing [[spf|SPF]] and [[dkim|DKIM]] checks on all emails it receives. If either of those protocols returns the same domain as the source domain or a subdomain of it, the DMARC check "passes."
 
 DMARC isn't a silver bullet for email security, but from a phisher's perspective, it's important to ensure that your source domain will pass a DMARC check.
+
+---
+
+## Determine if Domain is Spoofable
+
+- [[spoofcheck|spoofcheck]]

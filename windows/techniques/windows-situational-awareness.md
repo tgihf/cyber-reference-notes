@@ -61,7 +61,7 @@ dir /a "C:\Program Files (x86)"
 
 ### .NET Versions
 
-[[reg#Retrieve Registry Key|Query the registry key]] `"HKLM\SOFTWARE\Microsoft\NET Framework Setup\NDP"`.
+[[reg#Retrieve Registry Key|Query the registry key]] `"HKLM\SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Full"` and reference the tables [here](https://docs.microsoft.com/en-us/dotnet/framework/migration-guide/versions-and-dependencies).
 
 ### PowerShell Version (if applicable)
 
@@ -208,3 +208,11 @@ netsh firewall show config
 Via PowerShell:
 
 - [[powershell#Query Firewall Rules]]
+
+---
+
+## Other
+
+### Screenshots
+
+### Keylogging

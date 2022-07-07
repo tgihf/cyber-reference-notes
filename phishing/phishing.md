@@ -18,7 +18,9 @@ See [[email-address-research|here]].
 
 ### 4. Craft the Phish
 
-See [[craft-the-phish|here]].
+See [[craft-the-phish|here]] for general guidelines.
+
+See [[phishing-payloads|here]] for potential payloads.
 
 ### 5. Setup & Launch the Phishing Campaign
 

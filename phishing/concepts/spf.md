@@ -14,6 +14,12 @@ SPF attempts to prevent someone from spoofing the source of an email (i.e., send
 
 ---
 
+## Determine if Domain is Spoofable
+
+- [[spoofcheck|spoofcheck]]
+
+---
+
 ## References
 
 [demarcian on YouTube - SPF Overview](https://www.youtube.com/watch?v=WFPYrAr1boU)

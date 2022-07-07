@@ -4,6 +4,10 @@ The user startup folder path is `C:\Users\$USERNAME\AppData\Roaming\Microsoft\Wi
 
 The system startup folder path is `C:\ProgramData\Microsoft\Windows\Start Menu\Programs\StartUp`. Whenever **any** user logs in, all executables in this folder will be executed in the context of that user.
 
-References:
+- [[SharPersist#Establish Startup Folder Persistence|SharPersist]]
+
+---
+
+## References
 
 - [MITRE ATT&CK](https://attack.mitre.org/techniques/T1547/001/)

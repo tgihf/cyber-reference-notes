@@ -1,6 +1,6 @@
 # [feroxbuster](https://github.com/epi052/feroxbuster)
 
-> Web application recursive content discovery tool written in Rust.
+> Web application path discovery tool written in Rust.
 
 ---
 
@@ -22,7 +22,7 @@ See [here](https://epi052.github.io/feroxbuster-docs/docs/).
 feroxbuster -u $URL [-w $WORDLIST] [-x $FILE_EXTENSIONS] [--filter-status $STATUS_CODES_TO_IGNORE] [--filter-size $RESPONSE_SIZES_TO_IGNORE] [--filter-similar-to $URL_OF_SIMILAR_PAGE] [--json --output $OUTPUT_FILE]
 ```
 
-- Potential `$WORDLIST` options can be found [[content-discovery#Useful Wordlists|here]]
+- Potential `$WORDLIST` options can be found [[path-discovery#Useful Wordlists|here]]
 	- Defaults to `wordlist` option in `ferox-config.toml` (in `/etc/feroxbuster` on Kali)
 - `$FILE_EXTENSIONS`
 	- i.e., `php,txt,html`

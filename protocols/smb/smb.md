@@ -2,11 +2,37 @@
 
 > A network file sharing protocol that allows applications on a computer to read and write to files and to request services from server programs in a computer network.
 
+---
 
-## [Enumerate shares, users, groups, & more](tools/enum4linux)
+## Enumerate shares, users, groups, & more
 
-## [List SMB shares on target](list-shares.md)
+See [[enum4linux|here]].
 
-## [Browse SMB shares on target](browse-shares.md)
+---
 
-## [Exfil file on SMB shares](exfil-shares.md)
+## List SMB shares on target
+
+See [[list-shares|here]].
+
+---
+
+## Browse SMB shares on target
+
+See [[browse-shares|here]].
+
+---
+
+## Exfil file on SMB shares
+
+See [[exfil-shares|here]].
+
+---
+
+## List Named Named Pipes (Windows)
+
+```powershell
+ls \\$HOST\pipe
+```
+
+- `$HOST` can be `.` for local pipes
+

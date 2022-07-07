@@ -7,7 +7,7 @@
 ## Open TCP port discovery scan of `$TARGET`
 
 ```bash
-nmap -p- --min-rate=10000 $TARGET -oA $OUTPUT_FILENAME
+nmap -sS -Pn -p- $TARGET -oA $OUTPUT_FILENAME
 ```
 
 ---
@@ -63,3 +63,15 @@ nmap -p 21 --script=ftp-anon $TARGET
 ```bash
 nmap -n -sV --script "ldap* and not brute" $LDAP_SERVER_HOSTNAME_OR_IP
 ```
+
+---
+
+## Ping Sweep
+
+```bash
+nmap $TARGET
+```
+
+---
+
+##

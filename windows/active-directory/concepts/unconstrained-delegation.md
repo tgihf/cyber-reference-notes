@@ -62,7 +62,7 @@ Its object representation's `userAccountControl` attribute contains the value `A
 From a domain-joined Windows machine configured with unconstrained delegation and in the context of `NT AUTHORITY/SYSTEM`:
 
 - [[windows/active-directory/tools/rubeus#Listen for and Extract TGTs from Memory at a Particular Interval Exploiting unconstrained-delegation Unconstrained Delegation|Rubeus (C#)]]
-- [[c2-frameworks/covenant/tasks/Rubeus|Covenant's Rubeus Task]]
+- [[covenant-rubeus|Covenant's Rubeus Task]]
 
 Combine with [[unconstrained-delegation#Exploit the Printer Bug to Coerce a Domain Controller into Authenticating to a Compromised Unconstrained Delegation Computer|abusing the "Printer Bug" to coerce a domain controller into authenticating to the compromised computer configured with unconstrained delegation]] to steal `krbtgt`'s TGT.
 

@@ -91,3 +91,27 @@ Invoke-BloodHound -CollectionMethod $COLLECTION_METHOD -Domain $FOREIGN_DOMAIN
 ```
 
 Enumerates via LDAP, so must be executed in the security context of a user who can issue an LDAP query to `$FOREIGN_DOMAIN`'s primary domain controller.
+
+---
+
+## Cypher Query Inspiration
+
+The input at the bottom of the BloodHound page shows the current Cypher query, which can be customized to fine-tune results. Here's some syntactical inspiration.
+
+1. Show all users with a SPN set ([[kerberoasting|Kerberoastable]])
+
+```cypher
+MATCH (u:User {hasspn:true}) RETURN u
+```
+
+2. Show all computers that are allowed to delegate (i.e., have [[constrained-delegation|constrained delegation]] enabled) to other computers
+
+```cypher
+MATCH (c:Computer), (t:Computer), p=((c)-[:AllowedToDelegate]->(t)) RETURN p
+```
+
+3. Show shortest path from [[kerberoasting|Kerberoastable]] users to any computer
+
+```cypher
+MATCH (u:User {hasspn:true}), (c:Computer), p=shortestPath((u)-[*1..]->(c)) RETURN p
+```

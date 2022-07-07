@@ -15,7 +15,7 @@ schtasks
 ## Query a Particular Scheduled Task
 
 ```cmd
-schtasks /query /tn "$TASK_NAME" /v
+schtasks /query /tn "$FULL_PATH_TASK_NAME" /v
 ```
 
 ---
@@ -23,7 +23,7 @@ schtasks /query /tn "$TASK_NAME" /v
 ## Schedule a Local Task
 
 ```cmd
-schtasks /create /sc $FREQUENCY /mo $MODIFIER /tn "$TASK_NAME" /tr $PATH_TO_FILE_TO_RUN [/ru $RUN_AS_USER_USERNAME] [/rp $RUN_AS_USER_PASSWORD]
+schtasks /create /sc $FREQUENCY /mo $MODIFIER /tn "$FULL_PATH_TASK_NAME" /tr $PATH_TO_FILE_TO_RUN [/ru $RUN_AS_USER_USERNAME] [/rp $RUN_AS_USER_PASSWORD]
 ```
 
 ---
@@ -31,7 +31,15 @@ schtasks /create /sc $FREQUENCY /mo $MODIFIER /tn "$TASK_NAME" /tr $PATH_TO_FILE
 ## Schedule a Remote Task
 
 ```cmd
-schtasks /create /sc $FREQUENCY /mo $MODIFIER /tn "$TASK_NAME" /tr $PATH_TO_FILE_TO_RUN [/ru $RUN_AS_USER_USERNAME] [/rp $RUN_AS_USER_PASSWORD] /s $REMOTE_FQDN_OR_IP
+schtasks /create /sc $FREQUENCY /mo $MODIFIER /tn "$FULL_PATH_TASK_NAME" /tr $PATH_TO_FILE_TO_RUN [/ru $RUN_AS_USER_USERNAME] [/rp $RUN_AS_USER_PASSWORD] /s $REMOTE_FQDN_OR_IP
+```
+
+---
+
+## Change a Local Task
+
+```cmd
+schtasks /change /tn $FULL_PATH_TASK_NAME 
 ```
 
 ---

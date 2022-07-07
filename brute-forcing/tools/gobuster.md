@@ -15,7 +15,7 @@ gobuster dir -u $URL -w $WORDLIST [-x $FILE_EXTENSIONS] [-b $STATUS_CODES_TO_IGN
 	- i.e., `404,403`
 - `$RESPONSE_SIZES_TO_IGNORE`
 	- i.e., `275,4000`
-- Potential `$WORDLIST` options can be found [[content-discovery#Useful Wordlists|here]]
+- Potential `$WORDLIST` options can be found [[path-discovery#Useful Wordlists|here]]
 
 ---
 

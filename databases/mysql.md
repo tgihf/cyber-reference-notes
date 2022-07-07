@@ -149,7 +149,23 @@ SELECT database();
 ## Show Current User's MySQL Privileges
 
 ```sql
-show grants
+SHOW GRANTS
+```
+
+---
+
+## Read File
+
+```sql
+SELECT LOAD_FILE("$FILE_PATH")
+```
+
+---
+
+## Write to File
+
+```sql
+SELECT "$CONTENT_TO_WRITE" INTO OUTFILE "$OUTFILE_PATH"
 ```
 
 ---
@@ -167,7 +183,6 @@ docker run -d -it --rm \
   -p 3306:3306 \
   -e MYSQL_ROOT_PASSWORD=blah \
   -v $PWD/data:/var/lib/mysql \
-  -v $PWD/mysqld.cnf:/etc/mysql/mysql.conf.d/mysqld.cnf \
   genschsa/mysql-employees
 ```
 

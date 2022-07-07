@@ -4,7 +4,7 @@
 
 ## What is a `systemd` Timer?
 
-A `systemd` timer is a command executed by `systemd` (generally with elevated privileges) at a particular interval, date, or time. Very similar to a [[cron|cron job]].
+A [[systemd]] timer is a command executed by `systemd` (generally with elevated privileges) at a particular interval, date, or time. Very similar to a [[cron|cron job]].
 
 ---
 

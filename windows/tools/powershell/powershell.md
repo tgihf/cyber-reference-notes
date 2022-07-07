@@ -274,6 +274,22 @@ powershell.exe [-ep bypass] -c $COMMAND
 
 ---
 
+## Base64 Encode a String
+
+```powershell
+[System.Convert]::ToBase64String([System.Text.Encoding]::Unicode.GetBytes($STRING))
+```
+
+---
+
+## Base64 Decode a String
+
+```powershell
+[System.Convert]::FromBase64String($STRING)
+```
+
+---
+
 ## Execute Base64 Encoded Command
 
 ```powershell

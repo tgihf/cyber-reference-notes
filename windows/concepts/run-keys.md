@@ -13,7 +13,10 @@ The registry run keys are:
 - `HKCU\Software\Microsoft\Windows\CurrentVersion\Run`
 - `HKCU\Software\Microsoft\Windows\CurrentVersion\RunOnce`
 
-[[registry#Interacting with the Registry|How to interact with the registry]]
+Interacting with the Registry:
+
+- [[registry#Interacting with the Registry|General]]
+- [[SharPersist#Establish Registry Run Key Persistence|SharPersist]]
 
 References:
 

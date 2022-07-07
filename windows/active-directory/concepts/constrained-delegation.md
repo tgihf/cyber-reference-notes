@@ -50,7 +50,7 @@ Select the prebuilt analytic query "Shortest Paths to Unconstrained Delegation S
 	- [[getST#Abuse a Constrained Delegation Privilege to Generate a Service Ticket for Any User to a Host for which a SPN is Configured from Linux|impacket-getST]]
 - From a domain-joined Windows machine:
 	- [[windows/active-directory/tools/rubeus#Abuse a constrained-delegation Constrained Delegation Privilege to Generate a Service Ticket for Any User to a Host for which a SPN is Configured|Rubeus]]
-	- [[c2-frameworks/covenant/tasks/Rubeus#Abuse a constrained-delegation Constrained Delegation Privilege to Generate a Service Ticket for Any User to a Host for which a SPN is Configured|Covenant's Rubeus Task]]
+	- [[covenant-rubeus#Abuse a constrained-delegation Constrained Delegation Privilege to Generate a Service Ticket for Any User to a Host for which a SPN is Configured|Covenant's Rubeus Task]]
 
 ---
 

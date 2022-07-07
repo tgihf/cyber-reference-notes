@@ -12,6 +12,7 @@
 	- [[ldapsearch]]
 - From a domain-joined Windows machine via `C#`
 	- [[sharpview]]
+	- [[ADSearch]]
 - From a domain-joined Windows machine via `PowerShell`
 	- [[powershell-active-directory-module|PowerShell Active Directory Module (if available)]]
 	- [[powerview|PowerView]]

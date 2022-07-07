@@ -161,3 +161,15 @@ hashcat -m 7400 $HASHES $WORDLIST_FILE [-r $RULE_FILE]
 ```bash
 hashcat -m 1800 $HASHES $WORDLIST_FILE [-r $RULE_FILE]
 ```
+
+---
+
+## Crack Windows Active Directory Domain Cached Credential (DCC) Hash
+
+```bash
+hashcat -m 2100 $HASHES $WORDLIST_FILE [-r $RULE_FILE]
+```
+
+Hash format: `$DCC2$<iterations>#<username>#<hash>`
+
+
