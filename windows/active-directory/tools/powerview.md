@@ -84,6 +84,14 @@ Get-DomainUser | select cn
 
 ---
 
+## Get-DomainGroup
+
+```powershell
+Get-DomainGroup
+```
+
+---
+
 ## Get-DomainComputer
 
 Gathers information on the computers in the domain.
@@ -93,6 +101,14 @@ Get-DomainComputer | select name, operatingsystem
 ```
 
 On Linux: [[pywerview#get-netcomputer|pywerview's get-netcomputer]].
+
+---
+
+## Get-DomainOU
+
+```powershell
+Get-DomainOU
+```
 
 ---
 
@@ -134,6 +150,14 @@ Get-DomainSID
 
 ```powershell
 Get-DomainUser -KerberosPreauthNotRequired
+```
+
+---
+
+## Gather Users who have at least one [[service-principal-name|SPN]] Set
+
+```powershell
+Get-DomainUser -SPN
 ```
 
 ---
@@ -232,6 +256,10 @@ This may come in handy, as many object's ACEs designate the subject by its SID.
 
 ```powershell
 "$SID" | Convert-SidToName
+```
+
+```powershell
+ConvertFrom-SID $SID
 ```
 
 ---
@@ -432,3 +460,48 @@ Finds the sessions of users in the specified group (`Domain Admins`) by default.
 ```powershell
 Find-DomainUserLocation
 ```
+
+---
+
+## List All Principals Capable of Creating New GPOs
+
+```powershell
+Get-DomainObjectAcl -SearchBase "CN=Policies,CN=System,[DC=$SUBDOMAIN_NAME,]DC=$DOMAIN_NAME,DC=$TOP_LEVEL_DOMAIN_NAME" -ResolveGUIDs | ? { $_.ObjectAceType -eq "Group-Policy-Container" } | select ObjectDN, ActiveDirectoryRights, SecurityIdentifier | fl
+```
+
+---
+
+## List All Principals Capable of Linking GPOs to Particular OUs
+
+```powershell
+Get-DomainOU | Get-DomainObjectAcl -ResolveGUIDs | ? { $_.ObjectAceType -eq "GP-Link" -and $_.ActiveDirectoryRights -match "WriteProperty" } | select ObjectDN, SecurityIdentifier | fl
+```
+
+---
+
+## List All Computers in a Particular OU
+
+```powershell
+Get-DomainComputer | ? { $_.DistinguishedName -match "OU=$OU_NAME" } | select DnsHostName
+```
+
+---
+
+## List All Principals that can Modify Existing GPOs
+
+```powershell
+Get-DomainGPO | Get-DomainObjectAcl -ResolveGUIDs | ? { $_.ActiveDirectoryRights -match "WriteProperty|WriteDacl|WriteOwner" -and $_.SecurityIdentifier -match "$DOMAIN_SID-[\d]{4,10}" } | select ObjectDN, ActiveDirectoryRights, SecurityIdentifier | fl
+```
+
+- `$DOMAIN_SID` example: `S-1-5-21-3263068140-2042698922-2891547269`
+	- Filtering on a SID with at least a 4-character RID is a good way of filtering out administrator accounts
+
+---
+
+## Resolve GPO ObjectDN to Display Name
+
+```powershell
+Get-DomainGPO -Name "$OBJECT_DN" -Properties DisplayName
+```
+
+- Example `$OBJECT_DN`: `{AD7EE1ED-CDC8-4994-AE0F-50BA8B264829}`

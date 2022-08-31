@@ -1,6 +1,6 @@
 # Web Application Path Discovery
 
-> Web applications host various resources at various **paths** and these paths aren't always linked to by other parts of the web application. Thus, you won't always find all of a web application's paths by browsing around it, clicking links. Various tools and wordlists exists to help you discover these paths. Many of these paths leverage query parameters which aren't immediately apparent as well. These same tools and some different wordlists can help you discover these parameters.
+> Web applications host various resources at various **paths** and these paths aren't always linked to by other parts of the web application. Thus, you won't always find all of a web application's paths by browsing around it, clicking links. Various tools and wordlists exists to help you discover these paths. Many of these paths leverage **methods** and **query parameters** which aren't immediately apparent as well. These same tools and some different wordlists can help you discover these methods and parameters.
 
 ---
 

@@ -29,8 +29,106 @@ Example hash modes are also [here](https://hashcat.net/wiki/doku.php?id=example_
 
 ---
 
+## Attack Modes
+
+`hashcat`'s `-a` flag determines which type of attack to conduct. Below are the different types of choices.
+
+### Dictionary Attack
+
+Iterate through each candidate password in a file, hash it, and compare it to the target hash. Simplicity itself.
+
+```bash
+hashcat -a 0 -m $MODE $HASHES $PATH_TO_WORDLIST
+```
+
+### Combinator Attack
+
+A combinator attack combines two dictionaries, optionally applying rules to the candidate passwords from each before combining them.
+
+```bash
+hashcat -a 1 -m $MODE $HASHES $WORDLIST1 $WORDLIST2 [-j $RULE1] [-k $RULE2]
+```
+
+### Mask Attack
+
+Brute-force attacks often leverage the same keyspace (i.e., lowercase, uppercase, symbols) for each character. However, often times the password may follow a particular format. Mask attacks exploit this by assigning a particular keyspace to each character and then brute-forcing the password according to each character's keyspace.
+
+For example, if you know a password begins with an uppercase character, followed by seven lowercase characters, and ends in a number (i.e., `Password1`, then a mask attack would only target those keyspaces for each character. This flexibility significantly increases the efficiency of the attack.
+
+In Hashcat, the mask attack type is `3` (i.e., `-a 3`) and you specify the mask at the end of the command, like so:
+
+```bash
+hashcat -a 3 -m $MODE $HASHES $MASK
+```
+
+`hashcat --help` shows the characters that can be used to construct a mask:
+
+```bash
+hashcat --help
+...
+? | Charset
+===+=========
+l | abcdefghijklmnopqrstuvwxyz
+u | ABCDEFGHIJKLMNOPQRSTUVWXYZ
+d | 0123456789
+h | 0123456789abcdef
+H | 0123456789ABCDEF
+s | !"#$%&'()*+,-./:;<=>?@[\]^_`{|}~
+a | ?l?u?d?s
+b | 0x00 - 0xff
+...
+```
+
+The above example password format can be targeted with this mask: `?u?l?l?l?l?l?l?l?d`.
+
+#### Variable Masks
+
+A plain mask is rather inflexible. For example, `?u?l?l?l?d` will only generate passwords with a digit at the end. But what if we want to generate passwords that end in a digit *or* a symbol? Masks can incorporate variables for this purpose. Here's how:
+
+```bash
+hashcat -a 3 -m $MODE $HASHES -1 ?d?s ?u?l?l?l?1
+```
+
+Now, the passwords `Bla1` and `Bla!` will be generated.
+
+#### Mask Files
+
+Even a mask that incorporates a variable portion is still inflexible with regards to **length**. Perhaps all you know is the target password begins with an uppercase letter, followed by an unknown number of lowercase letters, followed by either a digit or a symbol? Regular masks and masks that incorporate variables still only account for a static length.
+
+To generate passwords with multiple lengths, `hashcat` makes it possible to specify a file of masks instead of a single one. You can include masks of different lengths in this file, like so:
+
+```txt
+?d?s,?u?l?l?l?1
+?d?s,?u?l?l?l?l?1
+?d?s,?u?l?l?l?l?l?1
+...
+```
+
+It's not quite as flexible as a regular expression, but it works!
+
+### Hybrid Attack
+
+A combinator attack combines candidate passwords from a dictionary with candidate passwords generated via a mask.
+
+`-a 6` **appends** the mask to the dictionary candidate:
+
+```bash
+hashcat -a 6 -m $MODE $HASHES $WORDLIST $MASK
+```
+
+`-a 7` **prepends** the mask to the dictionary candidate:
+
+```bash
+hashcat -a 7 -m $MODE $HASHES $WORDLIST $MASK
+```
+
+---
+
 ## Rulesets
 
+A rule is a permutation you can apply to each password candidate in a dictionary file before hashing it and comparing it to the target hash. A ruleset is a file of these permutations, all applied to each candidate.
+
+- Hashcat's rule syntax can be found on their website, [here](https://hashcat.net/wiki/doku.php?id=rule_based_attack)
 - Example rulesets can be found in `/usr/share/hashcat/rules/`
 - Recommended: `/usr/share/hashcat/rules/best64.rule`
 
@@ -116,7 +214,7 @@ $krb5tgs$23$*SQLService$THROWBACK.LOCAL$THROWBACK.local/SQLService*$3ece5128fb36
 
 ---
 
-## Crack NetNTLMv2 Hashes
+## Offline dictionary attack against NetNTLMv2 hashes
 
 ```bash
 hashcat -m 5600 $HASHES $WORDLIST_FILE [-r $RULE_FILE]
@@ -132,7 +230,7 @@ PetersJ::THROWBACK:b0dac951f0cf53d4:47CCCA16DED0244B2ADA9A935BCC6AFA:01010000000
 
 ---
 
-## Crack MD5 (Unix) Hashes
+## Offline dictionary attack against MD5 (Unix) hashes
 
 ```bash
 hashcat -m 500 $HASHES $WORDLIST_FILE [-r $RULE_FILE]
@@ -140,7 +238,7 @@ hashcat -m 500 $HASHES $WORDLIST_FILE [-r $RULE_FILE]
 
 ---
 
-## Crack Blowfish (Unix) Hashes
+## Offline dictionary attack against Blowfish (Unix) hashes
 
 ```bash
 hashcat -m 3200 $HASHES $WORDLIST_FILE [-r $RULE_FILE]
@@ -148,7 +246,7 @@ hashcat -m 3200 $HASHES $WORDLIST_FILE [-r $RULE_FILE]
 
 ---
 
-## Crack sha256crypt Hashes
+## Offline dictionary attack against sha256crypt hashes
 
 ```bash
 hashcat -m 7400 $HASHES $WORDLIST_FILE [-r $RULE_FILE]
@@ -156,7 +254,7 @@ hashcat -m 7400 $HASHES $WORDLIST_FILE [-r $RULE_FILE]
 
 ---
 
-## Crack sha512crypt Hashes
+## Offline dictionary attack against sha512crypt hashes
 
 ```bash
 hashcat -m 1800 $HASHES $WORDLIST_FILE [-r $RULE_FILE]
@@ -164,7 +262,7 @@ hashcat -m 1800 $HASHES $WORDLIST_FILE [-r $RULE_FILE]
 
 ---
 
-## Crack Windows Active Directory Domain Cached Credential (DCC) Hash
+## Offline dictionary attack against Windows Active Directory Domain Cached Credential (DCC) hashes
 
 ```bash
 hashcat -m 2100 $HASHES $WORDLIST_FILE [-r $RULE_FILE]

@@ -18,7 +18,7 @@ Each COM component (class) implements one or more particular *interfaces*, each 
 
 ## Registration
 
-A Windows system's COM components (classes) are defined in the registry under `HKCR\CLSID\`. These are aggregated from entries in `HKCU\Classes\` and `HKLM\Classes\`. If an entry for the same COM component exists in both `HKCU\Classes\` and `HKLM\Classes\`, `HKCU\Classes\`'s will be prioritized and copied to `HKCR\CLSID\`, not `HKLM\Classes\`'s.
+A Windows system's COM components (classes) are defined in the registry under `HKCR\CLSID\`. These are aggregated from entries in `HKCU\SOFTWARE\Classes\CLSID\` and `HKLM\SOFTWARE\Classes\CLSID\`. If an entry for the same COM component exists in both `HKCU\SOFTWARE\Classes\CLSID\` and `HKLM\SOFTWARE\Classes\CLSID`, `HKCU\SOFTWARE\Classes\CLSID`'s will be prioritized and copied to `HKCR\CLSID\`, not `HKLM\SOFTWARE\Classes\CLSID`'s.
 
 A Windows system's COM interfaces are defined in the registry under `HKCR\Interface`.
 

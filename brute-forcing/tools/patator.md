@@ -147,6 +147,14 @@ patator http_fuzz url=$URL method=$METHOD [header='$HEADER'] body='$HTTP_BODY' 0
 patator http_fuzz url=$URL method=$METHOD [header='$HEADER']  body='$HTTP_BODY' 0=$FILE0 -x ignore:code=$FALURE_CODE
 ```
 
+## Brute force HTTP request based on Content Length
+
+```bash
+patator http_fuzz url=$URL method=$METHOD $OTHER_ARGUMENTS -x ignore:clen=$CONTENT_LENGTH
+```
+
+- `$CONTENT_LENGTH` can be range, check usage for details
+
 ---
 
 ## Brute Force SSH - Single Username

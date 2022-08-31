@@ -45,6 +45,16 @@ A collection of one or more domain trees in Active Directory Domain Services (AD
 
 ---
 
+## Enumeration
+
+- [[powerview#Get-NetForest]]
+- [[powerview#List All Users Who are Members of the Current Domain and are in Groups of Foreign Domains]]
+- [[powerview#List All Users Who are Members of a Target Domain and are in Groups of Foreign Domains]]
+- [[powerview#List All GPOs that Modify Local Group Membership]]
+- [[powerview#List All Computers that have Domain Users or Domain Groups as Members of One of its Local Groups]]
+
+---
+
 ## References
 
 [Microsoft's How Domain & Forest Trusts Work](https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2003/cc773178(v=ws.10)?redirectedfrom=MSDN)

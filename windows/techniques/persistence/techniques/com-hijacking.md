@@ -38,7 +38,8 @@ foreach ($Task in $Tasks)
 In one line:
 
 ```powershell
-Get-ScheduledTask | % { if (($_.Actions.ClassId -ne $null) -and ($_.Triggers.Enabled -eq $true) -and ($_.Principal.GroupId -eq "Users")) { Write-Host "Task Name: " $_.TaskName; Write-Host "Task Path: " $_.TaskPath; Write-Host "CLSID: " $_.Actions.ClassId; Write-Host $_.Triggers; Write-Host } }
+Get-ScheduledTask | ? { ($_.Actions.ClassId -ne $null) -and ($_.Triggers.Enabled -eq $true) -and ($_.Principal.GroupId -eq "User
+s") } | % { "Task Name: $($_.TaskName)`nTask Path: $($_.TaskPath)`nClass ID: $($_.Actions.ClassId)`nTriggers: $($_.Triggers)`n`n" }
 ```
 
 2. Select which task you'd like to hijack

@@ -290,6 +290,14 @@ powershell.exe [-ep bypass] -c $COMMAND
 
 ---
 
+## Write Base64 Decoded Bytes to Disk
+
+```powershell
+[IO.File]::WriteAllBytes($PATH, [System.Convert]::FromBase64String($STRING))
+```
+
+---
+
 ## Execute Base64 Encoded Command
 
 ```powershell
