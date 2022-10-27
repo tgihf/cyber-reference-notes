@@ -4,7 +4,7 @@ Empire is installed by default in Kali Linux at `/usr/bin/powershell-empire`.
 
 ---
 
-## Start the Team Server
+## Start the Empire Server
 
 ```bash
 $ sudo powershell-empire server [--debug] [--config $CONFIG_YAML] [--restip $IP_TO_BIND_REST_API_TO] [--restport $PORT_TO_BIND_REST_API_TO] [--socketport $PORT_TO_RUN_SOCKETIO_ON] [--username $USERNAME] [--password $PASSWORD]
@@ -18,52 +18,24 @@ $ sudo powershell-empire server [--debug] [--config $CONFIG_YAML] [--restip $IP_
 
 ---
 
-## Connect to the Team Server
+## Connect to the C2 Server
 
 Start the client.
 
 ```bash
-powershell-empire client
+sudo powershell-empire client
 ```
 
-This will attempt to connect to a Team Server on `localhost`. If this fails, the client will boot up and you can connect to an arbitrary Team Server with:
+This will attempt to connect to an Empire Server on `localhost`. If this fails, the client will boot up and you can connect to an arbitrary Empire Server with:
 
 ```bash
-(Empire) > connect $TEAMSERVER_FQDN_OR_IP [--port=$TEAMSERVER_REST_API_PORT] [--socketport=$TEAMSERVER_SOCKETIO_PORT] [--username=$TEAMSERVER_USERNAME] [--password=$TEAMSERVER_PASSWORD]****
+(Empire) > connect $EMPIRE_SERVER_FQDN_OR_IP [--port=$EMPIRE_SERVER_REST_API_PORT] [--socketport=$EMPIRE_SERVER_SOCKETIO_PORT] [--username=$EMPIRE_SERVER_USERNAME] [--password=$EMPIRE_SERVER_PASSWORD]
 ```
 
 ---
 
-## Wipe and Reset the Team Server
+## Wipe and Reset the Empire Server
 
 ```bash
 powershell-empire server --reset
-```
-
----
-
-## List Listeners
-
-```bash
-(Empire) > listeners
-```
-
----
-
-## Start HTTP Listener
-
-```bash
-(Empire) > uselistener http
-```
-
-Configure the options. Note that the option `Port` is required.
-
-```bash
-(Empire: uselistener/http) > options
-```
-
-Start it.
-
-```bash
-(Empire: uselistener/http) > execute
 ```

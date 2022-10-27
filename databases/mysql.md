@@ -1,4 +1,4 @@
-# MySQL Database
+	# MySQL Database
 
 ## Comment Syntax
 
@@ -32,6 +32,17 @@ SELECT CONCAT(username, ':', password) FROM users
 
 * Takes a variable number of arguments
 * Arguments can be column names from the target table or string literals
+
+---
+
+## Concatenate All Rows' Particular Column Value into a Single String
+
+```sql
+SELECT GROUP_CONCAT($COLUMN_NAME) FROM $TABLE_NAME
+```
+
+- This is a helpful alternative in SQL injection when you can only return a single row's column at a time
+	- Instead of using `LIMIT` and multiple requests to return each row's value, you can use this to return all rows' value
 
 ---
 
@@ -134,6 +145,14 @@ SELECT database();
 
 ---
 
+## Database enumeration
+
+```sql
+SELECT schema_name FROM information_schema.schemata
+```
+
+---
+
 ## Table enumeration
 
 [[database-enumeration#Querying database tables non-Oracle]]
@@ -143,6 +162,24 @@ SELECT database();
 ## Table column enumeration
 
 [[database-enumeration#Querying database tables' columns non-Oracle]]
+
+---
+
+## Enumerate a Database's Tables and their Correspoding Columns
+
+```sql
+SELECT GROUP_CONCAT(TABLE_NAME, ':', COLUMN_NAME) FROM information_schema.columns WHERE TABLE_SCHEMA = '$DATABASE'
+```
+
+- Databases can be enumerated with [[mysql#Database enumeration|this query]]
+
+---
+
+## Table & Column Enumeration for Entire Database (One Request)
+
+```sql
+SELECT GROUP_CONCAT(CONCAT('\n', table_name, ':', column_name)) FROM information.schema.columns WHERE table_schema = '$DATABASE_NAME';
+```
 
 ---
 

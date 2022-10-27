@@ -10,6 +10,8 @@
 - [ ] [[powerview#Get-DomainGroup|Groups]]
 - [ ] [[powerview#Get-DomainOU|OUs]]
 - [ ] [[group-policy#Enumerate Group Policy Objects|GPOs]]
+- [ ] [[dacls-aces#Retrieve an Object's DACL requires domain user credentials|Discretionary Access Control Lists]]
+- [ ] [[mssql#Enumerate a Domain's MSSQL Servers|MSSQL Servers]]
 - [ ] [[forest#Enumeration|Forest]]
 - [ ] [[trusts#Mapping Domain Trusts|Trusts]]
 
@@ -43,10 +45,20 @@
 - [ ] Kerberos Misconfigurations
 	- [ ] [[ASREP-roasting|ASREP Roast vulnerable domain users]]
 	- [ ] [[kerberoasting|Kerberoast vulnerable domain users]]
+- [ ] DACL Misconfigurations
+	- [ ] [[dacls-aces#Permissions of Interest|Exploit vulnerable permissions]]
 - [ ] Delegation Misconfigurations
 	- [ ] [[unconstrained-delegation|Hunt for exploitable instances of unconstrained delegation]]
 	- [ ] [[constrained-delegation|Hunt for exploitable instances of constrained delegation]]
 	- [ ] [[resource-based-constrained-delegation|Hunt for exploitable instances of resource-based constrained delegation]]]
+- [ ] Abuse accessible MSSQL Servers and their linked servers
+	- [ ] [[mssql#Capture MSSQL Server's NetNTLMv2 Hash|Capture and crack accessible MSSQL servers' NetNTLMv2 hashes]]
+		- [ ] This can also be adapted for linked servers
+	- [ ] [[mssql#Execute Operating System Commands on an MSSQL Server|Execute operating system commands on accessible MSSQL servers]]
+	- [ ] [[mssql#Command Execution Methodology on MSSQL Server's Linked Servers|Execute operating system commands on accessible MSSQL servers' linked servers]]
+- [ ] GPO Misconfigurations
+	- [ ] If an owned principal has permission, [[group-policy#Group Policy#Create GPO and Link to OU|create a new GPO and link it to an OU that contains a target principal]]
+	- [ ] If an owned principal has permission, [[group-policy#Modify Existing GPO|modify an existing GPO]] that affects an OU that contains a target principal
 - [ ] Abuse LAPS
 	- [ ] [[local-administrator-password-solution|Abuse LAPS misconfiguration]]
 - [ ] Known Vulnerabilities & Misconfigurations
@@ -62,7 +74,8 @@
 
 ## 3. Establish Persistence
 
-- [ ] [[silver-ticket|If you've compromised a principal, create a silver ticket for that account]]
-- [ ] [[golden-ticket|If you've compromised a domain administrator's account, you can dump the domain controller's hashes to obtain krbtgt's hash and create a golden ticket]]
 - [ ] [[adcs#Leveraging a Certificate for Persistence|Generate an ADCS certificate for a principal]]
+- [ ] [[dcsync#Add DCSync Privileges to a Principal|Add DCSync privilege to a principal you control]]
+- [ ] [[golden-ticket|If you've compromised a domain administrator's account, you can dump the domain controller's hashes to obtain krbtgt's hash and create a golden ticket]]
 - [ ] [[group-policy|Create and link or modifying existing GPO to allow persistent access]]
+- [ ] [[silver-ticket|If you've compromised a principal, create a silver ticket for that account]]

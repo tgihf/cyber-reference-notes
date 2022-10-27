@@ -16,11 +16,21 @@ gitdumper.py $URL $OUTPUT_DIRECTORY
 
 ---
 
-## View Order of Repository's Commits
+## View Repository's Commits
 
 ```bash
-cat .git/logs/HEAD
+git log
 ```
+
+---
+
+## Show a Commit's Changes
+
+```bash
+git show $COMMIT_HASH
+```
+
+- `$COMMIT_HASH` uniquely identifies a commit and can be found when [[git#View Repository's Commits|viewing the repository's commits]]
 
 ---
 

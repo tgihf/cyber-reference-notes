@@ -18,6 +18,7 @@ Some notable tools available in the collection include:
 - [[sharpup|SharpUp]]
 - [[sharpview|SharpView]]
 - [[rotten-potato#Exploits|SweetPotato]]
+	- Note that `SweetPotato` needs to be compiled in Release mode to ensure the `NtApiDotNet` assembly is merged
 - [[winpeas|winPEAS]]
 
 ---

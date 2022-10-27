@@ -154,6 +154,20 @@ Get-DomainUser -KerberosPreauthNotRequired
 
 ---
 
+## Disable a Principal's Pre-Authentication
+
+```powershell
+Set-DomainObject -Identity $USERNAME -XOR @{UserAccountControl=4194304}
+```
+
+You can check with:
+
+```powershell
+Get-DomainUser -Identity $USERNAME | ConvertFrom-UACValue
+```
+
+---
+
 ## Gather Users who have at least one [[service-principal-name|SPN]] Set
 
 ```powershell

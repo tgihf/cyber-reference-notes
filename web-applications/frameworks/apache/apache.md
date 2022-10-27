@@ -6,6 +6,8 @@
 
 ## Interesting Files & Directories
 
+This is very similar to [[nginx#Interesting Files Directories|Nginx's interesting files and directories]].
+
 ### `/etc/apache2/sites-available/`
 
 Contains configuration files for all of the **available** (but not necessarily enabled) Apache Virtual Hosts, each of which is its own web site with its own configuration.

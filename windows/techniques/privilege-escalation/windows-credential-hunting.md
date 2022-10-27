@@ -5,9 +5,10 @@
 ## Credential Hunting Process
 
 1. [[windows-credential-hunting#View Credentials Stored in Windows Credential Manager|View credentials stored in Windows Credential Manager]].
-1. Search for passwords in [[windows-credential-hunting#Common Files that May Contain Passwords|files that often contain them]].
-2. Search for passwords in [[windows-credential-hunting#Common Registry Entries that May Contain Passwords|registry entries that often contain them]].
-3. Search for variations of the word "password" in files and the registry ([[windows-credential-hunting#Search for Variations of the Word Password|here]]).
+2. Can you [[abusing-dpapi|abuse DPAPI]]?
+3. Search for passwords in [[windows-credential-hunting#Common Files that May Contain Passwords|files that often contain them]].
+4. Search for passwords in [[windows-credential-hunting#Common Registry Entries that May Contain Passwords|registry entries that often contain them]].
+5. Search for variations of the word "password" in files and the registry ([[windows-credential-hunting#Search for Variations of the Word Password|here]]).
 
 ---
 

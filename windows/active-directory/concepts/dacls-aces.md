@@ -8,25 +8,33 @@
 
 - `GenericAll`
 	- Full access to the [[objects|object]]
-		- Add user to a group
-		- Change user's password
+		- [[ASREP-roasting#Disable a Pre-Authentication for a Principal Targeted ASREP Roasting|Targeted ASREP Roasting]]
+		- [[kerberoasting#Add a SPN to a Target Principal|Targeted Kerberoasting]]
+		- If user, add user to a target group
+		- If group, add target user to the group
+		- Reset principal's password
 - `GenericWrite`
 	- Update an [[objects|object's]] attributes
 		- Configure a logon script
+		- [[ASREP-roasting#Disable a Pre-Authentication for a Principal Targeted ASREP Roasting|Targeted ASREP Roasting]]
+		- [[kerberoasting#Add a SPN to a Target Principal|Targeted Kerberoasting]]
 		- Configure the principal with [[unconstrained-delegation|unconstrained delegation]] or [[constrained-delegation|constrained delegation]]
-		- Disable its [[kerberos#Kerberos Pre-Authentication|Kerberos pre-authentication]]
 - `WriteOwner`
 	- Change the [[objects|object's]] owner to the attacker, granting full control of the [[objects|object]] (see `GenericAll`)
 - `WriteDACL`
 	- Modify the [[objects|object's]] ACEs and grant the attacker one of the other permissions of interest (i.e., `GenericAll` or `WriteOwner`)
 - `WriteProperty`
-	- Add a user to a group
+	- If user, add user to a target group
+	- If group, add target user to the group
 - `AllExtendedRights`
-	- Add a user to a group or reset its password
+	- If user, add user to a target group
+	- If group, add target user to the group
+	- Reset principal's password
 - `ForceChangePassword`
-	- Ability to change a user's password
+	- Reset principal's password
 - `Self (Self-Membership)`
-	- Ability to add the principal to a group
+	- If user, add user to a target group
+	- If group, add target user to the group
 
 ---
 
