@@ -183,11 +183,37 @@ SELECT GROUP_CONCAT(CONCAT('\n', table_name, ':', column_name)) FROM information
 
 ---
 
+## Show Current User
+
+```sql
+SELECT CURRENT_USER()
+```
+
+---
+
 ## Show Current User's MySQL Privileges
+
+### Via `SHOW GRANTS`
 
 ```sql
 SHOW GRANTS
 ```
+
+### Via Database Tables
+
+The `information_schema.user_privileges` and `mysql.user` tables can be used to enumerate the current user's privileges.
+
+```sql
+SELECT grantee, privilege_type FROM INFORMATION_SCHEMA.USER_PRIVILEGES WHERE grantee = '$USERNAME_DOUBLE_SINGLE_QUOTED'
+```
+
+- `$USERNAME_DOUBLE_SINGLE_QUOTED` example: `user@localhost` would be `''user''@''localhost''`
+
+```sql
+SELECT user,select_priv,insert_priv,update_priv,delete_priv,create_priv,drop_priv,reload_priv,shutdown_priv,process_priv,file_priv,grant_priv,references_priv,index_priv,alter_priv,show_db_priv,super_priv,create_tmp_table_priv,lock_tables_priv,execute_priv,repl_slave_priv,repl_client_priv,create_view_priv,show_view_priv,create_routine_priv,alter_routine_priv,create_user_priv FROM mysql.user" WHERE user = '$USERNAME'
+```
+
+- Note `file_priv`
 
 ---
 
@@ -226,7 +252,7 @@ docker run -d -it --rm \
 Get a shell in the container.
 
 ```bash
-docker exec -it $CONTAINER_ID /bin/bash
+docker exec -it mysql-employees /bin/bash
 ```
 
 In the container, connect to the test MySQL database.

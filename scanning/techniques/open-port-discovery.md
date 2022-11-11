@@ -10,9 +10,9 @@
 
 ## nmap
 
-[[nmap#Open port discovery scan on TARGET|Open TCP port discovery]]
+[[nmap#Open TCP port discovery scan of `$TARGET`]]
 
-[[nmap#Open UDP port discovery scan of TARGET|Open UDP port discovery]]
+[[nmap#Open UDP port discovery scan of `$TARGET`]]
 
 ---
 

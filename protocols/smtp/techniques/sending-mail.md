@@ -2,4 +2,4 @@
 
 ## Send email from command line
 
-[[swaks#Send email]]
+See [[swaks#Send email|here]].

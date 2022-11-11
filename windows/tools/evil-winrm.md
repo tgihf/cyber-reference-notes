@@ -34,3 +34,24 @@ evil-winrm -i $TARGET -u [$DOMAIN\\]$USERNAME -H $NTLM_HASH
 evil-winrm -i $TARGET -u [$DOMAIN\\]$USERNAME --ssl -c $PATH_TO_CERTIFICATE -k $PATH_TO_PRIVATE_KEY
 ```
 
+---
+
+## Login in via Kerberos
+
+```bash
+KRB5CCNAME=$PATH_TO_CCACHE evil-winrm -i $TARGET -r $DOMAIN
+```
+
+- `$PATH_TO_CCACHE`: See [[using-kerberos-tickets|here]] (note this link is for `impacket` tools but `evil-winrm` leverages the same technique)
+
+For `-r $DOMAIN`, note the help description: `-r, --realm DOMAIN               Kerberos auth, it has to be set also in /etc/krb5.conf file using this format -> CONTOSO.COM = { kdc = fooserver.contoso.com }`. This will be set under the `[realms]` header in `/etc/krb5.conf` in multiple lines, for example:
+
+```txt
+[realms]
+...
+TARGET.LOCAL = {
+	kdc = dc.target.local
+}
+...
+```
+

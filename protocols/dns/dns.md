@@ -64,7 +64,9 @@ See [[dkim|here]].
 
 ---
 
-## [[enumeration#Attempt Zone Transfer from a DNS Server|Zone Transfer]]
+## Attempt a Zone Transfer Against a DNS Server
+
+See [[enumeration#Attempt zone-transfer Zone Transfer from a DNS Server|here]].
 
 ---
 

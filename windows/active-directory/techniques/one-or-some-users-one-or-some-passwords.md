@@ -39,12 +39,12 @@
 
 ## 2. Hunting for Accesses, Misconfigurations, and Vulnerabilities
 
-- [ ] For each possessed credential:
-	- [ ] [[crackmapexec|Pass a domain credential(s) to a target(s) to check for various types of access]]
-		- [ ] If unelevated, [[windows-privilege-escalation|attempt to elevate privileges to local administrator and dump hashes]]
-- [ ] Kerberos Misconfigurations
-	- [ ] [[ASREP-roasting|ASREP Roast vulnerable domain users]]
-	- [ ] [[kerberoasting|Kerberoast vulnerable domain users]]
+- [x] For each possessed credential:
+	- [x] [[crackmapexec|Pass a domain credential(s) to a target(s) to check for various types of access]]
+		- [x] If unelevated, [[windows-privilege-escalation|attempt to elevate privileges to local administrator and dump hashes]]
+- [x] Kerberos Misconfigurations
+	- [x] [[ASREP-roasting|ASREP Roast vulnerable domain users]]
+	- [x] [[kerberoasting|Kerberoast vulnerable domain users]]
 - [ ] DACL Misconfigurations
 	- [ ] [[dacls-aces#Permissions of Interest|Exploit vulnerable permissions]]
 - [ ] Delegation Misconfigurations

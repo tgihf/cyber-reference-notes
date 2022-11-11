@@ -28,7 +28,7 @@ If you find a file inclusion vulnerability and give it the path of a non-PHP sou
 
 ## LFI Technique 03: Reading PHP Source Code Files
 
-`include()`, `include_once()`, `require()`, and `require_once()` will also take [PHP  Wrappers](https://www.php.net/manual/en/wrappers.php.php), which are a PHP mechanism for interacting with various input streams. PHP's `php://filter` wrapper can be used to read in a resource (file), apply a [filter](https://www.php.net/manual/en/filters.php) to its contents, and return the filtered out.
+`include()`, `include_once()`, `require()`, and `require_once()` will also take [PHP  Wrappers](https://www.php.net/manual/en/wrappers.php.php), which are a PHP mechanism for interacting with various input streams. PHP's `php://filter` wrapper can be used to read in a resource (file), apply a [filter](https://www.php.net/manual/en/filters.php) to its contents, and return the filtered output.
 
 There are several notable types of these filters: string filters, conversion filters, compression filters, and encryption filters. The [conversion filters](https://www.php.net/manual/en/filters.convert.php) can be used to base64 encode the input stream.
 

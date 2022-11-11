@@ -2,6 +2,4 @@
 
 ## Stand up simple SMTP server
 
-- Any mail sent to your SMTP server will be printed to stdout
-
-[[python3-smtpd#Stand up simple SMTP server]]
+See [[python3-smtpd#Stand up simple SMTP server|here]]. Any mail sent to your SMTP server will be printed to `stdout`.
