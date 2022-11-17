@@ -71,3 +71,31 @@ Save the resultant hash to a file and crack it as normal.
 ```bash
 john --wordlist=$PATH_TO_PASSWORD_LIST $PATH_TO_CONVERTED_ZIP_HASH_FILE
 ```
+
+---
+
+## Offline dictionary attack against a KeePass database file (`.kdbx`)
+
+Install KeePass tools like `keepass2john`.
+
+```bash
+apt install kpcli
+```
+
+If the KeePass databsae file is only protected by a master password hash, use `keepass2john` to extract that master password hash into `$OUTPUT_FILE`.
+
+```bash
+keepass2john $KDBX_FILE > $OUTPUT_FILE
+```
+
+If the KeePass database file is protected by a credential file and a master password, extract the master password hash into `$OUTPUT_FILE`.
+
+```bash
+keepass2john -k <file-password> $KDBX_FILE > $OUTPUT_FILE
+```
+
+Crack the master password hash.
+
+```bash
+john --wordlist=$PATH_TO_WORDLIST $OUTPUT_FILE
+```

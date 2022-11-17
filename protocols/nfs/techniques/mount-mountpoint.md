@@ -28,3 +28,12 @@ sudo mount -t nfs -o rw,vers=2 10.10.10.10:/var backups
 ```bash
 sudo umount $LOCAL_MOUNT_POINT
 ```
+
+---
+
+## NFS Impersonation
+
+NFS enforces authorization on a filesystem, user ID, and group ID basis.
+
+For example, assume you mount a remote mount point that is writable by a remote user with the ID `2000` and by a remote group with the ID `3000`. If you [[useradd#Create New User|create a local user with the same user and/or group ID]], you'll be able to write to the remote mount point.
+
