@@ -4,6 +4,14 @@
 
 ---
 
+## Clone a Repository
+
+```bash
+git clone $REPOSITORY_URL
+```
+
+---
+
 ## Dump `.git` Directory from URL
 
 [GitTools](https://github.com/internetwache/GitTools)

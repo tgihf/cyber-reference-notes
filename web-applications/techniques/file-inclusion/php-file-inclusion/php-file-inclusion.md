@@ -82,6 +82,7 @@ PHP has various configuration settings that can be leveraged by application deve
 
 - `open_basedir`: A string of colon-separated directories that files can be "included" from
 	- i.e., if `open_basedir` == `/www:/tmp`, then only files in `/www` and `/tmp` can be "included" (this includes files in subdirectories of those directories as well)
+- `disable_functions`: Viewable in `phpinfo()`, a list of functions that can't be executed
 
 ---
 
