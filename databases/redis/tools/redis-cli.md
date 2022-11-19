@@ -1,3 +1,5 @@
+# redis-cli
+
 > A terminal program used to send commands to and read replies from a [[redis|Redis]] server.
 
 ---
