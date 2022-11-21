@@ -6,7 +6,7 @@
 
 ## General Syntax
 
-```cmd
+```batch
 tasklist /V [/S $REMOTE_HOST] [/U $USERNAME] [/P $PASSWORD] /FI "$FILTER"
 ```
 

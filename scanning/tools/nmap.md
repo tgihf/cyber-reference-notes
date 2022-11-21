@@ -61,7 +61,7 @@ nmap -p 21 --script=ftp-anon $TARGET
 ## Anonymously extract data from an LDAP server
 
 ```bash
-nmap -n -sV --script "ldap* and not brute" $LDAP_SERVER_HOSTNAME_OR_IP
+nmap -p 389,636 -n -sV --script "ldap* and not brute" $LDAP_SERVER_HOSTNAME_OR_IP
 ```
 
 ---

@@ -20,8 +20,8 @@
 	- For each user input on the path (page):
 		- Scrutinize the web application's behavior in response to the user input for the following vulnerabilities:
 			- **Server-Side Vulnerabilities**
-				- [ ] [[sql-injection|SQL injection]]
-				- [ ] [[os-command-injection|Command injection]]
+				- [x] [[sql-injection|SQL injection]]
+				- [x] [[os-command-injection|Command injection]]
 				- [ ] [[directory-traversal|Directory traversal]]
 				- [ ] [[file-inclusion|File inclusion]]
 				- [ ] [[file-uploads|File uploads]]
